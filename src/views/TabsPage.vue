@@ -31,7 +31,6 @@ import { alertCircle, build, search } from 'ionicons/icons';
   ion-tab-bar, ion-tab-button {
     background-color: rgba(0,170,162);
   }
-  ion-header ion-icon,
   ion-tab-bar ion-icon {
     fill: white;
   }

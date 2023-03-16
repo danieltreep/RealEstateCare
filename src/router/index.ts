@@ -17,7 +17,8 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'task',
-        component: () => import('@/views/ActiveTask.vue')
+        component: () => import('@/views/ActiveTask.vue'),
+        meta: { transition: 'slide-left' },
       },
       {
         path: 'search',
@@ -26,6 +27,10 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'information',
         component: () => import('@/views/InformationPage.vue')
+      },
+      {
+        path: 'settings',
+        component: () => import('@/views/SettingsPage.vue')
       }
     ]
   }

@@ -5,7 +5,7 @@
       <div class="grid">
         <ion-row ion-no-margin>
           <ion-col> 
-            <ion-card>
+            <ion-card tab="rapporten" href="/rapporten">
               <ion-card-content>
                 <ion-icon :icon="clipboardOutline" />
                 <h1>Toegewezen rapporten</h1>
@@ -13,7 +13,7 @@
             </ion-card>
           </ion-col>
           <ion-col>
-            <ion-card>
+            <ion-card tab="uitgevoerd" href="/uitgevoerd">
               <ion-card-content>
                 <ion-icon :icon="checkmarkCircle" />
                 <h1>Uitgevoerde rapporten</h1>
@@ -23,7 +23,7 @@
         </ion-row>
         <ion-row >
           <ion-col>
-            <ion-card>
+            <ion-card tab="documentatie" href="/documentatie">
               <ion-card-content>
                 <ion-icon :icon="grid" />
                 <h1>Documentatie</h1>
@@ -31,7 +31,7 @@
             </ion-card>
           </ion-col>
           <ion-col>
-            <ion-card>
+            <ion-card tab="instellingen" href="/instellingen">
               <ion-card-content>
                 <ion-icon :icon="settingsSharp" />
                 <h1>Instellingen</h1>

@@ -3,21 +3,8 @@
       <ion-toolbar color="dark">
         <img :src="require('../../public/assets/logo.svg')" class="ion-padding" />
         <NotificationBar slot="end" />
-        <!-- <div slot="end">
-            <ion-icon 
-                aria-hidden="true" 
-                :icon="notifications" 
-                size="large" 
-                id="click-trigger"
-              />
-            <ion-popover trigger="click-trigger" triggerAction="click">
-                <ng-template>
-                    <ion-content class="ion-padding">Hello World!</ion-content>
-                    <ion-content class="ion-padding">Hello World!</ion-content>
-                </ng-template>
-            </ion-popover>
-        </div> -->
-        <router-link to="/tabs/settings" slot="end">
+        
+        <router-link to="/instellingen" slot="end">
           <ion-icon 
             aria-hidden="true" 
             :icon="settingsSharp" 

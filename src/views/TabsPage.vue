@@ -3,19 +3,19 @@
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="task" href="/tabs/task">
+        <ion-tab-button tab="taken" href="/taken">
           <ion-icon aria-hidden="true" :icon="build" />
-          <ion-label>Active Tasks</ion-label>
+          <ion-label>Taken</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="search" href="/tabs/search">
+        <ion-tab-button tab="zoeken" href="/zoeken">
           <ion-icon aria-hidden="true" :icon="search" />
-          <ion-label>Search</ion-label>
+          <ion-label>Zoeken</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="information" href="/tabs/information">
+        <ion-tab-button tab="informatie" href="/informatie">
           <ion-icon aria-hidden="true" :icon="alertCircle" />
-          <ion-label>Information</ion-label>
+          <ion-label>Informatie</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>

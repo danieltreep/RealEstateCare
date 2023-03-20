@@ -2,7 +2,7 @@
     <ion-page>
         <HeaderSection />
         <ion-content :fullscreen="true">
-            <h1>Instellingen</h1>
+            <h1>Documentatie</h1>
 
       
         </ion-content>

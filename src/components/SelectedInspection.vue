@@ -21,12 +21,14 @@
         <p>Goedgekeurd: {{ selectedInspection.technicalInstallationInspection.approved }}</p> 
         <p>Opmerkingen: {{ selectedInspection.technicalInstallationInspection.comments }}</p> 
         
-        <h2>Schade opnemen</h2>
-        <p>Locatie aangetroffen modicicatie: {{ selectedInspection.inventorizeModifications.location }}</p> 
-        <p>Uitgevoerd door: {{ selectedInspection.inventorizeModifications.executedBy }}</p> 
-        <p>Beschrijving modificatie: {{ selectedInspection.inventorizeModifications.description }}</p> 
-        <p>Te ondernemen actie: {{ selectedInspection.inventorizeModifications.toDo }}</p> 
-        <p>Opmerkingen: {{ selectedInspection.inventorizeModifications.comments }}</p> 
+        <h2>Modificaties inventariseren</h2>
+        <p>Opmerkingen: {{ selectedInspection.technicalInstallationInspection.comments }}</p> 
+
+        <!-- <p>Locatie aangetroffen modicicatie: {{ selectedInspection.inventorizeModifications.location }}</p>  -->
+        <!-- <p>Uitgevoerd door: {{ selectedInspection.inventorizeModifications.executedBy }}</p>  -->
+        <!-- <p>Beschrijving modificatie: {{ selectedInspection.inventorizeModifications.description }}</p>  -->
+        <!-- <p>Te ondernemen actie: {{ selectedInspection.inventorizeModifications.toDo }}</p>  -->
+        <!-- <p>Opmerkingen: {{ selectedInspection.inventorizeModifications.comments }}</p>  -->
 
     </div>
 </template>

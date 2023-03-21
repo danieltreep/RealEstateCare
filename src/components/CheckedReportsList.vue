@@ -1,54 +1,43 @@
 <template>
     <ion-list v-for="(inspection, index) in inspections" :key="index">
-        <ion-item>
-            <ion-label>{{inspection.id}}</ion-label>
+        <ion-item @click="selectInspection(inspection.id)">
+            <ion-label>Inspectie op {{inspection.id}}</ion-label>
         </ion-item>
-        <!-- <ion-item>
-            <ion-label>Inspectie 12-04-2022</ion-label>
-        </ion-item>
-        <ion-item>
-            <ion-label>Inspectie 24-03-2022</ion-label>
-        </ion-item>
-        <ion-item>
-            <ion-label>{{inspections[0].id}}</ion-label>
-        </ion-item>
-        <ion-item v-for="(inspection, index) in inspections" :key="index">
-            <ion-label>{{ inspection.damageInspection.location }}</ion-label>
-        </ion-item> -->
     </ion-list>
+
+    <SelectedInspection v-if="showSelectedInspection" :selectedInspection="inspections[selectedInspectionId]"/>
+    <!-- <div >
+        <h1>Inspectie ID: {{ selectedInspectionId }} van {{ inspections[selectedInspectionId].damageInspection.date }}</h1>
+        
+    </div> -->
 </template>
 <script lang="ts">
 import { IonItem, IonLabel, IonList } from '@ionic/vue'; 
-// import getInspections from '@/services/getInspections.js'
+import getInspections from '@/services/getInspections.js';
+import SelectedInspection from './SelectedInspection.vue';
 
 export default {
     name: "CheckedReportsList",
+    components: {
+        IonItem, IonLabel, IonList, SelectedInspection
+    },
     data() {
         return {
-            inspections: '',
-            
+            inspections: [],
+            selectedInspectionId: 0,
+            showSelectedInspection: false,
         }
     },
-    components: {
-        IonItem, IonLabel, IonList
-    },
     methods: {
-        getInspections() {
-            fetch('https://my-json-server.typicode.com/danieltreep/RealEstateCare/inspections')
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                    this.inspections = data;
-                })
-                .catch(error => console.error(error))
+        selectInspection(id) {
+            this.selectedInspectionId = id;
+            this.showSelectedInspection = true;
         }
     },
     mounted() {
-        this.getInspections()
-        // this.inspections = getInspections();
-        // const inspection = getInspections();
-        // this.inspections = inspection;
-        // console.log("inspections " + inspection)
+        getInspections()
+            .then(data => this.inspections = data)
+        
     }
 }
 

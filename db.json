@@ -30,6 +30,37 @@
                 "toDo": "",
                 "comments": ""
             }
+        },
+        {
+            "id": "1",
+            "damageInspection": {
+                "location": "Arnhem",
+                "new": "checked",
+                "type": "slijtage",
+                "date": "2022-04-20",
+                "acuteActionRequired": "unchecked",
+                "description": "De houten voorgevel is gaan rotten"
+            },
+            "maintenance": {
+                "location": "hier",
+                "type": "schade",
+                "acuteActionRequired": "unchecked",
+                "costIndication": "1000"
+            },
+            "technicalInstallationInspection": {
+                "location": "",
+                "installationType": "",
+                "malfunctions": "",
+                "approved": "",
+                "comments": ""
+            },
+            "invenorizeModifications": {
+                "location": "",
+                "executedBy": "",
+                "description": "",
+                "toDo": "",
+                "comments": ""
+            }
         }
     ]
 }

@@ -1,15 +1,12 @@
 <template>
     <ion-list v-for="(inspection, index) in inspections" :key="index">
         <ion-item @click="selectInspection(inspection.id)">
-            <ion-label>Inspectie op {{inspection.id}}</ion-label>
+            <ion-label>Inspectie {{inspection.id}}</ion-label>
         </ion-item>
     </ion-list>
 
     <SelectedInspection v-if="showSelectedInspection" :selectedInspection="inspections[selectedInspectionId]"/>
-    <!-- <div >
-        <h1>Inspectie ID: {{ selectedInspectionId }} van {{ inspections[selectedInspectionId].damageInspection.date }}</h1>
-        
-    </div> -->
+    
 </template>
 <script lang="ts">
 import { IonItem, IonLabel, IonList } from '@ionic/vue'; 

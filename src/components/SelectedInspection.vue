@@ -1,43 +1,87 @@
 <template>
-    <div>
-        <h2>Schade opnemen</h2>
-        <p>Locatie: {{ selectedInspection.damageInspection.location }}</p> 
-        <p>Nieuwe schade: {{ selectedInspection.damageInspection.new }}</p> 
-        <p>Soort schade: {{ selectedInspection.damageInspection.type }}</p> 
-        <p>Datum: {{ selectedInspection.damageInspection.date }}</p> 
-        <p>Acute actie vereist: {{ selectedInspection.damageInspection.acuteActionRequired }}</p> 
-        <p>Omschrijving: {{ selectedInspection.damageInspection.description }}</p> 
-
-        <h2>Achterstallig onderhoud</h2>
-        <p>Locatie: {{ selectedInspection.maintenance.location }}</p> 
-        <p>Soort onderhoud: {{ selectedInspection.maintenance.type }}</p> 
-        <p>Acute actie vereist: {{ selectedInspection.maintenance.acuteActionRequired }}</p> 
-        <p>Kostenindicatie: {{ selectedInspection.maintenance.costIndication }}</p> 
+    <ion-list :inset="true">
         
-        <h2>Technische installaties inspecteren</h2>
-        <p>Locatie: {{ selectedInspection.technicalInstallationInspection.location }}</p> 
-        <p>Soort installatie: {{ selectedInspection.technicalInstallationInspection.installationType }}</p> 
-        <p>Gemelde storingen: {{ selectedInspection.technicalInstallationInspection.malfunctions }}</p> 
-        <p>Goedgekeurd: {{ selectedInspection.technicalInstallationInspection.approved }}</p> 
-        <p>Opmerkingen: {{ selectedInspection.technicalInstallationInspection.comments }}</p> 
+        <ion-list-header>Schade opnemen</ion-list-header>
+        <ion-item>
+            <ion-label>Locatie: {{ selectedInspection.damageInspection.location }}</ion-label> 
+        </ion-item>
+        <ion-item>
+            <p>Nieuwe schade: {{ selectedInspection.damageInspection.new }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Soort schade: {{ selectedInspection.damageInspection.type }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Datum: {{ selectedInspection.damageInspection.date }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Acute actie vereist: {{ selectedInspection.damageInspection.acuteActionRequired }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Omschrijving: {{ selectedInspection.damageInspection.description }}</p> 
+        </ion-item>
+
+        <ion-list-header>Achterstallig onderhoud</ion-list-header>
+        <ion-item>
+            <p>Locatie: {{ selectedInspection.maintenance.location }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Soort onderhoud: {{ selectedInspection.maintenance.type }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Acute actie vereist: {{ selectedInspection.maintenance.acuteActionRequired }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Kostenindicatie: {{ selectedInspection.maintenance.costIndication }}</p> 
+        </ion-item>
         
-        <h2>Modificaties inventariseren</h2>
-        <p>Opmerkingen: {{ selectedInspection.technicalInstallationInspection.comments }}</p> 
+        <ion-list-header>Technische installaties inspecteren</ion-list-header>
+        <ion-item>
+            <p>Locatie: {{ selectedInspection.technicalInstallationInspection.location }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Soort installatie: {{ selectedInspection.technicalInstallationInspection.installationType }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Gemelde storingen: {{ selectedInspection.technicalInstallationInspection.malfunctions }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Goedgekeurd: {{ selectedInspection.technicalInstallationInspection.approved }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Opmerkingen: {{ selectedInspection.technicalInstallationInspection.comments }}</p> 
+        </ion-item>
+        
+        <ion-list-header>Modificaties inventariseren</ion-list-header>
+        <ion-item>
+            <p>Locatie aangetroffen modicicatie: {{ selectedInspection.inventorizeModifications.location }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Uitgevoerd door: {{ selectedInspection.inventorizeModifications.executedBy }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Beschrijving modificatie: {{ selectedInspection.inventorizeModifications.description }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Te ondernemen actie: {{ selectedInspection.inventorizeModifications.toDo }}</p> 
+        </ion-item>
+        <ion-item>
+            <p>Opmerkingen: {{ selectedInspection.inventorizeModifications.comments }}</p> 
+        </ion-item>
 
-        <!-- <p>Locatie aangetroffen modicicatie: {{ selectedInspection.inventorizeModifications.location }}</p>  -->
-        <!-- <p>Uitgevoerd door: {{ selectedInspection.inventorizeModifications.executedBy }}</p>  -->
-        <!-- <p>Beschrijving modificatie: {{ selectedInspection.inventorizeModifications.description }}</p>  -->
-        <!-- <p>Te ondernemen actie: {{ selectedInspection.inventorizeModifications.toDo }}</p>  -->
-        <!-- <p>Opmerkingen: {{ selectedInspection.inventorizeModifications.comments }}</p>  -->
-
-    </div>
+    </ion-list>
 </template>
 <script lang="ts">
+    import { IonItem, IonLabel, IonList, IonListHeader } from '@ionic/vue';
+    import { defineComponent } from 'vue';
 export default {
+    
+
     name: 'SelectedInspection',
     props: {
         selectedInspection: Object
-    }
+    },
+    components: { IonItem, IonLabel, IonList, IonListHeader },
 }
 </script>
 <style lang="">

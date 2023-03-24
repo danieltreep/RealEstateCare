@@ -5,61 +5,154 @@
             "damageInspection": {
                 "location": "Arnhem",
                 "new": "checked",
-                "type": "slijtage",
+                "type": "anders",
                 "date": "2022-04-20",
-                "acuteActionRequired": "unchecked",
+                "acuteActionRequired": "checked",
                 "description": "De houten voorgevel is gaan rotten"
             },
             "maintenance": {
-                "location": "hier",
-                "type": "schade",
-                "acuteActionRequired": "unchecked",
-                "costIndication": "1000"
+                "location": "Arnhem",
+                "type": "houtrot",
+                "acuteActionRequired": "checked",
+                "costIndication": "500-1500"
             },
             "technicalInstallationInspection": {
-                "location": "",
-                "installationType": "",
-                "malfunctions": "",
-                "approved": "",
-                "comments": ""
+                "location": "Arnhem",
+                "installationType": "Verwarming",
+                "malfunctions": "Verwarming geeft rare tikken",
+                "approved": "unchecked",
+                "comments": "De verwarming is aan vervanging toe"
             },
             "inventorizeModifications": {
-                "location": "",
-                "executedBy": "",
-                "description": "",
-                "toDo": "",
-                "comments": ""
+                "location": "Achtertuin",
+                "executedBy": "Aannemer",
+                "description": "Er is uitbouw gedaan",
+                "toDo": "Accepteren",
+                "comments": "De uitbouw is goedgekeurd door de gemeente en is veilig"
             }
         },
         {
             "id": "1",
             "damageInspection": {
-                "location": "Arnhem",
-                "new": "checked",
-                "type": "slijtage",
-                "date": "2022-04-20",
+                "location": "Rotterdam",
+                "new": "unchecked",
+                "type": "normaal gebruik",
+                "date": "2022-04-18",
                 "acuteActionRequired": "unchecked",
-                "description": "De houten voorgevel is gaan rotten"
+                "description": "De scharnieren van de deur zijn wat doorgezakt waardoor deze niet goed meer sluit"
             },
             "maintenance": {
-                "location": "hier",
-                "type": "schade",
+                "location": "Rotterdam",
+                "type": "Schilderwerk",
                 "acuteActionRequired": "unchecked",
-                "costIndication": "1000"
+                "costIndication": "0-500"
             },
             "technicalInstallationInspection": {
-                "location": "",
-                "installationType": "",
-                "malfunctions": "",
-                "approved": "",
-                "comments": ""
+                "location": "Rotterdam",
+                "installationType": "Luchtverversing",
+                "malfunctions": "De luchtverversing werkt niet meer goed",
+                "approved": "unchecked",
+                "comments": "De luchtverversing moet vervangen worden"
             },
             "inventorizeModifications": {
-                "location": "",
-                "executedBy": "",
-                "description": "",
-                "toDo": "",
-                "comments": ""
+                "location": "Voorgevel",
+                "executedBy": "Huurder",
+                "description": "De voorgevel is geschilderd in een andere kleur",
+                "toDo": "Accepteren",
+                "comments": "De kleur voldoet aan de eisen"
+            }
+        },
+        {
+            "id": "2",
+            "damageInspection": {
+                "location": "Amsterdam",
+                "new": "checked",
+                "type": "geweld",
+                "date": "2022-04-17",
+                "acuteActionRequired": "checked",
+                "description": "De vooruit is ingegooid met een baksteen"
+            },
+            "maintenance": {
+                "location": "Amsterdam",
+                "type": "beglazing",
+                "acuteActionRequired": "checked",
+                "costIndication": "500-1500"
+            },
+            "technicalInstallationInspection": {
+                "location": "Amsterdam",
+                "installationType": "Beveiliging",
+                "malfunctions": "Er zijn camera's geinstalleerd die uitzicht hebben op de straat",
+                "approved": "checked",
+                "comments": "Ter beveiliging van het pand is dit goedgekeurd"
+            },
+            "inventorizeModifications": {
+                "location": "Voorgevel",
+                "executedBy": "Huurder",
+                "description": "Er zijn camera's geinstalleerd",
+                "toDo": "Accepteren",
+                "comments": "De installatie voldoet aan alle eisen"
+            }
+        },
+        {
+            "id": "3",
+            "damageInspection": {
+                "location": "Hoofddorp",
+                "new": "checked",
+                "type": "calamiteit",
+                "date": "2022-04-07",
+                "acuteActionRequired": "checked",
+                "description": "Er is een boom op het dak gevallen en het dak ligt voor een deel open"
+            },
+            "maintenance": {
+                "location": "Hoofddorp",
+                "type": "Leidingwerk",
+                "acuteActionRequired": "checked",
+                "costIndication": "1500+"
+            },
+            "technicalInstallationInspection": {
+                "location": "Hoofddorp",
+                "installationType": "Elektra",
+                "malfunctions": "Er onstaat kortsluiting als de stroom aan gaat",
+                "approved": "unchecked",
+                "comments": "Er onstaat kortsluiting zodra de stroom aan gaat. Dit moet opgelost worden want dit is onveilig"
+            },
+            "inventorizeModifications": {
+                "location": "Dak",
+                "executedBy": "Huurder",
+                "description": "Er is een dakkapel gemaakt",
+                "toDo": "Laten keuren",
+                "comments": "De bouw is nog niet goedgekeurd"
+            }
+        },
+        {
+            "id": "4",
+            "damageInspection": {
+                "location": "Leiden",
+                "new": "unchecked",
+                "type": "Slijtage",
+                "date": "2022-04-06",
+                "acuteActionRequired": "unchecked",
+                "description": "De vloer begint door te zakken"
+            },
+            "maintenance": {
+                "location": "Leiden",
+                "type": "Houtrot",
+                "acuteActionRequired": "unchecked",
+                "costIndication": "0-500"
+            },
+            "technicalInstallationInspection": {
+                "location": "Leiden",
+                "installationType": "Koeling",
+                "malfunctions": "De koeling werkt niet meer",
+                "approved": "unchecked",
+                "comments": "De koeling werkt niet meer"
+            },
+            "inventorizeModifications": {
+                "location": "Badkamer",
+                "executedBy": "Aannemer",
+                "description": "De badkamer is vernieuwd en er is een bad geplaatst",
+                "toDo": "Laten keuren",
+                "comments": "De installatie is nog niet goedgekeurd"
             }
         }
     ]

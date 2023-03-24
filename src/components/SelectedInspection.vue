@@ -1,89 +1,119 @@
 <template>
-    <ion-list :inset="true">
+    <ion-list>
+        <h3 class="ion-text-center ion-padding-top">Details inspectie: {{ selectedInspection.id }}</h3>
         
-        <ion-list-header>Schade opnemen</ion-list-header>
-        <ion-item>
-            <ion-label>Locatie: {{ selectedInspection.damageInspection.location }}</ion-label> 
-        </ion-item>
-        <ion-item>
-            <p>Nieuwe schade: {{ selectedInspection.damageInspection.new }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Soort schade: {{ selectedInspection.damageInspection.type }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Datum: {{ selectedInspection.damageInspection.date }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Acute actie vereist: {{ selectedInspection.damageInspection.acuteActionRequired }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Omschrijving: {{ selectedInspection.damageInspection.description }}</p> 
-        </ion-item>
+        <ion-item-group>
+            <ion-list-header>Schade opnemen</ion-list-header>
+            <ion-item>
+                <ion-label position="stacked"><i>Locatie:</i></ion-label> 
+                <ion-label class="ion-text-wrap">{{ selectedInspection.damageInspection.location }}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Nieuwe schade:</i></ion-label> 
+                <ion-label class="ion-text-wrap">{{ selectedInspection.damageInspection.new === 'checked' ? 'Ja' : 'Nee' }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Soort schade:</i></ion-label> 
+                <ion-label class="ion-text-wrap">{{ selectedInspection.damageInspection.type }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Datum:</i></ion-label> 
+                <ion-label class="ion-text-wrap">{{ selectedInspection.damageInspection.date }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Acute actie vereist:</i></ion-label> 
+                <ion-label class="ion-text-wrap">{{ selectedInspection.damageInspection.acuteActionRequired === 'checked' ? 'Ja' : 'Nee' }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Omschrijving:</i></ion-label> 
+                <ion-label class="ion-text-wrap">{{ selectedInspection.damageInspection.description }}</ion-label> 
+            </ion-item>
+        </ion-item-group>
 
-        <ion-list-header>Achterstallig onderhoud</ion-list-header>
-        <ion-item>
-            <p>Locatie: {{ selectedInspection.maintenance.location }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Soort onderhoud: {{ selectedInspection.maintenance.type }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Acute actie vereist: {{ selectedInspection.maintenance.acuteActionRequired }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Kostenindicatie: {{ selectedInspection.maintenance.costIndication }}</p> 
-        </ion-item>
+        <ion-item-group>
+            <ion-list-header>Achterstallig onderhoud</ion-list-header>
+            <ion-item>
+                <ion-label position="stacked"><i>Locatie:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.maintenance.location }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Soort onderhoud:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.maintenance.type }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Acute actie vereist:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.maintenance.acuteActionRequired === 'checked' ? 'Ja' : 'Nee' }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Kostenindicatie:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.maintenance.costIndication }}</ion-label> 
+            </ion-item>
+        </ion-item-group>
         
-        <ion-list-header>Technische installaties inspecteren</ion-list-header>
-        <ion-item>
-            <p>Locatie: {{ selectedInspection.technicalInstallationInspection.location }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Soort installatie: {{ selectedInspection.technicalInstallationInspection.installationType }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Gemelde storingen: {{ selectedInspection.technicalInstallationInspection.malfunctions }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Goedgekeurd: {{ selectedInspection.technicalInstallationInspection.approved }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Opmerkingen: {{ selectedInspection.technicalInstallationInspection.comments }}</p> 
-        </ion-item>
+        <ion-item-group>
+            <ion-list-header>Technische installaties inspecteren</ion-list-header>
+            <ion-item>
+                <ion-label position="stacked"><i>Locatie:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.technicalInstallationInspection.location }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Soort installatie:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.technicalInstallationInspection.installationType }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Gemelde storingen:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.technicalInstallationInspection.malfunctions }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Goedgekeurd:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.technicalInstallationInspection.approved === 'checked' ? 'Ja' : 'Nee' }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Opmerkingen:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.technicalInstallationInspection.comments }}</ion-label> 
+            </ion-item>
+        </ion-item-group>
         
-        <ion-list-header>Modificaties inventariseren</ion-list-header>
-        <ion-item>
-            <p>Locatie aangetroffen modicicatie: {{ selectedInspection.inventorizeModifications.location }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Uitgevoerd door: {{ selectedInspection.inventorizeModifications.executedBy }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Beschrijving modificatie: {{ selectedInspection.inventorizeModifications.description }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Te ondernemen actie: {{ selectedInspection.inventorizeModifications.toDo }}</p> 
-        </ion-item>
-        <ion-item>
-            <p>Opmerkingen: {{ selectedInspection.inventorizeModifications.comments }}</p> 
-        </ion-item>
+        <ion-item-group>
+            <ion-list-header>Modificaties inventariseren</ion-list-header>
+            <ion-item>
+                <ion-label position="stacked"><i>Locatie modicicatie:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.inventorizeModifications.location }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Uitgevoerd door:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.inventorizeModifications.executedBy }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Beschrijving modificatie:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.inventorizeModifications.description }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Te ondernemen actie:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.inventorizeModifications.toDo }}</ion-label> 
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"><i>Opmerkingen:</i></ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.inventorizeModifications.comments }}</ion-label> 
+            </ion-item>
+        </ion-item-group>
 
     </ion-list>
 </template>
-<script lang="ts">
-    import { IonItem, IonLabel, IonList, IonListHeader } from '@ionic/vue';
-    import { defineComponent } from 'vue';
-export default {
-    
 
-    name: 'SelectedInspection',
-    props: {
-        selectedInspection: Object
-    },
-    components: { IonItem, IonLabel, IonList, IonListHeader },
-}
+<script lang="ts">
+    import { IonItem, IonLabel, IonList, IonListHeader, IonItemGroup } from '@ionic/vue';
+    export default {
+        name: 'SelectedInspection',
+        props: {
+            selectedInspection: Object
+        },
+        components: { IonItem, IonLabel, IonList, IonListHeader, IonItemGroup },
+    }
 </script>
-<style lang="">
-    
+
+<style lang="css">
+    ion-item-group {
+        margin-bottom: 2rem;
+    }
 </style>

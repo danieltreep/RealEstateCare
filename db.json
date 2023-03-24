@@ -1,18 +1,18 @@
 {
     "inspections": [
         {
-            "id": "0",
+            "id": "1",
             "damageInspection": {
                 "location": "Arnhem",
                 "new": "checked",
-                "type": "anders",
-                "date": "2022-04-20",
+                "type": "Anders",
+                "date": "2022-03-20",
                 "acuteActionRequired": "checked",
                 "description": "De houten voorgevel is gaan rotten"
             },
             "maintenance": {
                 "location": "Arnhem",
-                "type": "houtrot",
+                "type": "Houtrot",
                 "acuteActionRequired": "checked",
                 "costIndication": "500-1500"
             },
@@ -32,12 +32,12 @@
             }
         },
         {
-            "id": "1",
+            "id": "2",
             "damageInspection": {
                 "location": "Rotterdam",
                 "new": "unchecked",
-                "type": "normaal gebruik",
-                "date": "2022-04-18",
+                "type": "Normaal gebruik",
+                "date": "2022-03-21",
                 "acuteActionRequired": "unchecked",
                 "description": "De scharnieren van de deur zijn wat doorgezakt waardoor deze niet goed meer sluit"
             },
@@ -63,18 +63,18 @@
             }
         },
         {
-            "id": "2",
+            "id": "3",
             "damageInspection": {
                 "location": "Amsterdam",
                 "new": "checked",
-                "type": "geweld",
+                "type": "Geweld",
                 "date": "2022-04-17",
                 "acuteActionRequired": "checked",
                 "description": "De vooruit is ingegooid met een baksteen"
             },
             "maintenance": {
                 "location": "Amsterdam",
-                "type": "beglazing",
+                "type": "Beglazing",
                 "acuteActionRequired": "checked",
                 "costIndication": "500-1500"
             },
@@ -94,12 +94,12 @@
             }
         },
         {
-            "id": "3",
+            "id": "4",
             "damageInspection": {
                 "location": "Hoofddorp",
                 "new": "checked",
-                "type": "calamiteit",
-                "date": "2022-04-07",
+                "type": "Calamiteit",
+                "date": "2022-04-18",
                 "acuteActionRequired": "checked",
                 "description": "Er is een boom op het dak gevallen en het dak ligt voor een deel open"
             },
@@ -125,12 +125,12 @@
             }
         },
         {
-            "id": "4",
+            "id": "5",
             "damageInspection": {
                 "location": "Leiden",
                 "new": "unchecked",
                 "type": "Slijtage",
-                "date": "2022-04-06",
+                "date": "2022-04-26",
                 "acuteActionRequired": "unchecked",
                 "description": "De vloer begint door te zakken"
             },

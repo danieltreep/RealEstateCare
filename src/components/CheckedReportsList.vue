@@ -1,6 +1,6 @@
 <template>
     <ion-list v-for="(inspection, index) in inspections" :key="index">
-        <ion-item @click="selectInspection(inspection.id)" :detail="true" lines="full">
+        <ion-item @click="selectInspection(inspection.id - 1)" :detail="true" lines="full">
             <ion-icon :icon="clipboardOutline" slot="start"/>
             <ion-label>Inspectie {{inspection.id}} op {{inspection.damageInspection.date}}</ion-label>
         </ion-item>

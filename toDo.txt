@@ -1,0 +1,25 @@
+1: De inspecteur krijgt een lijst met alle uitgevoerde rapporten, als hij op een rapport klikt kan hij de details zien
+2: Hij moet het kunnen aanpassen. Maak een knop voor aanpassen dat het scherm opent voor het maken van inspecties. Haal de specifieke inspectie op.
+3: Verwijderen?
+4: Elk van de vier onderdelen kan geselecteerd worden, als het geselecteerd wordt, wordt het getoond en kan worden aangepast.
+5: Class waar?
+6: Linken naar bestanden
+7: Foto's, waar opslaan?
+8: Instellingen
+9: MVC concept
+
+Te doen:
+1: Debriefing, feedback verwerken
+2: JSON data verbeteren, foto's?
+3: Inspecties sorteren op datum
+4: Een README bestand maken en toevoegen
+5: Inlogscherm dmv local storage
+6: Linken naar bestanden in Knowledge base, bestanden vinden online?
+7: Class toevoegen waarvan objecten gemaakt kunnen worden
+8: Werkende instellingen?
+9: Usability, WCAG richtlijnen en stijlgids controleren. 
+10: Routing zonder reload
+11: Getter voor enkele inspectie
+12: Upload inspecties via service
+13: Singleton
+14: toDo verwijderen

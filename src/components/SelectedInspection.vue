@@ -18,7 +18,7 @@
             </ion-item>
             <ion-item>
                 <ion-label position="stacked"><i>Datum:</i></ion-label> 
-                <ion-label class="ion-text-wrap">{{ selectedInspection.damageInspection.date }}</ion-label> 
+                <ion-label class="ion-text-wrap">{{ selectedInspection.damageInspection.inspectionDate }}</ion-label> 
             </ion-item>
             <ion-item>
                 <ion-label position="stacked"><i>Acute actie vereist:</i></ion-label> 

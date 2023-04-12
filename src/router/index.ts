@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 import TabsPage from '../views/TabsPage.vue';
+import LoginPage from '../views/welcome/LoginPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -12,11 +13,6 @@ const routes: Array<RouteRecordRaw> = [
         redirect: '/taken'
       },
       {
-        path: 'taken',
-        name: 'taken',
-        component: () => import('@/views/TaskPage.vue'),
-      },
-      {
         path: 'zoeken',
         name: 'zoeken',
         component: () => import('@/views/SearchPage.vue')
@@ -25,6 +21,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'informatie',
         name: 'informatie',
         component: () => import('@/views/InformationPage.vue')
+      },
+      {
+        path: 'taken',
+        name: 'taken',
+        component: () => import('@/views/TaskPage.vue')
       },
       {
         path: 'instellingen',
@@ -47,6 +48,10 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/DocumentationPage.vue')
       }
     ]
+  },
+  {
+    path: '/login',
+    component: LoginPage
   }
 ]
 

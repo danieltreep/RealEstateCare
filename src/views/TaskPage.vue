@@ -4,39 +4,47 @@
     <ion-content :fullscreen="true">
       <div class="grid">
         <ion-row ion-no-margin>
-          <ion-col> 
-            <ion-card tab="rapporten" href="/rapporten">
-              <ion-card-content>
-                <ion-icon :icon="clipboardOutline" />
-                <h1>Toegewezen rapporten</h1>
-              </ion-card-content>
-            </ion-card>
+          <ion-col>
+            <router-link to="/rapporten">
+              <ion-card>
+                <ion-card-content>
+                  <ion-icon :icon="clipboardOutline" />
+                  <h1>Toegewezen rapporten</h1>
+                </ion-card-content>
+              </ion-card>
+            </router-link> 
           </ion-col>
           <ion-col>
-            <ion-card tab="uitgevoerd" href="/uitgevoerd">
-              <ion-card-content>
-                <ion-icon :icon="checkmarkCircle" />
-                <h1>Uitgevoerde rapporten</h1>
-              </ion-card-content>
-            </ion-card>
+            <router-link to="/uitgevoerd">
+              <ion-card>
+                <ion-card-content>
+                  <ion-icon :icon="checkmarkCircle" />
+                  <h1>Uitgevoerde rapporten</h1>
+                </ion-card-content>
+              </ion-card>
+            </router-link>
           </ion-col>
         </ion-row>
         <ion-row >
           <ion-col>
-            <ion-card tab="documentatie" href="/documentatie">
-              <ion-card-content>
-                <ion-icon :icon="grid" />
-                <h1>Documentatie</h1>
-              </ion-card-content>
-            </ion-card>
+            <router-link to="/documentatie">
+              <ion-card>
+                <ion-card-content>
+                  <ion-icon :icon="grid" />
+                  <h1>Documentatie</h1>
+                </ion-card-content>
+              </ion-card>
+            </router-link>
           </ion-col>
           <ion-col>
-            <ion-card tab="instellingen" href="/instellingen">
-              <ion-card-content>
-                <ion-icon :icon="settingsSharp" />
-                <h1>Instellingen</h1>
-              </ion-card-content>
-            </ion-card>
+            <router-link to="/instellingen">
+              <ion-card>
+                <ion-card-content>
+                  <ion-icon :icon="settingsSharp" />
+                  <h1>Instellingen</h1>
+                </ion-card-content>
+              </ion-card>
+            </router-link>
           </ion-col>
         </ion-row>
       </div>
@@ -75,5 +83,7 @@
     fill: black;
     stroke: black !important;
   }
-  
+  a {
+    text-decoration: none;
+  }
 </style>

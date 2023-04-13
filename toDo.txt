@@ -9,7 +9,6 @@
 9: MVC concept
 
 Te doen:
-1: Debriefing, feedback verwerken
 2: JSON data verbeteren, foto's?
 3: Inspecties sorteren op datum
 4: Een README bestand maken en toevoegen
@@ -18,8 +17,9 @@ Te doen:
 7: Class toevoegen waarvan objecten gemaakt kunnen worden
 8: Werkende instellingen?
 9: Usability, WCAG richtlijnen en stijlgids controleren. 
-10: Routing zonder reload
 11: Getter voor enkele inspectie
 12: Upload inspecties via service
 13: Singleton
 14: toDo verwijderen
+15: State toevoegen
+16: Update bestaande inspecties layout

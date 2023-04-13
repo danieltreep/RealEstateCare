@@ -108,7 +108,13 @@
         props: {
             selectedInspection: Object
         },
-        components: { IonItem, IonLabel, IonList, IonListHeader, IonItemGroup },
+        components: { 
+            IonItem, 
+            IonLabel, 
+            IonList, 
+            IonListHeader, 
+            IonItemGroup 
+        },
     }
 </script>
 

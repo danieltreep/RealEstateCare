@@ -32,7 +32,7 @@
                         <ion-icon :icon="logIn" slot="end"></ion-icon>
                     </ion-button>
                     
-                    <img :src="require('../../../public/assets/logo-icon.svg')" class="img" />
+                    <img :src="require('../../public/assets/logo-icon.svg')" class="img" />
                 </form>
             </div>
         </ion-content>

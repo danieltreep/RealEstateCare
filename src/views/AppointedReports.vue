@@ -12,7 +12,7 @@
                 <Transition>
                     <ion-item-group v-show="schadeOpnemen">
                         <ion-item>
-                            <ion-label position="stacked" >Locatie:</ion-label> 
+                            <ion-label position="floating" >Locatie:</ion-label> 
                             <ion-input :clear-input="true"></ion-input>
                         </ion-item>
                         <ion-item lines="none">
@@ -43,7 +43,7 @@
                             <ion-checkbox></ion-checkbox> 
                         </ion-item>
                         <ion-item>
-                            <ion-label position="stacked">Omschrijving:</ion-label> 
+                            <ion-label position="floating">Omschrijving:</ion-label> 
                             <ion-textarea type="textarea" :auto-grow="true"></ion-textarea>
                         </ion-item>
                     </ion-item-group>
@@ -56,7 +56,7 @@
                 <Transition>
                     <ion-item-group v-show="achterstalligOnderhoud">
                         <ion-item>
-                            <ion-label position="stacked" >Locatie:</ion-label> 
+                            <ion-label position="floating" >Locatie:</ion-label> 
                             <ion-input :clear-input="true"></ion-input>
                         </ion-item>
                         <ion-item lines="none">
@@ -91,7 +91,7 @@
                 <Transition>
                     <ion-item-group v-show="technischeInstallaties">
                         <ion-item>
-                            <ion-label position="stacked" >Locatie:</ion-label> 
+                            <ion-label position="floating" >Locatie:</ion-label> 
                             <ion-input :clear-input="true"></ion-input>
                         </ion-item>
                         <ion-item lines="none">
@@ -105,7 +105,7 @@
                             </ion-select>
                         </ion-item>
                         <ion-item>
-                            <ion-label position="stacked">Gemelde storingen:</ion-label> 
+                            <ion-label position="floating">Gemelde storingen:</ion-label> 
                             <ion-input :clear-input="true"></ion-input>
                         </ion-item>
                         <ion-item lines="none">
@@ -113,7 +113,7 @@
                             <ion-checkbox></ion-checkbox>
                         </ion-item>
                         <ion-item>
-                            <ion-label position="stacked" >Opmerkingen:</ion-label> 
+                            <ion-label position="floating" >Opmerkingen:</ion-label> 
                             <ion-textarea type="textarea" :auto-grow="true"></ion-textarea>
                         </ion-item>
                     </ion-item-group>
@@ -126,7 +126,7 @@
                 <Transition>
                     <ion-item-group v-show="modificaties">
                         <ion-item>
-                            <ion-label position="stacked" >Locatie modificatie:</ion-label> 
+                            <ion-label position="floating" >Locatie modificatie:</ion-label> 
                             <ion-input :clear-input="true"></ion-input>
                         </ion-item>
                         <ion-item lines="none">
@@ -138,7 +138,7 @@
                             </ion-select>
                         </ion-item>
                         <ion-item>
-                            <ion-label position="stacked" >Beschrijving modificatie:</ion-label> 
+                            <ion-label position="floating" >Beschrijving modificatie:</ion-label> 
                             <ion-input :clear-input="true"></ion-input>
                         </ion-item>
                         <ion-item lines="none">
@@ -151,7 +151,7 @@
                             </ion-select>
                         </ion-item>
                         <ion-item>
-                            <ion-label position="stacked">Opmerkingen:</ion-label> 
+                            <ion-label position="floating">Opmerkingen:</ion-label> 
                             <ion-textarea type="textarea" :auto-grow="true"></ion-textarea>
                         </ion-item>
                     </ion-item-group>

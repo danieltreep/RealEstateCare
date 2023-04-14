@@ -1,9 +1,11 @@
 <template>
     <ion-page>
         <HeaderSection />
+
         <ion-content :fullscreen="true">
             <h1>Toegewezen Rapporten</h1>
-        
+            {{ counter }}
+            <ion-button @click="increment">Increment</ion-button>
             <ion-list>
                 <ion-item lines="none" class="groupHeader">
                     <ion-label>Schade opnemen</ion-label>
@@ -200,6 +202,16 @@
                 achterstalligOnderhoud: false,
                 technischeInstallaties: false,
                 modificaties: false
+            }
+        },
+        methods: {
+            increment() {
+                this.$store.dispatch('increment');
+            }
+        },
+        computed: {
+            counter() {
+                return this.$store.state.counter;
             }
         }
     }

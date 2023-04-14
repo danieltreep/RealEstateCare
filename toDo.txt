@@ -21,5 +21,4 @@ Te doen:
 12: Upload inspecties via service
 13: Singleton
 14: toDo verwijderen
-15: State toevoegen
 16: Update bestaande inspecties layout

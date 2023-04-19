@@ -16,7 +16,7 @@ Te doen:
 - Inlogscherm dmv local storage
 - Linken naar bestanden in Knowledge base, bestanden vinden online?
 - Class toevoegen waarvan objecten gemaakt kunnen worden
-- Werkende instellingen, dark mode
+- Werkende instellingen
 - Usability, WCAG richtlijnen en stijlgids controleren. 
 - Upload inspecties via service
 - Singleton

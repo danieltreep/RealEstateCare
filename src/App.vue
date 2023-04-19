@@ -28,9 +28,10 @@
   .darkMode ion-card {
     box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 16px;
   }
-  /* ion-checkbox {
-    --checkbox-background: white;
-  } */
+  .darkMode ion-item:not(.groupHeader) ion-checkbox {
+    --checkbox-background-checked: var(--main-color);
+    --border-color-checked: var(--main-color);
+  }
   h1 {
     text-align: center;
   }

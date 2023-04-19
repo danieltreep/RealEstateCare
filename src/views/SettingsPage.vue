@@ -45,5 +45,8 @@
     }
 </script>
 <style>
-    
+    ion-toggle {
+        --track-background-checked: var(--main-color);
+        --handle-background-checked: white;
+    }
 </style>

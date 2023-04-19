@@ -1,45 +1,51 @@
 <template>
 <ion-page>
     <ion-content :fullscreen="true" color="dark">
-        <div class="container">
+        
             <h1 class="h1">Login</h1>
-            <form action="" class="form">
-                <ion-input 
-                    :clear-input="true" 
-                    placeholder="Gebruikersnaam" 
-                    class="input"
-                    ><ion-icon 
-                        :icon="personCircle" 
-                        class="ion-margin-end ion-margin-start icon"
-                        aria-hidden="true"
-                    ></ion-icon>
-                </ion-input>
             
-                <ion-input 
-                    :clear-input="true" 
-                    type="password" 
-                    placeholder="Wachtwoord"
-                    class="input"
-                    ><ion-icon 
-                        :icon="lockClosed" 
-                        class="ion-margin-end ion-margin-start icon"
+                
+            
+                <ion-item lines="none">
+                    <ion-icon 
+                        :icon="personCircle" 
                         aria-hidden="true"
                     ></ion-icon>
-                </ion-input>
+                    <ion-input 
+                        :clear-input="true" 
+                        label="Gebruikersnaam" 
+                        labelPlacement="stacked"
+                    ></ion-input>
+                </ion-item>
                 
+                <ion-item lines="none">
+                    <ion-icon 
+                        :icon="lockClosed" 
+                        aria-hidden="true"
+                    ></ion-icon>
+                    <ion-input 
+                        label="Wachtwoord"
+                        labelPlacement="stacked"
+                        :clear-input="true" 
+                        type="password" 
+                    > 
+                    </ion-input>
+                </ion-item>
+                
+
                 <ion-button class="button" router-link="/taken">  Login
                     <ion-icon :icon="logIn" slot="end"></ion-icon>
                 </ion-button>
                 
                 <img :src="require('../../public/assets/logo-icon.svg')" class="img" />
-            </form>
-        </div>
+            
+        
     </ion-content>
 </ion-page>
 </template>
 
 <script lang="ts">
-    import {IonPage, IonContent, IonButton, IonInput, IonIcon} from '@ionic/vue';
+    import {IonPage, IonContent, IonButton, IonInput, IonIcon, IonItem} from '@ionic/vue';
     import { personCircle, lockClosed, logIn } from 'ionicons/icons';
 
     export default {
@@ -49,7 +55,9 @@
             IonContent,
             IonButton,
             IonInput,
-            IonIcon
+            IonIcon,
+            IonItem,
+            
         },
         data() {
             return {
@@ -61,52 +69,51 @@
     }
 </script>
 
-<style>
-    .input {
-        --background: white;
-        --color: black;
-        --placeholder-color: black;
+<style scoped>
+    ion-input {
+        --background: var(--ion-color-dark);
+        --color: white;
         --placeholder-opacity: .9;
-        border-radius: 10px;
-        flex: 0;
-        width: 100%;
-        margin: .5rem;
+        --placeholder-color: white;
+        --border-radius: 10px;
+        margin: .5rem 0;
+        border-bottom: 2px solid white;
     }
-    .form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 2rem;
+    ion-item {
+        --background: var(--ion-color-dark);
     }
-    .icon {
-        font-size: 20px;
+    ion-icon {
+        font-size: 30px;
         margin-right: 1rem;
         fill: var(--main-color);
     }
-    .button {
+    ion-button {
         --background: var(--main-color);
-        width: 100%;
-        border-radius: 10px;
+        --border-radius: 10px;
         font-weight: bold;
-        margin-top: 2rem;
+        margin: 2rem 1rem ;
+    }
+    ion-button ion-icon {
+        fill: white;
+        display: none;
     }
     .img {
-        margin-top: 1rem;
-        scale: 1.3;
+        height: 60px;
         position: absolute;
-        bottom: 8rem;
+        bottom: 6rem;
+        left: 50%;
+        transform: translate(-50%, 0);
     }
     .h1 {
-        font-size: 3rem;
-        margin: 0;
+        font-size: 2.5rem;
+        margin: 0 1rem 2rem;
         font-weight: bold;
+        text-align: start;
     }
-    .container {
-        height: 100%;
-        padding: 5rem 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    ion-content {
+        --padding-end: 1.5rem;
+        --padding-start: 1.5rem;
+        --padding-top: 45%;
+        
     }
 </style>

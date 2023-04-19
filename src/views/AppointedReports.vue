@@ -4,7 +4,7 @@
 
         <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
             <h1>Toegewezen Rapporten</h1>
-            
+            <p>Selecteer de benodigde categoriën voor de inspectie</p>
             <ion-list>
                 <ion-item lines="none" class="groupHeader">
                     <ion-checkbox v-model="schadeOpnemen">Schade opnemen</ion-checkbox>
@@ -51,7 +51,7 @@
                         <ion-item lines="none">
                             <label>Foto's:</label>
                             <label class="fileInputButton" aria-label="Kies foto" for="fileInput">Kies foto's
-                                <ion-icon :icon="camera"></ion-icon>   
+                                <ion-icon :icon="camera" ></ion-icon>   
                             </label>
                             <input hidden id="fileInput" type="file" accept="image/png, image/jpeg" slot="end">
                         </ion-item>
@@ -208,7 +208,7 @@
                         achterstalligOnderhoud || 
                         technischeInstallaties ||
                         modificaties">
-                    <ion-button>Opslaan</ion-button>
+                    <ion-button size="default" fill="outline">Opslaan</ion-button>
                 </ion-item>
             </ion-list>
         </ion-content>
@@ -250,9 +250,6 @@
             }
         },
         computed: {
-            counter() {
-                return this.$store.state.counter;
-            },
             darkMode() {
                 return this.$store.state.darkMode;
             }
@@ -261,39 +258,59 @@
 </script>
 
 <style lang="css" scoped>
-    ion-item-group {
-        margin-bottom: 2rem;
-    }
+    /* Transition timing */
     .v-enter-active,
     .v-leave-active {
         transition: opacity 0.3s ease;
     }
-    
     .v-enter-from,
     .v-leave-to {
         opacity: 0;
+    }
+
+    /* Ion components */
+    ion-item-group {
+        margin-bottom: 2rem;
     }
     ion-item {
         font-size: .9rem;
     }
     ion-item.groupHeader {
         margin-top: 1rem;
-        font-weight: bold;
-        border-top: 3px solid var(--main-color);
         font-size: 1.1rem;
+        --background: var(--main-color);
+        --color: white;
     }
     ion-checkbox {
         --size: 1.2rem;
         --border-radius: 5px;
-        --checkbox-background: rgb(206, 206, 206);
-        --checkbox-background-checked: var(--main-color);
-        --border-color-checked: var(--main-color);
+        --checkbox-background: rgb(236, 236, 236);
+        --checkbox-background-checked: var(--ion-color-dark);
+        --border-color-checked: var(--ion-color-dark);
+        --border-color: var(--ion-color-dark);
+        --border-width: 2px;
     }
+    ion-icon {
+        font-size: 22px;
+    }
+    ion-button {
+        --border-color: var(--main-color);
+        --background-activated: var(--main-color);
+        --background-activated-opacity: .8;
+        width: 100%;
+        margin: 2rem 0;
+        --color: black;
+    }
+    
+    /* Custom components */
     input[type='file'],
     label {
         margin-top: 1rem;
     }
-    
+    p {
+        text-align: center;
+        margin-inline: 1rem;
+    }
     .fileInputButton {
         background-color: rgb(236, 236, 236);
         border-radius: 10px;

@@ -8,11 +8,26 @@
         </ion-content>
     </ion-page>
 </template>
-<script setup lang="ts">
+<script lang="ts">
     import HeaderSection from '@/components/HeaderSection.vue';
     import CheckedReportsList from '@/components/CheckedReportsList.vue';
     import { IonPage, IonContent } from '@ionic/vue'
 
+    export default {
+        name: 'AppointedReports',
+        components: {
+            IonPage,
+            IonContent,
+            HeaderSection,
+            CheckedReportsList
+        },
+        computed: {
+            
+        },
+        mounted() {
+            this.$store.dispatch('fetchInspections')
+        }
+    }
 </script>
 <style>
     h1 {

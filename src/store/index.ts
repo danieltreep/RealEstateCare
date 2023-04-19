@@ -1,21 +1,26 @@
 import { createStore } from 'vuex'
+import getInspections from '@/services/getInspections.js';
 
 export default createStore({
   state: {
-    counter: 0
+    inspections: []
   },
-  getters: {
-  },
+  
   mutations: {
-    increment(state) {
-      state.counter++
+    setInspections(state, payload) {
+      state.inspections = payload;
     }
   },
   actions: {
-    increment(context, value) {
-      context.commit('increment', value);
+    fetchInspections(context) {
+      getInspections()
+        .then(data => context.commit('setInspections', data));
     }
   },
-  modules: {
+  getters: {
+    getSelectedInspection: (state) => (id) => {
+      return state.inspections.find(inspection => inspection.id === id)
+    }
   }
+  
 })

@@ -1,7 +1,7 @@
 <template>
     <ion-list v-for="(inspection, index) in inspections" :key="index">
         <ion-item 
-            @click="selectInspection(inspection.id - 1)" 
+            @click="selectInspection(inspection.id)" 
             :detail="true" 
             lines="full" >
             <ion-icon 
@@ -13,13 +13,12 @@
 
     <SelectedInspection 
         v-if="showSelectedInspection" 
-        :selectedInspection="inspections[selectedInspectionId]" />
+        :selectedInspection="selectedInspection" />
     
 </template>
 <script lang="ts">
 import { IonItem, IonLabel, IonList, IonIcon } from '@ionic/vue'; 
 import { clipboardOutline } from 'ionicons/icons';
-import getInspections from '@/services/getInspections.js';
 import SelectedInspection from './SelectedInspection.vue';
 
 export default {
@@ -33,22 +32,26 @@ export default {
     },
     data() {
         return {
-            inspections: [],
-            selectedInspectionId: 0,
+            selectedInspectionId: '0',
             showSelectedInspection: false,
             clipboardOutline
         }
     },
     methods: {
-        selectInspection(id: number) {
+        selectInspection(id: string) {
+            console.log(id);
             this.selectedInspectionId = id;
             this.showSelectedInspection = true;
         }
     },
-    mounted() {
-        getInspections()
-            .then(data => this.inspections = data)
-        
+    computed: {
+        inspections() {
+            return this.$store.state.inspections;
+        },
+        selectedInspection() {
+            return this.$store.getters.getSelectedInspection(this.selectedInspectionId);
+        },
+
     }
 }
 

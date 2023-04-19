@@ -9,16 +9,20 @@
 9: MVC concept
 
 Te doen:
-2: JSON data verbeteren, foto's?
-3: Inspecties sorteren op datum
-4: Een README bestand maken en toevoegen
-5: Inlogscherm dmv local storage
-6: Linken naar bestanden in Knowledge base, bestanden vinden online?
-7: Class toevoegen waarvan objecten gemaakt kunnen worden
-8: Werkende instellingen?
-9: Usability, WCAG richtlijnen en stijlgids controleren. 
-11: Getter voor enkele inspectie
-12: Upload inspecties via service
-13: Singleton
-14: toDo verwijderen
-16: Update bestaande inspecties layout
+- JSON data verbeteren, foto's bestandsnamen 
+- Inspecties sorteren op 
+- Inspectie aanpassen
+- Een README bestand maken en toevoegen
+- Inlogscherm dmv local storage
+- Linken naar bestanden in Knowledge base, bestanden vinden online?
+- Class toevoegen waarvan objecten gemaakt kunnen worden
+- Werkende instellingen, dark mode
+- Usability, WCAG richtlijnen en stijlgids controleren. 
+- Getter voor enkele inspectie
+- Upload inspecties via service
+- Singleton
+- toDo verwijderen
+- Update bestaande inspecties layout
+- Mockup foto's
+- Foto gallerij
+- Comment uitleg

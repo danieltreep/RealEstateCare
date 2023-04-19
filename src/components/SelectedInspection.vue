@@ -118,7 +118,7 @@
             IonListHeader, 
             IonItemGroup,
             IonButton 
-        },
+        }
     }
 </script>
 

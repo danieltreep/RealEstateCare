@@ -82,10 +82,10 @@
     .icon {
         font-size: 20px;
         margin-right: 1rem;
-        fill: rgba(0,170,162);
+        fill: var(--main-color);
     }
     .button {
-        --background: rgba(0,170,162);
+        --background: var(--main-color);
         width: 100%;
         border-radius: 10px;
         font-weight: bold;

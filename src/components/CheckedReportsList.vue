@@ -1,4 +1,5 @@
 <template>
+    <!-- Loop over alle inspecties uit de store en open enkele inspectie bij klik op basis van id -->
     <ion-list v-for="(inspection, index) in inspections" :key="index">
         <ion-item 
             @click="selectInspection(inspection.id)" 
@@ -11,6 +12,7 @@
         </ion-item>
     </ion-list>
 
+    <!-- Hier komt de geselecteerde inspectie als er een is gekozen -->
     <SelectedInspection 
         v-if="showSelectedInspection" 
         :selectedInspection="selectedInspection" />
@@ -53,5 +55,4 @@ export default {
 
     }
 }
-
 </script>

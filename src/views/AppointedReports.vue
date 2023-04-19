@@ -7,22 +7,21 @@
             
             <ion-list>
                 <ion-item lines="none" class="groupHeader">
-                    <ion-label>Schade opnemen</ion-label>
-                    <ion-checkbox v-model="schadeOpnemen"></ion-checkbox>
+                    <ion-checkbox v-model="schadeOpnemen">Schade opnemen</ion-checkbox>
                 </ion-item>
+
                 <Transition>
                     <ion-item-group v-show="schadeOpnemen">
                         <ion-item>
-                            <ion-label position="stacked" >Locatie:</ion-label> 
-                            <ion-input :clear-input="true"></ion-input>
+                            <ion-input label="Locatie:" :clear-input="true"></ion-input>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <ion-label class="ion-text-wrap">Nieuwe schade:</ion-label> 
-                            <ion-checkbox></ion-checkbox>
+                            <ion-checkbox>Nieuwe schade:</ion-checkbox>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <ion-label class="ion-text-wrap">Soort schade:</ion-label> 
-                            <ion-select aria-label="soort schade opnemen" placeholder="Selecteer" interface="action-sheet">
+                            <ion-select label="Soort schade:" aria-label="soort schade opnemen" placeholder="Selecteer" interface="action-sheet">
                                 <ion-select-option value="Moedwillig">Moedwillig</ion-select-option>
                                 <ion-select-option value="Slijtage">Slijtage</ion-select-option>
                                 <ion-select-option value="Geweld">Geweld</ion-select-option>
@@ -31,24 +30,26 @@
                                 <ion-select-option value="Anders">Anders</ion-select-option>
                             </ion-select>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <ion-label class="ion-text-wrap">Datum:</ion-label> 
-                            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+                            <ion-label>Datum:</ion-label> 
+                            <ion-datetime-button datetime="datetime">Datum:</ion-datetime-button>
     
                             <ion-modal :keep-contents-mounted="true">
                                 <ion-datetime id="datetime"></ion-datetime>
                             </ion-modal>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <ion-label class="ion-text-wrap">Acute actie vereist:</ion-label>
-                            <ion-checkbox></ion-checkbox> 
+                            <ion-checkbox>Acute actie vereist:</ion-checkbox> 
                         </ion-item>
+
                         <ion-item>
-                            <ion-label position="stacked">Omschrijving:</ion-label> 
-                            <ion-textarea type="textarea" :auto-grow="true"></ion-textarea>
+                            <ion-textarea label="Omschrijving:" type="textarea" :auto-grow="true"></ion-textarea>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <label for="fileInput">Foto's:</label>
+                            <label>Foto's:</label>
                             <label class="fileInputButton" aria-label="Kies foto" for="fileInput">Kies foto's
                                 <ion-icon :icon="camera"></ion-icon>   
                             </label>
@@ -58,18 +59,17 @@
                 </Transition>
 
                 <ion-item lines="none" class="groupHeader">
-                    <ion-label>Achterstallig onderhoud opnemen</ion-label>
-                    <ion-checkbox v-model="achterstalligOnderhoud">Label start</ion-checkbox>
+                    <ion-checkbox v-model="achterstalligOnderhoud">Achterstallig onderhoud opnemen</ion-checkbox>
                 </ion-item>
+
                 <Transition>
                     <ion-item-group v-show="achterstalligOnderhoud">
                         <ion-item>
-                            <ion-label position="stacked" >Locatie:</ion-label> 
-                            <ion-input :clear-input="true"></ion-input>
+                            <ion-input label="Locatie:" :clear-input="true"></ion-input>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <ion-label class="ion-text-wrap">Soort onderhoud:</ion-label>
-                            <ion-select aria-label="soort onderhoud" placeholder="Selecteer" interface="action-sheet">
+                            <ion-select label="Soort onderhoud:" aria-label="soort onderhoud" placeholder="Selecteer" interface="action-sheet">
                                 <ion-select-option value="Achilderwerk">Schilderwerk</ion-select-option>
                                 <ion-select-option value="Houtrot">Houtrot</ion-select-option>
                                 <ion-select-option value="Elektra">Elektra</ion-select-option>
@@ -77,20 +77,21 @@
                                 <ion-select-option value="Beglazing">Beglazing</ion-select-option>
                             </ion-select> 
                         </ion-item>
+
                         <ion-item lines="none"> 
-                            <ion-label class="ion-text-wrap">Acute actie vereist:</ion-label> 
-                            <ion-checkbox></ion-checkbox>
+                            <ion-checkbox>Acute actie vereist:</ion-checkbox>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <ion-label class="ion-text-wrap">Kostenindicatie:</ion-label> 
-                            <ion-select aria-label="kostenindicatie" placeholder="Selecteer" interface="action-sheet">
+                            <ion-select label="Kostenindicatie:" aria-label="kostenindicatie" placeholder="Selecteer" interface="action-sheet">
                                 <ion-select-option value="0-500">&euro; 0-500</ion-select-option>
                                 <ion-select-option value="500-1500">&euro; 500-1.500</ion-select-option>
                                 <ion-select-option value="1500+">&euro; 1.500+</ion-select-option>
                             </ion-select>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <label for="fileInputOnderhoud">Foto's:</label>
+                            <label>Foto's:</label>
                             <label class="fileInputButton" aria-label="Kies foto" for="fileInputOnderhoud">Kies foto's
                                 <ion-icon :icon="camera"></ion-icon>   
                             </label>
@@ -100,18 +101,17 @@
                 </Transition>
                 
                 <ion-item lines="none" class="groupHeader">
-                    <ion-label >Technische installaties inspecteren</ion-label>
-                    <ion-checkbox v-model="technischeInstallaties">Label start</ion-checkbox>
+                    <ion-checkbox v-model="technischeInstallaties">Technische installaties inspecteren</ion-checkbox>
                 </ion-item>
+
                 <Transition>
                     <ion-item-group v-show="technischeInstallaties">
                         <ion-item>
-                            <ion-label position="stacked" >Locatie:</ion-label> 
-                            <ion-input :clear-input="true"></ion-input>
+                            <ion-input label="Locatie:" :clear-input="true"></ion-input>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <ion-label class="ion-text-wrap">Soort installatie:</ion-label> 
-                            <ion-select aria-label="soort installatie" placeholder="Selecteer" interface="action-sheet">
+                            <ion-select label="Soort installatie" aria-label="soort installatie" placeholder="Selecteer" interface="action-sheet">
                                 <ion-select-option value="Koeling">Koeling</ion-select-option>
                                 <ion-select-option value="Verwarming">Verwarming</ion-select-option>
                                 <ion-select-option value="Luchtverversing">Luchtverversing</ion-select-option>
@@ -119,20 +119,26 @@
                                 <ion-select-option value="Beveiliging">Beveiliging</ion-select-option>
                             </ion-select>
                         </ion-item>
+
                         <ion-item>
-                            <ion-label position="stacked">Gemelde storingen:</ion-label> 
-                            <ion-input :clear-input="true"></ion-input>
+                            <ion-textarea label="Gemelde storingen:"></ion-textarea>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <ion-label class="ion-text-wrap">Goedgekeurd:</ion-label> 
-                            <ion-checkbox></ion-checkbox>
+                            <ion-checkbox>Goedgekeurd:</ion-checkbox>
                         </ion-item>
-                        <ion-item >
-                            <ion-label position="stacked" >Opmerkingen:</ion-label> 
-                            <ion-textarea type="textarea" :auto-grow="true"></ion-textarea>
+
+                        <ion-item>
+                            <ion-textarea 
+                                label="Opmerkingen:" 
+                                labelPlacement="fixed"
+                                type="textarea" 
+                                :auto-grow="true">
+                            </ion-textarea>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <label for="fileInputTechnisch">Foto's:</label>
+                            <label>Foto's:</label>
                             <label class="fileInputButton" aria-label="Kies foto" for="fileInputTechnisch">Kies foto's
                                 <ion-icon :icon="camera"></ion-icon>   
                             </label>
@@ -142,42 +148,51 @@
                 </Transition>
                 
                 <ion-item lines="none" class="groupHeader">
-                    <ion-label >Modificaties inventariseren</ion-label>
-                    <ion-checkbox v-model="modificaties">Label start</ion-checkbox>
+                    <ion-checkbox v-model="modificaties">Modificaties inventariseren</ion-checkbox>
                 </ion-item>
+
                 <Transition>
                     <ion-item-group v-show="modificaties">
                         <ion-item>
-                            <ion-label position="stacked" >Locatie modificatie:</ion-label> 
-                            <ion-input :clear-input="true"></ion-input>
+                            <ion-input label="Locatie modificatie:" :clear-input="true"></ion-input>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <ion-label class="ion-text-wrap">Uitgevoerd door:</ion-label> 
-                            <ion-select aria-label="uitvoerder" placeholder="Selecteer" interface="action-sheet">
+                            <ion-select label="Uitgevoerd door:" aria-label="uitvoerder" placeholder="Selecteer" interface="action-sheet">
                                 <ion-select-option value="Huurder">Huurder</ion-select-option>
                                 <ion-select-option value="Aannemer">Aannemer</ion-select-option>
                                 <ion-select-option value="Onbekend">Onbekend</ion-select-option>
                             </ion-select>
                         </ion-item>
+
                         <ion-item>
-                            <ion-label position="stacked" >Beschrijving modificatie:</ion-label> 
-                            <ion-input :clear-input="true"></ion-input>
+                            <ion-input label="Beschrijving modificatie:" :clear-input="true"></ion-input>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <ion-label class="ion-text-wrap">Te ondernemen actie:</ion-label> 
-                            <ion-select aria-label="actie" placeholder="Selecteer" interface="action-sheet">
+                            <ion-select 
+                                label="Te ondernemen actie:" 
+                                aria-label="actie" 
+                                placeholder="Selecteer" 
+                                interface="action-sheet">
                                 <ion-select-option value="Accepteren">Accepteren</ion-select-option>
                                 <ion-select-option value="Keuren">Keuren</ion-select-option>
                                 <ion-select-option value="Verwijderen">Verwijderen</ion-select-option>
                                 <ion-select-option value="Aanpassen en keuren">Aanpassen en keuren</ion-select-option>
                             </ion-select>
                         </ion-item>
+
                         <ion-item>
-                            <ion-label position="stacked">Opmerkingen:</ion-label> 
-                            <ion-textarea type="textarea" :auto-grow="true"></ion-textarea>
+                            <ion-textarea 
+                                label="Opmerkingen:" 
+                                labelPlacement="fixed"
+                                type="textarea" 
+                                :auto-grow="true">
+                            </ion-textarea>
                         </ion-item>
+
                         <ion-item lines="none">
-                            <label for="fileInputModificaties" >Foto's:</label>
+                            <label>Foto's:</label>
                             <label class="fileInputButton" aria-label="Kies foto" for="fileInputModificaties">Kies foto's
                                 <ion-icon :icon="camera"></ion-icon>    
                             </label>
@@ -247,11 +262,7 @@
 
 <style lang="css" scoped>
     ion-item-group {
-        /* margin-bottom: 2rem; */
-        transition: all .3s;
-    }
-    h1 {
-        text-align: center;
+        margin-bottom: 2rem;
     }
     .v-enter-active,
     .v-leave-active {
@@ -262,23 +273,27 @@
     .v-leave-to {
         opacity: 0;
     }
+    ion-item {
+        font-size: .9rem;
+    }
     ion-item.groupHeader {
         margin-top: 1rem;
         font-weight: bold;
-        border-top: 3px solid rgba(0,170,162);
-
+        border-top: 3px solid var(--main-color);
+        font-size: 1.1rem;
     }
     ion-checkbox {
         --size: 1.2rem;
         --border-radius: 5px;
+        --checkbox-background: rgb(206, 206, 206);
+        --checkbox-background-checked: var(--main-color);
+        --border-color-checked: var(--main-color);
     }
     input[type='file'],
     label {
         margin-top: 1rem;
     }
-    label:not(.fileInputButton) {
-        font-size: .9rem;
-    }
+    
     .fileInputButton {
         background-color: rgb(236, 236, 236);
         border-radius: 10px;
@@ -288,5 +303,11 @@
         align-items: center;
         gap: .3rem;
         margin-left: auto;
+        color: black;
+        fill: black;
     }
+    .fileInputButton ion-icon {
+        fill: black;
+    }
+    
 </style>

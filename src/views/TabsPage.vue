@@ -29,7 +29,7 @@
 
 <style scoped>
   ion-tab-bar, ion-tab-button {
-    background-color: rgba(0,170,162);
+    background-color: var(--main-color);
   }
   ion-tab-bar ion-icon {
     fill: white;

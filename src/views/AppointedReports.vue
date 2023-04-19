@@ -2,7 +2,7 @@
     <ion-page>
         <HeaderSection />
 
-        <ion-content :fullscreen="true">
+        <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
             <h1>Toegewezen Rapporten</h1>
             
             <ion-list>
@@ -237,6 +237,9 @@
         computed: {
             counter() {
                 return this.$store.state.counter;
+            },
+            darkMode() {
+                return this.$store.state.darkMode;
             }
         }
     }

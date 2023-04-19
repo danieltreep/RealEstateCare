@@ -1,47 +1,64 @@
 <template>
-    <ion-page>
-        <ion-content :fullscreen="true" color="dark">
-            <div class="container">
-                <h1 class="h1">Login</h1>
-                <form action="" class="form">
-                    <ion-input 
-                        :clear-input="true" 
-                        placeholder="Gebruikersnaam" 
-                        class="input"
-                        ><ion-icon 
-                            :icon="personCircle" 
-                            class="ion-margin-end ion-margin-start icon"
-                            aria-hidden="true"
-                        ></ion-icon>
-                    </ion-input>
+<ion-page>
+    <ion-content :fullscreen="true" color="dark">
+        <div class="container">
+            <h1 class="h1">Login</h1>
+            <form action="" class="form">
+                <ion-input 
+                    :clear-input="true" 
+                    placeholder="Gebruikersnaam" 
+                    class="input"
+                    ><ion-icon 
+                        :icon="personCircle" 
+                        class="ion-margin-end ion-margin-start icon"
+                        aria-hidden="true"
+                    ></ion-icon>
+                </ion-input>
+            
+                <ion-input 
+                    :clear-input="true" 
+                    type="password" 
+                    placeholder="Wachtwoord"
+                    class="input"
+                    ><ion-icon 
+                        :icon="lockClosed" 
+                        class="ion-margin-end ion-margin-start icon"
+                        aria-hidden="true"
+                    ></ion-icon>
+                </ion-input>
                 
-                    <ion-input 
-                        :clear-input="true" 
-                        type="password" 
-                        placeholder="Wachtwoord"
-                        class="input"
-                        ><ion-icon 
-                            :icon="lockClosed" 
-                            class="ion-margin-end ion-margin-start icon"
-                            aria-hidden="true"
-                        ></ion-icon>
-                    </ion-input>
-                    
-                    
-                    <ion-button class="button" router-link="/taken">  Login
-                        <ion-icon :icon="logIn" slot="end"></ion-icon>
-                    </ion-button>
-                    
-                    <img :src="require('../../public/assets/logo-icon.svg')" class="img" />
-                </form>
-            </div>
-        </ion-content>
-    </ion-page>
+                <ion-button class="button" router-link="/taken">  Login
+                    <ion-icon :icon="logIn" slot="end"></ion-icon>
+                </ion-button>
+                
+                <img :src="require('../../public/assets/logo-icon.svg')" class="img" />
+            </form>
+        </div>
+    </ion-content>
+</ion-page>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
     import {IonPage, IonContent, IonButton, IonInput, IonIcon} from '@ionic/vue';
     import { personCircle, lockClosed, logIn } from 'ionicons/icons';
+
+    export default {
+        name: 'LoginPage',
+        components: {
+            IonPage, 
+            IonContent,
+            IonButton,
+            IonInput,
+            IonIcon
+        },
+        data() {
+            return {
+                personCircle,
+                lockClosed,
+                logIn
+            }
+        }
+    }
 </script>
 
 <style>

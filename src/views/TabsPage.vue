@@ -1,5 +1,5 @@
 <template>
-  <ion-page>
+  <ion-page background-color="black">
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
@@ -23,11 +23,11 @@
 </template>
 
 <script setup lang="ts">
-import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-import { alertCircle, build, search } from 'ionicons/icons';
+  import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
+  import { alertCircle, build, search } from 'ionicons/icons';
 </script>
 
-<style>
+<style scoped>
   ion-tab-bar, ion-tab-button {
     background-color: rgba(0,170,162);
   }

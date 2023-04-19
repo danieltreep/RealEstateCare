@@ -18,7 +18,6 @@ Te doen:
 - Class toevoegen waarvan objecten gemaakt kunnen worden
 - Werkende instellingen, dark mode
 - Usability, WCAG richtlijnen en stijlgids controleren. 
-- Getter voor enkele inspectie
 - Upload inspecties via service
 - Singleton
 - toDo verwijderen

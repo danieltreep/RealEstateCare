@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <HeaderSection />
-    <ion-content :fullscreen="true">
+    <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
       
 
       
@@ -9,9 +9,23 @@
   </ion-page>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import {IonPage, IonContent} from '@ionic/vue';
 import HeaderSection from '@/components/HeaderSection.vue';
+
+export default {
+  name: 'SearchPage',
+  components: {
+    IonPage, 
+    IonContent,
+    HeaderSection
+  },
+  computed: {
+    darkMode() {
+      return this.$store.state.darkMode
+    }
+  }
+}
 </script>
 
 <style>

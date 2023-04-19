@@ -10,7 +10,7 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        redirect: '/taken'
+        redirect: '/login'
       },
       {
         path: 'zoeken',

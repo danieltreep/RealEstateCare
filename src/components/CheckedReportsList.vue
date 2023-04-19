@@ -32,14 +32,13 @@ export default {
     },
     data() {
         return {
-            selectedInspectionId: '0',
+            selectedInspectionId: '',
             showSelectedInspection: false,
             clipboardOutline
         }
     },
     methods: {
         selectInspection(id: string) {
-            console.log(id);
             this.selectedInspectionId = id;
             this.showSelectedInspection = true;
         }

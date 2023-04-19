@@ -43,4 +43,7 @@ export default {
     fill: white;
     font-size: large;
   }
+  ion-header {
+    border-bottom: 2px solid white;
+  }
 </style>

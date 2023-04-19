@@ -1,14 +1,14 @@
 <template>
   <ion-page>
     <HeaderSection />
-    <ion-content :fullscreen="true">
+    <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
       <div class="grid">
         <ion-row ion-no-margin>
           <ion-col>
             <router-link to="/rapporten">
               <ion-card>
                 <ion-card-content>
-                  <ion-icon :icon="clipboardOutline" />
+                  <ion-icon :icon="clipboard" color="dark" />
                   <h1>Toegewezen rapporten</h1>
                 </ion-card-content>
               </ion-card>
@@ -18,7 +18,7 @@
             <router-link to="/uitgevoerd">
               <ion-card>
                 <ion-card-content>
-                  <ion-icon :icon="checkmarkCircle" />
+                  <ion-icon :icon="checkmarkCircle" color="dark"/>
                   <h1>Uitgevoerde rapporten</h1>
                 </ion-card-content>
               </ion-card>
@@ -30,7 +30,7 @@
             <router-link to="/documentatie">
               <ion-card>
                 <ion-card-content>
-                  <ion-icon :icon="grid" />
+                  <ion-icon :icon="documents" color="dark"/>
                   <h1>Documentatie</h1>
                 </ion-card-content>
               </ion-card>
@@ -40,7 +40,7 @@
             <router-link to="/instellingen">
               <ion-card>
                 <ion-card-content>
-                  <ion-icon :icon="settingsSharp" />
+                  <ion-icon :icon="settingsSharp" color="dark"/>
                   <h1>Instellingen</h1>
                 </ion-card-content>
               </ion-card>
@@ -52,10 +52,37 @@
   </ion-page>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
   import { IonPage, IonContent, IonIcon, IonCard, IonCardContent, IonRow, IonCol } from '@ionic/vue';
-  import { clipboardOutline, checkmarkCircle, grid, settingsSharp} from 'ionicons/icons';
+  import { clipboard, checkmarkCircle, documents, settingsSharp} from 'ionicons/icons';
   import HeaderSection from '@/components/HeaderSection.vue';
+
+  export default {
+    name: 'TaskPage',
+    components: {
+      IonPage,
+      IonContent,
+      IonIcon,
+      IonCard,
+      IonCardContent,
+      IonRow,
+      IonCol,
+      HeaderSection
+    },
+    data() {
+      return {
+        clipboard,
+        checkmarkCircle,
+        documents,
+        settingsSharp
+      }
+    },
+    computed: {
+      darkMode() {
+        return this.$store.state.darkMode;
+      }
+    }
+  }
 </script>
 
 <style scoped>
@@ -80,8 +107,6 @@
   }
   ion-card ion-icon {
     font-size: 80px;
-    fill: black;
-    stroke: black !important;
   }
   a {
     text-decoration: none;

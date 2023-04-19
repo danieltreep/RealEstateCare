@@ -1,7 +1,7 @@
 <template>
     <ion-page>
         <HeaderSection />
-        <ion-content :fullscreen="true">
+        <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
             <h1>Uitgevoerde Rapporten</h1>
             <CheckedReportsList />
       
@@ -14,7 +14,7 @@
     import { IonPage, IonContent } from '@ionic/vue'
 
     export default {
-        name: 'AppointedReports',
+        name: 'CheckedReports',
         components: {
             IonPage,
             IonContent,
@@ -22,7 +22,9 @@
             CheckedReportsList
         },
         computed: {
-            
+            darkMode() {
+                return this.$store.state.darkMode;
+            }
         },
         mounted() {
             this.$store.dispatch('fetchInspections')

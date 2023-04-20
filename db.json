@@ -1,7 +1,7 @@
 {
     "inspections": [
         {
-            "id": "1",
+            "id": 1,
             "damageInspection": {
                 "selected": "true",
                 "location": "Arnhem",
@@ -36,7 +36,7 @@
             }
         },
         {
-            "id": "2",
+            "id": 2,
             "damageInspection": {
                 "selected": "true",
                 "location": "Rotterdam",
@@ -71,7 +71,7 @@
             }
         },
         {
-            "id": "3",
+            "id": 3,
             "damageInspection": {
                 "selected": "true",
                 "location": "Amsterdam",
@@ -106,7 +106,7 @@
             }
         },
         {
-            "id": "4",
+            "id": 4,
             "damageInspection": {
                 "selected": "true",
                 "location": "Hoofddorp",
@@ -141,7 +141,7 @@
             }
         },
         {
-            "id": "5",
+            "id": 5,
             "damageInspection": {
                 "selected": "true",
                 "location": "Leiden",

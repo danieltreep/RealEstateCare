@@ -40,7 +40,7 @@ export default {
         }
     },
     methods: {
-        selectInspection(id: string) {
+        selectInspection(id: number) {
             this.selectedInspectionId = id;
             this.showSelectedInspection = true;
         }

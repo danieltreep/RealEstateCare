@@ -13,11 +13,11 @@ Te doen:
 - Inspecties sorteren op 
 - Inspectie aanpassen
 - Een README bestand maken en toevoegen
-- Inlogscherm dmv local storage
+- Inlogscherm dmv local storage, login 
 - Linken naar bestanden in Knowledge base, bestanden vinden online?
 - Class toevoegen waarvan objecten gemaakt kunnen worden
 - Werkende instellingen
-- Usability, WCAG richtlijnen en stijlgids controleren. 
+- Usability, WCAG richtlijnen en stijlgids controleren.  Tab index, Aria
 - Upload inspecties via service
 - Singleton
 - toDo verwijderen
@@ -25,3 +25,4 @@ Te doen:
 - Mockup foto's
 - Foto gallerij
 - Comment uitleg
+- Terug balk

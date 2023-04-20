@@ -4,7 +4,8 @@ import getInspections from '@/services/getInspections.js';
 export default createStore({
   state: {
     inspections: [],
-    darkMode: false
+    darkMode: false,
+    loggedIn: false
   },
   
   mutations: {
@@ -13,6 +14,9 @@ export default createStore({
     },
     setDarkMode(state) {
       state.darkMode = !state.darkMode; 
+    },
+    setLogin(state) {
+      state.loggedIn = !state.loggedIn;
     }
   },
   actions: {
@@ -22,6 +26,9 @@ export default createStore({
     },
     setDarkMode(context) {
       context.commit('setDarkMode');
+    },
+    loginUser(context) {
+      context.commit('setLogin');
     }
   },
   getters: {

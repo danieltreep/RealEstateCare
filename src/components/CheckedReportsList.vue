@@ -4,7 +4,8 @@
         <ion-item 
             @click="selectInspection(inspection.id)" 
             :detail="true" 
-            lines="full" >
+            lines="full" 
+            tabindex="1">
             <ion-icon 
                 :icon="clipboardOutline" 
                 slot="start" />

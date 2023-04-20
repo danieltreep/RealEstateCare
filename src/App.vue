@@ -26,7 +26,7 @@
     --ion-background-color: var(--ion-color-dark);
   }
   .darkMode ion-card {
-    box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 16px;
+    --background: #33363b;
   }
   .darkMode ion-item:not(.groupHeader) ion-checkbox {
     --checkbox-background-checked: var(--main-color);

@@ -2,6 +2,7 @@
     <ion-page>
         <HeaderSection />
         <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
+            <GoBackBar />
             <h1>Documentatie</h1>
 
       
@@ -9,6 +10,7 @@
     </ion-page>
 </template>
 <script  lang="ts">
+    import GoBackBar from '@/components/GoBackBar.vue';
     import HeaderSection from '@/components/HeaderSection.vue';
     import { IonPage, IonContent } from '@ionic/vue'
 
@@ -17,7 +19,8 @@
         components: {
             IonPage,
             IonContent,
-            HeaderSection
+            HeaderSection,
+            GoBackBar
         },
         computed: {
             darkMode() {

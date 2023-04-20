@@ -2,6 +2,7 @@
     <ion-page>
         <HeaderSection />
         <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
+            <GoBackBar />
             <h1>Uitgevoerde Rapporten</h1>
             <CheckedReportsList />
       
@@ -11,6 +12,7 @@
 <script lang="ts">
     import HeaderSection from '@/components/HeaderSection.vue';
     import CheckedReportsList from '@/components/CheckedReportsList.vue';
+    import GoBackBar from '@/components/GoBackBar.vue';
     import { IonPage, IonContent } from '@ionic/vue'
 
     export default {
@@ -19,7 +21,8 @@
             IonPage,
             IonContent,
             HeaderSection,
-            CheckedReportsList
+            CheckedReportsList,
+            GoBackBar
         },
         computed: {
             darkMode() {

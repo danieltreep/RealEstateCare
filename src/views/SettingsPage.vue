@@ -2,6 +2,7 @@
     <ion-page class="settings">
         <HeaderSection />
         <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
+            <GoBackBar />
             <h1>Instellingen</h1>
             <ion-item>
                 <ion-toggle :checked="checked" @click="setDarkMode">Dark mode</ion-toggle>
@@ -10,6 +11,7 @@
     </ion-page>
 </template>
 <script lang="ts">
+    import GoBackBar from '@/components/GoBackBar.vue';
     import HeaderSection from '@/components/HeaderSection.vue';
     import { IonPage, IonContent, IonToggle, IonItem} from '@ionic/vue'
     
@@ -20,7 +22,8 @@
             IonContent,
             IonToggle,
             IonItem,
-            HeaderSection
+            HeaderSection,
+            GoBackBar
         },
         methods: {
             setDarkMode() {

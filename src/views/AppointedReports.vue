@@ -1,8 +1,8 @@
 <template>
     <ion-page>
         <HeaderSection />
-
         <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
+            <GoBackBar />
             <h1>Toegewezen Rapporten</h1>
             <p>Selecteer de benodigde categoriën voor de inspectie</p>
             <ion-list>
@@ -216,6 +216,7 @@
 </template>
 <script lang="ts">
     import HeaderSection from '@/components/HeaderSection.vue';
+    import GoBackBar from '@/components/GoBackBar.vue';
     import { camera } from 'ionicons/icons';
     import { IonPage, IonIcon, IonContent, IonCheckbox, IonLabel, IonButton, IonSelect, IonTextarea, IonDatetime, IonDatetimeButton, IonModal, IonSelectOption, IonInput, IonItem, IonItemGroup, IonList } from '@ionic/vue';
 
@@ -238,7 +239,8 @@
             IonModal,
             IonTextarea,
             IonButton,
-            IonIcon
+            IonIcon,
+            GoBackBar
         },
         data() {
             return {

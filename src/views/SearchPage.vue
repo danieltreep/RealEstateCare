@@ -1,10 +1,9 @@
 <template>
   <ion-page>
     <HeaderSection />
-    <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
+    <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''" >
       
 
-      
     </ion-content>
   </ion-page>
 </template>
@@ -22,9 +21,10 @@ export default {
   },
   computed: {
     darkMode() {
-      return this.$store.state.darkMode
+      return this.$store.state.darkMode;
     }
   }
+  
 }
 </script>
 

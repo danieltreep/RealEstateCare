@@ -5,7 +5,7 @@
             <GoBackBar />
             <h1>Instellingen</h1>
             <ion-item>
-                <ion-toggle :checked="checked" @click="setDarkMode">Dark mode</ion-toggle>
+                <ion-toggle :checked="checked" @click="setDarkMode">Donkere modus</ion-toggle>
             </ion-item>
         </ion-content>
     </ion-page>

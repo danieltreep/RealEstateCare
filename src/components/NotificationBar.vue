@@ -8,7 +8,6 @@
           />
         <ion-popover trigger="click-trigger" trigger-action="click">
             <ion-content class="ion-padding">Er zijn geen nieuwe notificaties</ion-content>
-            
         </ion-popover>
     </div>
 </template>

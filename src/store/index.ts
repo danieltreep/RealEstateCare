@@ -5,7 +5,8 @@ export default createStore({
   state: {
     inspections: [],
     darkMode: false,
-    loggedIn: false
+    loggedIn: false,
+    modalOpen: false
   },
   
   mutations: {
@@ -17,6 +18,17 @@ export default createStore({
     },
     setLogin(state) {
       state.loggedIn = !state.loggedIn;
+    },
+    setModal(state, payload) {
+      state.modalOpen = payload;
+    },
+    sortOnNewest(state) {
+      state.inspections.map(inspection => inspection.dateAdded = new Date(inspection.dateAdded));
+      state.inspections.sort((a, b) => b.dateAdded - a.dateAdded); 
+    },
+    sortOnOldest(state) {
+      state.inspections.map(inspection => inspection.dateAdded = new Date(inspection.dateAdded));
+      state.inspections.sort((a, b) => a.dateAdded - b.dateAdded); 
     }
   },
   actions: {
@@ -29,6 +41,16 @@ export default createStore({
     },
     loginUser(context) {
       context.commit('setLogin');
+    },
+    setModal(context, value) {
+      context.commit('setModal', value);
+    },
+    sortOnDate(context, value) {
+      if (value === 'Nieuwste') {
+        context.commit('sortOnNewest');
+      } else if (value === 'Oudste') {
+        context.commit('sortOnOldest');
+      }
     }
   },
   getters: {

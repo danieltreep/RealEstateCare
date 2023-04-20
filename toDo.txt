@@ -1,22 +1,18 @@
-1: De inspecteur krijgt een lijst met alle uitgevoerde rapporten, als hij op een rapport klikt kan hij de details zien
-2: Hij moet het kunnen aanpassen. Maak een knop voor aanpassen dat het scherm opent voor het maken van inspecties. Haal de specifieke inspectie op.
-3: Verwijderen?
-4: Elk van de vier onderdelen kan geselecteerd worden, als het geselecteerd wordt, wordt het getoond en kan worden aangepast.
-5: Class waar?
-6: Linken naar bestanden
-7: Foto's, waar opslaan?
-8: Instellingen
-9: MVC concept
+- De inspecteur krijgt een lijst met alle uitgevoerde rapporten, als hij op een rapport klikt kan hij de details zien
+- Hij moet het kunnen aanpassen. Maak een knop voor aanpassen dat het scherm opent voor het maken van inspecties. Haal de specifieke inspectie op.
+- Verwijderen?
+- Class waar?
+- Linken naar bestanden
+- Foto's, waar opslaan?
+- Dark mode
+- MVC concept, singleton beschrijven
+- Login dmv van local storage push
 
 Te doen:
 - JSON data verbeteren, foto's bestandsnamen 
-- Inspecties sorteren op 
 - Inspectie aanpassen
 - Een README bestand maken en toevoegen
-- Inlogscherm dmv local storage, login 
-- Linken naar bestanden in Knowledge base, bestanden vinden online?
 - Class toevoegen waarvan objecten gemaakt kunnen worden
-- Werkende instellingen
 - Usability, WCAG richtlijnen en stijlgids controleren.  Tab index, Aria
 - Upload inspecties via service
 - Singleton
@@ -24,5 +20,6 @@ Te doen:
 - Update bestaande inspecties layout
 - Mockup foto's
 - Foto gallerij
-- Comment uitleg
-- Terug balk
+- Comment uitleg + cleanup
+- Lock onderdelen als er niet is ingelogd
+- Andere pagina's

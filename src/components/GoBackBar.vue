@@ -32,5 +32,6 @@
     }
     ion-button {
         --background: var(--main-color);
+        margin: .5rem;
     }
 </style>

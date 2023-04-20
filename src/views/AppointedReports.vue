@@ -124,6 +124,15 @@
                             <ion-textarea label="Gemelde storingen:"></ion-textarea>
                         </ion-item>
 
+                        <ion-item>
+                            <ion-label>Documentatie Technische Installaties:</ion-label>
+                            <ion-button 
+                                @click="{
+                                    setDocument('Technische Installaties');
+                                    setModal(true);
+                                }">Open document</ion-button>
+                        </ion-item>
+
                         <ion-item lines="none">
                             <ion-checkbox>Goedgekeurd:</ion-checkbox>
                         </ion-item>
@@ -153,6 +162,15 @@
 
                 <Transition>
                     <ion-item-group v-show="modificaties">
+                        <ion-item>
+                            <ion-label>Documentatie Modificaties:</ion-label>
+                            <ion-button 
+                                @click="{
+                                    setDocument('Modificaties Inventariseren');
+                                    setModal(true);
+                                }">Open document</ion-button>
+                        </ion-item>
+
                         <ion-item>
                             <ion-input label="Locatie modificatie:" :clear-input="true"></ion-input>
                         </ion-item>
@@ -208,15 +226,18 @@
                         achterstalligOnderhoud || 
                         technischeInstallaties ||
                         modificaties">
-                    <ion-button size="default" fill="outline">Opslaan</ion-button>
+                    <ion-button size="default" fill="outline" class="opslaan">Opslaan</ion-button>
                 </ion-item>
             </ion-list>
+
+            <DocumentViewer  :setModal="setModal" :isOpen="isOpen" :document="document"/>
         </ion-content>
     </ion-page>
 </template>
 <script lang="ts">
     import HeaderSection from '@/components/HeaderSection.vue';
     import GoBackBar from '@/components/GoBackBar.vue';
+    import DocumentViewer from '@/components/DocumentViewer.vue';
     import { camera } from 'ionicons/icons';
     import { IonPage, IonIcon, IonContent, IonCheckbox, IonLabel, IonButton, IonSelect, IonTextarea, IonDatetime, IonDatetimeButton, IonModal, IonSelectOption, IonInput, IonItem, IonItemGroup, IonList } from '@ionic/vue';
 
@@ -240,7 +261,8 @@
             IonTextarea,
             IonButton,
             IonIcon,
-            GoBackBar
+            GoBackBar,
+            DocumentViewer
         },
         data() {
             return {
@@ -248,12 +270,24 @@
                 schadeOpnemen: false,           // Gebruik voor v-if van opslaan button
                 achterstalligOnderhoud: false,  // Gebruik voor v-if van opslaan button
                 technischeInstallaties: false,  // Gebruik voor v-if van opslaan button
-                modificaties: false             // Gebruik voor v-if van opslaan button
+                modificaties: false,            // Gebruik voor v-if van opslaan button
+                document: ''                    // Vertel welke document
             }
         },
         computed: {
             darkMode() {
                 return this.$store.state.darkMode;
+            },
+            isOpen() {
+                return this.$store.state.modalOpen;
+            }
+        },
+        methods: {
+            setModal(boolean: boolean) {
+                this.$store.dispatch('setModal', boolean);
+            },
+            setDocument(document: string) {
+                this.document = document;
             }
         }
     }
@@ -297,13 +331,16 @@
     }
     ion-button {
         --border-color: var(--main-color);
+        --background: var(--main-color);
         --background-activated: var(--main-color);
         --background-activated-opacity: .8;
+    }
+    .opslaan {
         width: 100%;
+        
         margin: 2rem 0;
         --color: black;
     }
-    
     /* Custom components */
     input[type='file'],
     label {

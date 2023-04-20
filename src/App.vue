@@ -16,6 +16,9 @@
 </script>
 
 <style>
+  :root {
+    --main-color: rgba(0,170,162);
+  }
   .darkMode * {
     --color: white;
     color: white;
@@ -37,8 +40,5 @@
   }
   .darkMode ion-select { 
     --placeholder-color: white;
-  }
-  :root {
-    --main-color: rgba(0,170,162);
   }
 </style>

@@ -65,6 +65,7 @@
 <style scoped>
     .active {
         --background: var(--main-color);
-        
+        /* --color: white; */
     }
+    
 </style>

@@ -6,11 +6,11 @@
             <h1>Uitgevoerde Rapporten</h1>
             <ion-item>
                 <ion-label><b>Sorteer op:</b> </ion-label>
-                <ion-chip @click="sortOnDate('Nieuwste')">
+                <ion-chip @click="sortOnDate('Nieuwste')" :class="nieuw ? 'active' : ''">
                     <ion-label>Nieuwste</ion-label>
                     <ion-icon :icon="arrowDown"></ion-icon>
                 </ion-chip>
-                <ion-chip @click="sortOnDate('Oudste')">
+                <ion-chip @click="sortOnDate('Oudste')" :class="nieuw ? '' : 'active'">
                     <ion-label>Oudste</ion-label>
                     <ion-icon :icon="arrowUp"></ion-icon>
                 </ion-chip>
@@ -42,7 +42,8 @@
         data() {
             return {
                 arrowDown,
-                arrowUp
+                arrowUp,
+                nieuw: false
             }
         },
         computed: {
@@ -52,6 +53,7 @@
         },
         methods: {
             sortOnDate(value) {
+                this.nieuw = !this.nieuw;
                 this.$store.dispatch('sortOnDate', value);
             }
         },
@@ -60,6 +62,9 @@
         }
     }
 </script>
-<style>
-    
+<style scoped>
+    .active {
+        --background: var(--main-color);
+        
+    }
 </style>

@@ -7,7 +7,7 @@ class Inspection {
     inventorizeModifications: object;
     photos: Array<string>;
 
-    constructor({inspection}) {
+    constructor(inspection) {
         this.id = inspection.id,
         this.dateAdded = inspection.dateAdded,
         this.damageInspection = inspection.damageInspection,

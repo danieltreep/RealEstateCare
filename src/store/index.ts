@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import getInspections from '@/services/getInspections.js';
+import Inspection from '@/helpers/inspectionClass';
 
 export default createStore({
   state: {
@@ -34,7 +35,10 @@ export default createStore({
   actions: {
     fetchInspections(context) {
       getInspections()
-        .then(data => context.commit('setInspections', data));
+      .then(data => {
+        const inspectionClasses = data.map(inspection => new Inspection(inspection));
+        context.commit('setInspections', inspectionClasses);
+      })
     },
     setDarkMode(context) {
       context.commit('setDarkMode');

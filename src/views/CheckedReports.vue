@@ -58,7 +58,7 @@
             }
         },
         mounted() {
-            this.$store.dispatch('fetchInspections')
+            this.$store.dispatch('fetchInspections');
         }
     }
 </script>

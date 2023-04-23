@@ -4,13 +4,13 @@
             "id": 1,
             "dateAdded": "2022-03-20",
             "damageInspection": {
-                "selected": true,
-                "location": "Arnhem",
-                "new": "checked",
-                "type": "Anders",
-                "inspectionDate": "2022-03-20",
-                "acuteActionRequired": "checked",
-                "description": "De houten voorgevel is gaan rotten"
+                "selected": false,
+                "location": "",
+                "new": "",
+                "type": "",
+                "inspectionDate": "",
+                "acuteActionRequired": "",
+                "description": ""
             },
             "maintenance": {
                 "selected": true,
@@ -21,11 +21,11 @@
             },
             "technicalInstallationInspection": {
                 "selected": false,
-                "location": "Arnhem",
-                "installationType": "Verwarming",
-                "malfunctions": "Verwarming geeft rare tikken",
-                "approved": "unchecked",
-                "comments": "De verwarming is aan vervanging toe"
+                "location": "",
+                "installationType": "",
+                "malfunctions": "",
+                "approved": "",
+                "comments": ""
             },
             "inventorizeModifications": {
                 "selected": true,
@@ -57,22 +57,22 @@
                 "costIndication": "0-500"
             },
             "technicalInstallationInspection": {
-                "selected": true,
-                "location": "Rotterdam",
-                "installationType": "Luchtverversing",
-                "malfunctions": "De luchtverversing werkt niet meer goed",
-                "approved": "unchecked",
-                "comments": "De luchtverversing moet vervangen worden"
+                "selected": false,
+                "location": "",
+                "installationType": "",
+                "malfunctions": "",
+                "approved": "",
+                "comments": ""
             },
             "inventorizeModifications": {
-                "selected": true,
-                "location": "Voorgevel",
-                "executedBy": "Huurder",
-                "description": "De voorgevel is geschilderd in een andere kleur",
-                "toDo": "Accepteren",
-                "comments": "De kleur voldoet aan de eisen"
+                "selected": false,
+                "location": "",
+                "executedBy": "",
+                "description": "",
+                "toDo": "",
+                "comments": ""
             },
-            "photos": []
+            "photos": ["deur.jpg", "verf.jpg"]
         },
         {
             "id": 3,
@@ -131,20 +131,20 @@
                 "costIndication": "1500+"
             },
             "technicalInstallationInspection": {
-                "selected": true,
-                "location": "Hoofddorp",
-                "installationType": "Elektra",
-                "malfunctions": "Er onstaat kortsluiting als de stroom aan gaat",
-                "approved": "unchecked",
-                "comments": "Er onstaat kortsluiting zodra de stroom aan gaat. Dit moet opgelost worden want dit is onveilig"
+                "selected": false,
+                "location": "",
+                "installationType": "",
+                "malfunctions": "",
+                "approved": "",
+                "comments": ""
             },
             "inventorizeModifications": {
-                "selected": true,
-                "location": "Dak",
-                "executedBy": "Huurder",
-                "description": "Er is een dakkapel gemaakt",
-                "toDo": "Laten keuren",
-                "comments": "De bouw is nog niet goedgekeurd"
+                "selected": false,
+                "location": "",
+                "executedBy": "",
+                "description": "",
+                "toDo": "",
+                "comments": ""
             },
             "photos": ["boom.jpg"]
         },
@@ -161,19 +161,19 @@
                 "description": "De vloer begint door te zakken"
             },
             "maintenance": {
-                "selected": true,
-                "location": "Leiden",
-                "type": "Houtrot",
-                "acuteActionRequired": "unchecked",
-                "costIndication": "0-500"
+                "selected": false,
+                "location": "",
+                "type": "",
+                "acuteActionRequired": "",
+                "costIndication": ""
             },
             "technicalInstallationInspection": {
-                "selected": true,
-                "location": "Leiden",
-                "installationType": "Koeling",
-                "malfunctions": "De koeling werkt niet meer",
-                "approved": "unchecked",
-                "comments": "De koeling werkt niet meer"
+                "selected": false,
+                "location": "",
+                "installationType": "",
+                "malfunctions": "",
+                "approved": "",
+                "comments": ""
             },
             "inventorizeModifications": {
                 "selected": true,
@@ -183,7 +183,7 @@
                 "toDo": "Laten keuren",
                 "comments": "De installatie is nog niet goedgekeurd"
             },
-            "photos": []
+            "photos": ["vloer.jpg", "badkamer.jpg"]
         }
     ]
 }

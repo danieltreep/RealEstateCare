@@ -7,7 +7,7 @@
         </ion-item>
 
         <ion-list-header>Schade opnemen</ion-list-header>
-        <ion-item v-if="!selectedInspection.damageInspection.selected">
+        <ion-item v-if="!selectedInspection.damageInspection.selected" class="nvt">
             <ion-label>Niet van toepassing</ion-label>
         </ion-item>
         <ion-item-group v-if="selectedInspection.damageInspection.selected">
@@ -38,7 +38,7 @@
         </ion-item-group>
 
         <ion-list-header>Achterstallig onderhoud</ion-list-header>
-        <ion-item v-if="!selectedInspection.maintenance.selected">
+        <ion-item v-if="!selectedInspection.maintenance.selected" class="nvt">
             <ion-label>Niet van toepassing</ion-label>
         </ion-item>
         <ion-item-group v-if="selectedInspection.maintenance.selected">
@@ -61,7 +61,7 @@
         </ion-item-group>
         
         <ion-list-header>Technische installaties inspecteren</ion-list-header>
-        <ion-item v-if="!selectedInspection.technicalInstallationInspection.selected">
+        <ion-item v-if="!selectedInspection.technicalInstallationInspection.selected" class="nvt">
             <ion-label>Niet van toepassing</ion-label>
         </ion-item>
         <ion-item-group v-if="selectedInspection.technicalInstallationInspection.selected">
@@ -88,12 +88,12 @@
         </ion-item-group>
         
         <ion-list-header>Modificaties inventariseren</ion-list-header>
-        <ion-item v-if="!selectedInspection.inventorizeModifications.selected">
+        <ion-item v-if="!selectedInspection.inventorizeModifications.selected" class="nvt">
             <ion-label>Niet van toepassing</ion-label>
         </ion-item>
         <ion-item-group v-if="selectedInspection.inventorizeModifications.selected">
             <ion-item>
-                <ion-label><i>Locatie modificatie:</i></ion-label> 
+                <ion-label><i>Locatie:</i></ion-label> 
                 <ion-label class="ion-text-wrap"> {{ selectedInspection.inventorizeModifications.location }}</ion-label> 
             </ion-item>
             <ion-item>
@@ -101,7 +101,7 @@
                 <ion-label class="ion-text-wrap"> {{ selectedInspection.inventorizeModifications.executedBy }}</ion-label> 
             </ion-item>
             <ion-item>
-                <ion-label><i>Beschrijving modificatie:</i></ion-label> 
+                <ion-label><i>Beschrijving:</i></ion-label> 
                 <ion-label class="ion-text-wrap"> {{ selectedInspection.inventorizeModifications.description }}</ion-label> 
             </ion-item>
             <ion-item>
@@ -111,6 +111,13 @@
             <ion-item>
                 <ion-label><i>Opmerkingen:</i></ion-label> 
                 <ion-label class="ion-text-wrap"> {{ selectedInspection.inventorizeModifications.comments }}</ion-label> 
+            </ion-item>
+        </ion-item-group>
+
+        <ion-list-header>Foto's</ion-list-header>
+        <ion-item-group>
+            <ion-item v-for="(foto, index) in selectedInspection.photos" :key="index" lines="none">
+                <img :src="require(`../../public/assets/photos/${foto}`)" :alt="foto">
             </ion-item>
         </ion-item-group>
         
@@ -148,7 +155,11 @@
     }
     ion-button {
         height: 40px;
-        /* margin-bottom: 4rem; */
     }
-    
+    .nvt {
+        margin-bottom: 2rem;
+    }
+    img {
+        margin: .5rem 0;
+    }
 </style>

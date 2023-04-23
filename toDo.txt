@@ -10,13 +10,11 @@
 
 Te doen:
 - JSON data verbeteren, datum, verwijder delen
-- Een README bestand maken en toevoegen
-- Usability, WCAG richtlijnen en stijlgids controleren.  Tab index, Aria
+- Update bestaande inspecties layout, foto's
 - Upload inspecties via service
-- toDo verwijderen
-- Update bestaande inspecties layout, optionele delen
-- Mockup foto's
-- Foto gallerij
-- Comment uitleg + cleanup
 - Lock onderdelen als er niet is ingelogd
 - Andere pagina's
+- Comment uitleg + cleanup
+- Usability, WCAG richtlijnen en stijlgids controleren.  Tab index, Aria
+- Een README bestand maken en toevoegen
+- toDo verwijderen

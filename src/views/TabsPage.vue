@@ -1,5 +1,5 @@
 <template>
-  <ion-page background-color="black">
+  <ion-page>
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
@@ -14,7 +14,7 @@
         </ion-tab-button>
 
         <ion-tab-button tab="informatie" href="/informatie">
-          <ion-icon aria-hidden="true" :icon="alertCircle" />
+          <ion-icon aria-hidden="true" :icon="informationCircle" />
           <ion-label>Informatie</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
@@ -22,9 +22,29 @@
   </ion-page>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
   import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-  import { alertCircle, build, search } from 'ionicons/icons';
+  import { informationCircle, build, search } from 'ionicons/icons';
+
+  export default {
+    name: 'TabsPage',
+    components: {
+      IonTabBar,
+      IonTabButton,
+      IonTabs, 
+      IonLabel,
+      IonIcon,
+      IonPage,
+      IonRouterOutlet
+    },
+    data() {
+      return {
+        informationCircle,
+        build,
+        search
+      }
+    }
+  }
 </script>
 
 <style scoped>

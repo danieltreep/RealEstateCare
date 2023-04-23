@@ -124,7 +124,7 @@
                             <ion-textarea label="Gemelde storingen:"></ion-textarea>
                         </ion-item>
 
-                        <ion-item>
+                        <ion-item lines="none">
                             <ion-label>Documentatie Technische Installaties:</ion-label>
                             <ion-button 
                                 @click="{
@@ -162,7 +162,7 @@
 
                 <Transition>
                     <ion-item-group v-show="modificaties">
-                        <ion-item>
+                        <ion-item lines="none">
                             <ion-label>Documentatie Modificaties:</ion-label>
                             <ion-button 
                                 @click="{
@@ -334,12 +334,13 @@
         --background: var(--main-color);
         --background-activated: var(--main-color);
         --background-activated-opacity: .8;
+
     }
     .opslaan {
         width: 100%;
         
         margin: 2rem 0;
-        --color: black;
+        --color: white;
     }
     /* Custom components */
     input[type='file'],

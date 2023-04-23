@@ -1,13 +1,12 @@
 <template>
-   
     <ion-toolbar>
         <ion-button size="small" @click="$router.go(-1)">
             <ion-icon :icon="arrowBack"></ion-icon>
             Terug
         </ion-button>
-    </ion-toolbar>
-    
+    </ion-toolbar> 
 </template>
+
 <script lang="ts">
     import { IonToolbar, IonIcon, IonButton } from '@ionic/vue';
     import { arrowBack } from 'ionicons/icons';
@@ -26,12 +25,13 @@
         }
     }
 </script>
+
 <style scoped>
     ion-toolbar {
         --background: inherit;
     }
     ion-button {
         --background: var(--main-color);
-        margin: .5rem;
+        margin: 1rem;
     }
 </style>

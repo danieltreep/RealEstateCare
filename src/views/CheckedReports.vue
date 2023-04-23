@@ -4,7 +4,7 @@
         <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
             <GoBackBar />
             <h1>Uitgevoerde Rapporten</h1>
-            <ion-item>
+            <ion-item lines="none">
                 <ion-label><b>Sorteer op:</b> </ion-label>
                 <ion-chip @click="sortOnDate('Nieuwste')" :class="nieuw ? 'active' : ''">
                     <ion-label>Nieuwste</ion-label>
@@ -65,7 +65,6 @@
 <style scoped>
     .active {
         --background: var(--main-color);
-        /* --color: white; */
     }
     
 </style>

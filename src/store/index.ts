@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-import getInspections from '@/services/getInspections.js';
+import getInspections from '@/services/getInspectionsService.js';
 import Inspection from '@/helpers/inspectionClass';
 
 export default createStore({
@@ -13,6 +13,7 @@ export default createStore({
   mutations: {
     setInspections(state, payload) {
       state.inspections = payload;
+      state.inspections.map(inspection => inspection.dateAdded = new Date(inspection.dateAdded));
     },
     setDarkMode(state) {
       state.darkMode = !state.darkMode; 
@@ -24,11 +25,9 @@ export default createStore({
       state.modalOpen = payload;
     },
     sortOnNewest(state) {
-      state.inspections.map(inspection => inspection.dateAdded = new Date(inspection.dateAdded));
       state.inspections.sort((a, b) => b.dateAdded - a.dateAdded); 
     },
     sortOnOldest(state) {
-      state.inspections.map(inspection => inspection.dateAdded = new Date(inspection.dateAdded));
       state.inspections.sort((a, b) => a.dateAdded - b.dateAdded); 
     }
   },

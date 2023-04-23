@@ -9,8 +9,7 @@
 - Login dmv van local storage push
 
 Te doen:
-- JSON data verbeteren, datum, verwijder delen
-- Update bestaande inspecties layout, foto's
+- JSON data verbeteren, datum
 - Upload inspecties via service
 - Lock onderdelen als er niet is ingelogd
 - Andere pagina's

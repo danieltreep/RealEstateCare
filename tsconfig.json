@@ -33,7 +33,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-, "src/services/getInspections.js", "src/services/getInspections.js", "src/services/getInspections.js"  ],
+, "src/services/getInspectionsService.js", "src/services/getInspectionsService.js", "src/services/getInspectionsService.js"  ],
   "exclude": [
     "node_modules"
   ]

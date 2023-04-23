@@ -5,8 +5,12 @@
             <ion-button>Aanpassen</ion-button>
             <ion-button class="delete">Verwijderen</ion-button>
         </ion-item>
-        <ion-item-group>
-            <ion-list-header>Schade opnemen</ion-list-header>
+
+        <ion-list-header>Schade opnemen</ion-list-header>
+        <ion-item v-if="!selectedInspection.damageInspection.selected">
+            <ion-label>Niet van toepassing</ion-label>
+        </ion-item>
+        <ion-item-group v-if="selectedInspection.damageInspection.selected">
             <ion-item>
                 <ion-label ><i>Locatie:</i></ion-label> 
                 <ion-label class="ion-text-wrap">{{ selectedInspection.damageInspection.location }}</ion-label>
@@ -33,8 +37,11 @@
             </ion-item>
         </ion-item-group>
 
-        <ion-item-group>
-            <ion-list-header>Achterstallig onderhoud</ion-list-header>
+        <ion-list-header>Achterstallig onderhoud</ion-list-header>
+        <ion-item v-if="!selectedInspection.maintenance.selected">
+            <ion-label>Niet van toepassing</ion-label>
+        </ion-item>
+        <ion-item-group v-if="selectedInspection.maintenance.selected">
             <ion-item>
                 <ion-label><i>Locatie:</i></ion-label> 
                 <ion-label class="ion-text-wrap"> {{ selectedInspection.maintenance.location }}</ion-label> 
@@ -53,8 +60,11 @@
             </ion-item>
         </ion-item-group>
         
-        <ion-item-group>
-            <ion-list-header>Technische installaties inspecteren</ion-list-header>
+        <ion-list-header>Technische installaties inspecteren</ion-list-header>
+        <ion-item v-if="!selectedInspection.technicalInstallationInspection.selected">
+            <ion-label>Niet van toepassing</ion-label>
+        </ion-item>
+        <ion-item-group v-if="selectedInspection.technicalInstallationInspection.selected">
             <ion-item>
                 <ion-label><i>Locatie:</i></ion-label> 
                 <ion-label class="ion-text-wrap"> {{ selectedInspection.technicalInstallationInspection.location }}</ion-label> 
@@ -77,8 +87,11 @@
             </ion-item>
         </ion-item-group>
         
-        <ion-item-group>
-            <ion-list-header>Modificaties inventariseren</ion-list-header>
+        <ion-list-header>Modificaties inventariseren</ion-list-header>
+        <ion-item v-if="!selectedInspection.inventorizeModifications.selected">
+            <ion-label>Niet van toepassing</ion-label>
+        </ion-item>
+        <ion-item-group v-if="selectedInspection.inventorizeModifications.selected">
             <ion-item>
                 <ion-label><i>Locatie modificatie:</i></ion-label> 
                 <ion-label class="ion-text-wrap"> {{ selectedInspection.inventorizeModifications.location }}</ion-label> 

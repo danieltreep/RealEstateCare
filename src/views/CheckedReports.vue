@@ -1,9 +1,12 @@
 <template>
     <ion-page>
         <HeaderSection />
+
         <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
             <GoBackBar />
+
             <h1>Uitgevoerde Rapporten</h1>
+
             <ion-item lines="none">
                 <ion-label><b>Sorteer op:</b> </ion-label>
                 <ion-chip @click="sortOnDate('Nieuwste')" :class="nieuw ? 'active' : ''">
@@ -15,6 +18,7 @@
                     <ion-icon :icon="arrowUp"></ion-icon>
                 </ion-chip>
             </ion-item>
+            
             <CheckedReportsList />
         </ion-content>
     </ion-page>

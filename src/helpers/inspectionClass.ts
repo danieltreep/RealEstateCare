@@ -5,7 +5,7 @@ class Inspection {
     maintenance: object;
     technicalInstallationInspection: object;
     inventorizeModifications: object;
-    photos: Array<string>;
+    photos: Array<number>;
 
     constructor(inspection) {
         this.id = inspection.id,

@@ -20,7 +20,7 @@
                 "costIndication": "500-1500"
             },
             "technicalInstallationInspection": {
-                "selected": true,
+                "selected": false,
                 "location": "Arnhem",
                 "installationType": "Verwarming",
                 "malfunctions": "Verwarming geeft rare tikken",

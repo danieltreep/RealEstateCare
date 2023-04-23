@@ -9,15 +9,12 @@
 - Login dmv van local storage push
 
 Te doen:
-- JSON data verbeteren, foto's bestandsnamen 
-- Inspectie aanpassen
+- JSON data verbeteren, datum, verwijder delen
 - Een README bestand maken en toevoegen
-- Class toevoegen waarvan objecten gemaakt kunnen worden
 - Usability, WCAG richtlijnen en stijlgids controleren.  Tab index, Aria
 - Upload inspecties via service
-- Singleton
 - toDo verwijderen
-- Update bestaande inspecties layout
+- Update bestaande inspecties layout, optionele delen
 - Mockup foto's
 - Foto gallerij
 - Comment uitleg + cleanup

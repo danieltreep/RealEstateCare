@@ -56,7 +56,6 @@ export default {
     ion-button {
         --color: white;
         --background: var(--main-color);
-        margin-right: 1rem;
     }
     ion-icon {
         margin-left: .5rem;

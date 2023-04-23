@@ -326,6 +326,10 @@
         --border-color: var(--ion-color-dark);
         --border-width: 2px;
     }
+    ion-item:not(.groupHeader) ion-checkbox {
+        --checkbox-background-checked: var(--main-color);
+        --border-color-checked: var(--main-color);
+    }
     ion-icon {
         font-size: 22px;
     }

@@ -23,17 +23,12 @@
     --color: white;
     color: white;
     fill: white;
-    --placeholder-color: white;
   }
   .darkMode {
     --ion-background-color: var(--ion-color-dark);
   }
   .darkMode ion-card {
     --background: #33363b;
-  }
-  .darkMode ion-item:not(.groupHeader) ion-checkbox {
-    --checkbox-background-checked: var(--main-color);
-    --border-color-checked: var(--main-color);
   }
   h1 {
     text-align: center;

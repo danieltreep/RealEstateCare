@@ -1,15 +1,10 @@
 - De inspecteur krijgt een lijst met alle uitgevoerde rapporten, als hij op een rapport klikt kan hij de details zien
 - Hij moet het kunnen aanpassen. Maak een knop voor aanpassen dat het scherm opent voor het maken van inspecties. Haal de specifieke inspectie op.
 - Verwijderen?
-- Class waar?
-- Linken naar bestanden
-- Foto's, waar opslaan?
-- Dark mode
 - MVC concept, singleton beschrijven
-- Login dmv van local storage push
+
 
 Te doen:
-- JSON data verbeteren, datum
 - Upload inspecties via service
 - Lock onderdelen als er niet is ingelogd
 - Andere pagina's

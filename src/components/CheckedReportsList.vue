@@ -9,7 +9,7 @@
             <ion-icon 
                 :icon="clipboardOutline" 
                 slot="start" />
-            <ion-label>Inspectie {{inspection.id}} op {{`${inspection.dateAdded.getDate()}-${inspection.dateAdded.getMonth()}-${inspection.dateAdded.getFullYear()}`}}</ion-label>
+            <ion-label>Inspectie {{inspection.id}} op {{`${inspection.dateAdded.getDate()}-${inspection.dateAdded.getMonth() + 1}-${inspection.dateAdded.getFullYear()}`}}</ion-label>
         </ion-item>
     </ion-list>
 

@@ -2,7 +2,7 @@
     "inspections": [
         {
             "id": 1,
-            "dateAdded": "2022-3-20",
+            "dateAdded": "2022-03-20",
             "damageInspection": {
                 "selected": false,
                 "location": "",
@@ -39,7 +39,7 @@
         },
         {
             "id": 2,
-            "dateAdded": "2022-3-21",
+            "dateAdded": "2022-03-21",
             "damageInspection": {
                 "selected": true,
                 "location": "Rotterdam",
@@ -76,7 +76,7 @@
         },
         {
             "id": 3,
-            "dateAdded": "2022-4-17",
+            "dateAdded": "2022-04-17",
             "damageInspection": {
                 "selected": true,
                 "location": "Amsterdam",
@@ -113,7 +113,7 @@
         },
         {
             "id": 4,
-            "dateAdded": "2022-4-18",
+            "dateAdded": "2022-04-18",
             "damageInspection": {
                 "selected": true,
                 "location": "Hoofddorp",
@@ -150,7 +150,7 @@
         },
         {
             "id": 5,
-            "dateAdded": "2022-4-26",
+            "dateAdded": "2022-04-26",
             "damageInspection": {
                 "selected": true,
                 "location": "Leiden",

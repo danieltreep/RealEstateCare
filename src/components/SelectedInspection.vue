@@ -19,7 +19,7 @@
             </ion-item>
             <ion-item>
                 <ion-label><i>Nieuwe schade:</i></ion-label> 
-                <ion-label class="ion-text-wrap">{{ selectedInspection.damageInspection.new === 'checked' ? 'Ja' : 'Nee' }}</ion-label> 
+                <ion-label class="ion-text-wrap">{{ selectedInspection.damageInspection.new ? 'Ja' : 'Nee' }}</ion-label> 
             </ion-item>
             <ion-item>
                 <ion-label><i>Soort schade:</i></ion-label> 
@@ -31,7 +31,7 @@
             </ion-item>
             <ion-item>
                 <ion-label><i>Acute actie vereist:</i></ion-label> 
-                <ion-label class="ion-text-wrap">{{ selectedInspection.damageInspection.acuteActionRequired === 'checked' ? 'Ja' : 'Nee' }}</ion-label> 
+                <ion-label class="ion-text-wrap">{{ selectedInspection.damageInspection.acuteActionRequired ? 'Ja' : 'Nee' }}</ion-label> 
             </ion-item>
             <ion-item>
                 <ion-label><i>Omschrijving:</i></ion-label> 
@@ -54,7 +54,7 @@
             </ion-item>
             <ion-item>
                 <ion-label><i>Acute actie vereist:</i></ion-label> 
-                <ion-label class="ion-text-wrap"> {{ selectedInspection.maintenance.acuteActionRequired === 'checked' ? 'Ja' : 'Nee' }}</ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.maintenance.acuteActionRequired ? 'Ja' : 'Nee' }}</ion-label> 
             </ion-item>
             <ion-item>
                 <ion-label><i>Kostenindicatie:</i></ion-label> 
@@ -81,7 +81,7 @@
             </ion-item>
             <ion-item>
                 <ion-label><i>Goedgekeurd:</i></ion-label> 
-                <ion-label class="ion-text-wrap"> {{ selectedInspection.technicalInstallationInspection.approved === 'checked' ? 'Ja' : 'Nee' }}</ion-label> 
+                <ion-label class="ion-text-wrap"> {{ selectedInspection.technicalInstallationInspection.approved ? 'Ja' : 'Nee' }}</ion-label> 
             </ion-item>
             <ion-item>
                 <ion-label><i>Opmerkingen:</i></ion-label> 

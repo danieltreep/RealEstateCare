@@ -2,7 +2,7 @@
     <ion-page>
         <HeaderSection />
         <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
-            <!-- <GoBackBar /> -->
+            
             <h1>Pas rapport {{ oldInspection.id }} aan</h1>
             
             <ion-list>
@@ -319,7 +319,7 @@
         },
         methods: {
             onSubmit() {
-                this.$store.dispatch('changeInspection', this.oldInspection);
+                this.$store.dispatch('changeInspection', new Inspection(this.oldInspection));
                 this.$router.go(-1);
             }
         },

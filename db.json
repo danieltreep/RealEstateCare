@@ -16,7 +16,7 @@
                 "selected": true,
                 "location": "Arnhem",
                 "type": "Houtrot",
-                "acuteActionRequired": "checked",
+                "acuteActionRequired": true,
                 "costIndication": "500-1500"
             },
             "technicalInstallationInspection": {
@@ -80,17 +80,17 @@
             "damageInspection": {
                 "selected": true,
                 "location": "Amsterdam",
-                "new": "checked",
+                "new": true,
                 "type": "Geweld",
                 "inspectionDate": "2022-04-17",
-                "acuteActionRequired": "checked",
+                "acuteActionRequired": true,
                 "description": "De vooruit is ingegooid met een baksteen"
             },
             "maintenance": {
                 "selected": true,
                 "location": "Amsterdam",
                 "type": "Beglazing",
-                "acuteActionRequired": "checked",
+                "acuteActionRequired": true,
                 "costIndication": "500-1500"
             },
             "technicalInstallationInspection": {
@@ -98,7 +98,7 @@
                 "location": "Amsterdam",
                 "installationType": "Beveiliging",
                 "malfunctions": "Er zijn camera's geinstalleerd die uitzicht hebben op de straat",
-                "approved": "checked",
+                "approved": true,
                 "comments": "Ter beveiliging van het pand is dit goedgekeurd"
             },
             "inventorizeModifications": {
@@ -117,17 +117,17 @@
             "damageInspection": {
                 "selected": true,
                 "location": "Hoofddorp",
-                "new": "checked",
+                "new": true,
                 "type": "Calamiteit",
                 "inspectionDate": "2022-04-18",
-                "acuteActionRequired": "checked",
+                "acuteActionRequired": true,
                 "description": "Er is een boom op het dak gevallen en het dak ligt voor een deel open"
             },
             "maintenance": {
                 "selected": true,
                 "location": "Hoofddorp",
                 "type": "Leidingwerk",
-                "acuteActionRequired": "checked",
+                "acuteActionRequired": true,
                 "costIndication": "1500+"
             },
             "technicalInstallationInspection": {

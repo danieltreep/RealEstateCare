@@ -3,7 +3,7 @@
         <h3 class="ion-text-center ion-padding-top">Details inspectie: {{ selectedInspection.id }}</h3>
         <ion-item lines="none">
             <ion-button>Aanpassen</ion-button>
-            <ion-button class="delete">Verwijderen</ion-button>
+            <ion-button class="delete" @click="onDelete(selectedInspection.id)">Verwijderen</ion-button>
         </ion-item>
 
         <ion-list-header>Schade opnemen</ion-list-header>
@@ -129,7 +129,8 @@
     export default {
         name: 'SelectedInspection',
         props: {
-            selectedInspection: Object
+            selectedInspection: Object,
+            onDeletedInspection: Function
         },
         components: { 
             IonItem, 
@@ -138,6 +139,12 @@
             IonListHeader, 
             IonItemGroup,
             IonButton 
+        },
+        methods: {
+            onDelete(id) {
+                this.onDeletedInspection();
+                this.$store.dispatch('deleteInspection', id);
+            }
         }
     }
 </script>

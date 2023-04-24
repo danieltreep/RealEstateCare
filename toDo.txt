@@ -1,11 +1,9 @@
-- De inspecteur krijgt een lijst met alle uitgevoerde rapporten, als hij op een rapport klikt kan hij de details zien
-- Hij moet het kunnen aanpassen. Maak een knop voor aanpassen dat het scherm opent voor het maken van inspecties. Haal de specifieke inspectie op.
-- Verwijderen?
 - MVC concept, singleton beschrijven
 
 
 Te doen:
 - Upload inspecties via service
+- OnEnter login
 - Lock onderdelen als er niet is ingelogd
 - Andere pagina's
 - Comment uitleg + cleanup

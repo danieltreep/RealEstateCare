@@ -16,7 +16,8 @@
     <!-- Hier komt de geselecteerde inspectie als er een is gekozen -->
     <SelectedInspection 
         v-if="showSelectedInspection" 
-        :selectedInspection="selectedInspection" />
+        :selectedInspection="selectedInspection" 
+        :onDeletedInspection="onDeletedInspection"/>
     
 </template>
 <script lang="ts">
@@ -35,7 +36,7 @@ export default {
     },
     data() {
         return {
-            selectedInspectionId: '',
+            selectedInspectionId: null,
             showSelectedInspection: false,
             clipboardOutline
         }
@@ -44,6 +45,10 @@ export default {
         selectInspection(id: number) {
             this.selectedInspectionId = id;
             this.showSelectedInspection = true;
+        },
+        onDeletedInspection() {
+            this.selectedInspectionId = null;
+            this.showSelectedInspection = false;
         }
     },
     computed: {

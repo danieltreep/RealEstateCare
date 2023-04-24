@@ -29,6 +29,9 @@ export default createStore({
     },
     sortOnOldest(state) {
       state.inspections.sort((a, b) => a.dateAdded - b.dateAdded); 
+    },
+    deleteInspection(state, payload) {
+      state.inspections = state.inspections.filter(inspection => inspection.id !== payload);
     }
   },
   actions: {
@@ -54,6 +57,9 @@ export default createStore({
       } else if (value === 'Oudste') {
         context.commit('sortOnOldest');
       }
+    },
+    deleteInspection(context, value) {
+      context.commit('deleteInspection', value);
     }
   },
   getters: {

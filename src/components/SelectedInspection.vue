@@ -3,7 +3,9 @@
         <h3 class="ion-text-center ion-padding-top">Details inspectie: {{ selectedInspection.id }}</h3>
         <ion-item lines="none">
             <ion-button>Aanpassen</ion-button>
-            <ion-button class="delete" @click="onDelete(selectedInspection.id)">Verwijderen</ion-button>
+            <DeleteInspection 
+                :onDelete="onDelete"
+                :selectedInspectionId="selectedInspection.id"/>
         </ion-item>
 
         <ion-list-header>Schade opnemen</ion-list-header>
@@ -125,6 +127,7 @@
 </template>
 
 <script lang="ts">
+    import DeleteInspection from './DeleteInspectionButton.vue';
     import { IonItem, IonLabel, IonList, IonListHeader, IonItemGroup, IonButton } from '@ionic/vue';
     export default {
         name: 'SelectedInspection',
@@ -138,7 +141,8 @@
             IonList, 
             IonListHeader, 
             IonItemGroup,
-            IonButton 
+            IonButton,
+            DeleteInspection 
         },
         methods: {
             onDelete(id) {
@@ -157,11 +161,13 @@
         font-weight: bold;
         font-size: 1.2rem;
     }
-    ion-button.delete {
-        --background: red;
-    }
     ion-button {
         height: 40px;
+        width: 100%;
+        --background: var(--main-color);
+    }
+    ion-button.delete {
+        --background: red;
     }
     .nvt {
         margin-bottom: 2rem;

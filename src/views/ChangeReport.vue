@@ -2,27 +2,26 @@
     <ion-page>
         <HeaderSection />
         <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
-            <GoBackBar />
-            <h1>Toegewezen Rapporten</h1>
-            <p>Selecteer de benodigde categoriën voor de inspectie</p>
+            <!-- <GoBackBar /> -->
+            <h1>Pas rapport {{ oldInspection.id }} aan</h1>
             
             <ion-list>
                 <ion-item lines="none" class="groupHeader">
-                    <ion-checkbox v-model="newInspection.damageInspection.selected">Schade opnemen</ion-checkbox>
+                    <ion-checkbox v-model="oldInspection.damageInspection.selected">Schade opnemen</ion-checkbox>
                 </ion-item>
 
                 <Transition>
-                    <ion-item-group v-if="newInspection.damageInspection.selected">
+                    <ion-item-group v-if="oldInspection.damageInspection.selected">
                         <ion-item>
                             <ion-input 
                                 label="Locatie:" 
                                 :clear-input="true"
-                                v-model="newInspection.damageInspection.location"
+                                v-model="oldInspection.damageInspection.location"
                                 ></ion-input>
                         </ion-item>
 
                         <ion-item lines="none">
-                            <ion-checkbox v-model="newInspection.damageInspection.new">Nieuwe schade:</ion-checkbox>
+                            <ion-checkbox v-model="oldInspection.damageInspection.new">Nieuwe schade:</ion-checkbox>
                         </ion-item>
 
                         <ion-item lines="none">
@@ -31,7 +30,7 @@
                                 aria-label="soort schade opnemen" 
                                 placeholder="Selecteer" 
                                 interface="action-sheet"
-                                v-model="newInspection.damageInspection.type">
+                                v-model="oldInspection.damageInspection.type">
                                 <ion-select-option value="Moedwillig">Moedwillig</ion-select-option>
                                 <ion-select-option value="Slijtage">Slijtage</ion-select-option>
                                 <ion-select-option value="Geweld">Geweld</ion-select-option>
@@ -51,7 +50,7 @@
                         </ion-item>
 
                         <ion-item lines="none">
-                            <ion-checkbox v-model="newInspection.damageInspection.acuteActionRequired">Acute actie vereist:</ion-checkbox> 
+                            <ion-checkbox v-model="oldInspection.damageInspection.acuteActionRequired">Acute actie vereist:</ion-checkbox> 
                         </ion-item>
 
                         <ion-item>
@@ -59,7 +58,7 @@
                                 label="Omschrijving:" 
                                 type="textarea" 
                                 :auto-grow="true"
-                                v-model="newInspection.damageInspection.description"
+                                v-model="oldInspection.damageInspection.description"
                                 ></ion-textarea>
                         </ion-item>
 
@@ -74,17 +73,17 @@
                 </Transition>
 
                 <ion-item lines="none" class="groupHeader">
-                    <ion-checkbox v-model="newInspection.maintenance.selected">Achterstallig onderhoud opnemen</ion-checkbox>
+                    <ion-checkbox v-model="oldInspection.maintenance.selected">Achterstallig onderhoud opnemen</ion-checkbox>
                 </ion-item>
 
                 <Transition>
-                    <ion-item-group v-if="newInspection.maintenance.selected">
+                    <ion-item-group v-if="oldInspection.maintenance.selected">
                         <ion-item>
-                            <ion-input label="Locatie:" :clear-input="true" v-model="newInspection.maintenance.location"></ion-input>
+                            <ion-input label="Locatie:" :clear-input="true" v-model="oldInspection.maintenance.location"></ion-input>
                         </ion-item>
 
                         <ion-item lines="none">
-                            <ion-select label="Soort onderhoud:" aria-label="soort onderhoud" v-model="newInspection.maintenance.type" placeholder="Selecteer" interface="action-sheet">
+                            <ion-select label="Soort onderhoud:" aria-label="soort onderhoud" v-model="oldInspection.maintenance.type" placeholder="Selecteer" interface="action-sheet">
                                 <ion-select-option value="Schilderwerk">Schilderwerk</ion-select-option>
                                 <ion-select-option value="Houtrot">Houtrot</ion-select-option>
                                 <ion-select-option value="Elektra">Elektra</ion-select-option>
@@ -94,11 +93,11 @@
                         </ion-item>
 
                         <ion-item lines="none"> 
-                            <ion-checkbox v-model="newInspection.maintenance.acuteActionRequired">Acute actie vereist:</ion-checkbox>
+                            <ion-checkbox v-model="oldInspection.maintenance.acuteActionRequired">Acute actie vereist:</ion-checkbox>
                         </ion-item>
 
                         <ion-item lines="none">
-                            <ion-select label="Kostenindicatie:" v-model="newInspection.maintenance.costIndication" aria-label="kostenindicatie" placeholder="Selecteer" interface="action-sheet">
+                            <ion-select label="Kostenindicatie:" v-model="oldInspection.maintenance.costIndication" aria-label="kostenindicatie" placeholder="Selecteer" interface="action-sheet">
                                 <ion-select-option value="0-500">&euro; 0-500</ion-select-option>
                                 <ion-select-option value="500-1500">&euro; 500-1.500</ion-select-option>
                                 <ion-select-option value="1500+">&euro; 1.500+</ion-select-option>
@@ -116,17 +115,17 @@
                 </Transition>
                 
                 <ion-item lines="none" class="groupHeader">
-                    <ion-checkbox v-model="newInspection.technicalInstallationInspection.selected">Technische installaties inspecteren</ion-checkbox>
+                    <ion-checkbox v-model="oldInspection.technicalInstallationInspection.selected">Technische installaties inspecteren</ion-checkbox>
                 </ion-item>
 
                 <Transition>
-                    <ion-item-group v-if="newInspection.technicalInstallationInspection.selected">
+                    <ion-item-group v-if="oldInspection.technicalInstallationInspection.selected">
                         <ion-item>
-                            <ion-input label="Locatie:" :clear-input="true" v-model="newInspection.technicalInstallationInspection.location"></ion-input>
+                            <ion-input label="Locatie:" :clear-input="true" v-model="oldInspection.technicalInstallationInspection.location"></ion-input>
                         </ion-item>
 
                         <ion-item lines="none">
-                            <ion-select label="Soort installatie" aria-label="soort installatie" v-model="newInspection.technicalInstallationInspection.installationType" placeholder="Selecteer" interface="action-sheet">
+                            <ion-select label="Soort installatie" aria-label="soort installatie" v-model="oldInspection.technicalInstallationInspection.installationType" placeholder="Selecteer" interface="action-sheet">
                                 <ion-select-option value="Koeling">Koeling</ion-select-option>
                                 <ion-select-option value="Verwarming">Verwarming</ion-select-option>
                                 <ion-select-option value="Luchtverversing">Luchtverversing</ion-select-option>
@@ -136,20 +135,11 @@
                         </ion-item>
 
                         <ion-item>
-                            <ion-textarea label="Gemelde storingen:" v-model="newInspection.technicalInstallationInspection.malfunctions"></ion-textarea>
+                            <ion-textarea label="Gemelde storingen:" v-model="oldInspection.technicalInstallationInspection.malfunctions"></ion-textarea>
                         </ion-item>
 
                         <ion-item lines="none">
-                            <ion-label>Documentatie Technische Installaties:</ion-label>
-                            <ion-button 
-                                @click="{
-                                    setDocument('Technische Installaties');
-                                    setModal(true);
-                                }">Open document</ion-button>
-                        </ion-item>
-
-                        <ion-item lines="none">
-                            <ion-checkbox v-model="newInspection.technicalInstallationInspection.approved">Goedgekeurd:</ion-checkbox>
+                            <ion-checkbox v-model="oldInspection.technicalInstallationInspection.approved">Goedgekeurd:</ion-checkbox>
                         </ion-item>
 
                         <ion-item>
@@ -158,7 +148,7 @@
                                 labelPlacement="fixed"
                                 type="textarea" 
                                 :auto-grow="true"
-                                v-model="newInspection.technicalInstallationInspection.comments">
+                                v-model="oldInspection.technicalInstallationInspection.comments">
                             </ion-textarea>
                         </ion-item>
 
@@ -173,26 +163,17 @@
                 </Transition>
                 
                 <ion-item lines="none" class="groupHeader">
-                    <ion-checkbox v-model="newInspection.inventorizeModifications.selected">Modificaties inventariseren</ion-checkbox>
+                    <ion-checkbox v-model="oldInspection.inventorizeModifications.selected">Modificaties inventariseren</ion-checkbox>
                 </ion-item>
 
                 <Transition>
-                    <ion-item-group v-if="newInspection.inventorizeModifications.selected">
-                        <ion-item lines="none">
-                            <ion-label>Documentatie Modificaties:</ion-label>
-                            <ion-button 
-                                @click="{
-                                    setDocument('Modificaties Inventariseren');
-                                    setModal(true);
-                                }">Open document</ion-button>
-                        </ion-item>
-
+                    <ion-item-group v-if="oldInspection.inventorizeModifications.selected">
                         <ion-item>
-                            <ion-input label="Locatie modificatie:" :clear-input="true" v-model="newInspection.inventorizeModifications.location"></ion-input>
+                            <ion-input label="Locatie modificatie:" :clear-input="true" v-model="oldInspection.inventorizeModifications.location"></ion-input>
                         </ion-item>
 
                         <ion-item lines="none">
-                            <ion-select label="Uitgevoerd door:" aria-label="uitvoerder" placeholder="Selecteer" interface="action-sheet" v-model="newInspection.inventorizeModifications.executedBy">
+                            <ion-select label="Uitgevoerd door:" aria-label="uitvoerder" placeholder="Selecteer" interface="action-sheet" v-model="oldInspection.inventorizeModifications.executedBy">
                                 <ion-select-option value="Huurder">Huurder</ion-select-option>
                                 <ion-select-option value="Aannemer">Aannemer</ion-select-option>
                                 <ion-select-option value="Onbekend">Onbekend</ion-select-option>
@@ -200,7 +181,7 @@
                         </ion-item>
 
                         <ion-item>
-                            <ion-input label="Beschrijving modificatie:" :clear-input="true" v-model="newInspection.inventorizeModifications.description"></ion-input>
+                            <ion-input label="Beschrijving modificatie:" :clear-input="true" v-model="oldInspection.inventorizeModifications.description"></ion-input>
                         </ion-item>
 
                         <ion-item lines="none">
@@ -209,7 +190,7 @@
                                 aria-label="actie" 
                                 placeholder="Selecteer" 
                                 interface="action-sheet"
-                                v-model="newInspection.inventorizeModifications.toDo">
+                                v-model="oldInspection.inventorizeModifications.toDo">
                                 <ion-select-option value="Accepteren">Accepteren</ion-select-option>
                                 <ion-select-option value="Keuren">Keuren</ion-select-option>
                                 <ion-select-option value="Verwijderen">Verwijderen</ion-select-option>
@@ -223,7 +204,7 @@
                                 labelPlacement="fixed"
                                 type="textarea" 
                                 :auto-grow="true"
-                                v-model="newInspection.inventorizeModifications.comments">
+                                v-model="oldInspection.inventorizeModifications.comments">
                             </ion-textarea>
                         </ion-item>
 
@@ -240,10 +221,10 @@
                 <ion-item 
                     lines="none" 
                     v-if="
-                        newInspection.damageInspection.selected || 
-                        newInspection.maintenance.selected || 
-                        newInspection.technicalInstallationInspection.selected ||
-                        newInspection.inventorizeModifications.selected">
+                        oldInspection.damageInspection.selected || 
+                        oldInspection.maintenance.selected || 
+                        oldInspection.technicalInstallationInspection.selected ||
+                        oldInspection.inventorizeModifications.selected">
                     <ion-button 
                         size="default" 
                         @click="onSubmit()"
@@ -253,21 +234,18 @@
                 </ion-item>
             </ion-list>
 
-            <DocumentViewer  :setModal="setModal" :isOpen="isOpen" :document="document"/>
         </ion-content>
     </ion-page>
 </template>
 <script lang="ts">
     import HeaderSection from '@/components/HeaderSection.vue';
-    import GoBackBar from '@/components/GoBackBar.vue';
-    import DocumentViewer from '@/components/DocumentViewer.vue';
     import Inspection from '@/helpers/inspectionClass';
     
     import { camera } from 'ionicons/icons';
     import { IonPage, IonIcon, IonContent, IonCheckbox, IonLabel, IonButton, IonSelect, IonTextarea, IonDatetime, IonDatetimeButton, IonModal, IonSelectOption, IonInput, IonItem, IonItemGroup, IonList } from '@ionic/vue';
 
     export default {
-        name: 'AppointedReports',
+        name: 'ChangeReport',
         components: {
             HeaderSection,
             IonPage,
@@ -285,9 +263,7 @@
             IonModal,
             IonTextarea,
             IonButton,
-            IonIcon,
-            GoBackBar,
-            DocumentViewer
+            IonIcon
         },
         data() {
             return {
@@ -297,35 +273,35 @@
                 technischeInstallaties: false,  // Gebruik voor v-if 
                 modificaties: false,            // Gebruik voor v-if 
                 document: '',                   // Vertel welke document
-                newInspection: {
+                oldInspection: {
                     id: null,
                     dateAdded: new Date,
                     damageInspection: {
-                        selected: false,
+                        selected: undefined,
                         location: "",
-                        new: false,
+                        new: undefined,
                         type: "",
                         inspectionDate: "",
-                        acuteActionRequired: false,
+                        acuteActionRequired: undefined,
                         description: ""
                     },
                     maintenance: {
-                        selected: false,
+                        selected: undefined,
                         location: "",
                         type: "",
-                        acuteActionRequired: false,
+                        acuteActionRequired: undefined,
                         costIndication: ""
                     },
                     technicalInstallationInspection: {
-                        selected: false,
+                        selected: undefined,
                         location: "",
                         installationType: "",
                         malfunctions: "",
-                        approved: false,
+                        approved: undefined,
                         comments: ""
                     },
                     inventorizeModifications: {
-                        selected: false,
+                        selected: undefined,
                         location: "",
                         executedBy: "",
                         description: "",
@@ -339,28 +315,16 @@
         computed: {
             darkMode() {
                 return this.$store.state.darkMode;
-            },
-            isOpen() {
-                return this.$store.state.modalOpen;
-            },
-            highestInspectionId() {
-                return this.$store.getters.getHighestId + 1;        // Voeg 1 bij de hoogste Id uit de Id array zodat er nooit een dubbele is
             }
         },
         methods: {
-            setModal(boolean: boolean) {
-                this.$store.dispatch('setModal', boolean);
-            },
-            setDocument(document: string) {
-                this.document = document;
-            },
             onSubmit() {
-                this.$store.dispatch('addInspection', new Inspection(this.newInspection));
+                this.$store.dispatch('changeInspection', this.oldInspection);
                 this.$router.go(-1);
             }
         },
         mounted() {
-            this.newInspection.id = this.highestInspectionId;        // Stel id in bij het laden van een nieuw inspectie rapport
+            this.oldInspection = this.$store.getters.getSelectedInspection(+this.$route.params.id);
         }
     }
 </script>
@@ -410,7 +374,6 @@
         --background: var(--main-color);
         --background-activated: var(--main-color);
         --background-activated-opacity: .8;
-
     }
     ion-content{
         --keyboard-offset: 0 !important;

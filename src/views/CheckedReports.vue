@@ -42,9 +42,6 @@
             darkMode() {
                 return this.$store.state.darkMode;
             }
-        },
-        mounted() {
-            this.$store.dispatch('fetchInspections');
         }
     }
 </script>

@@ -7,7 +7,7 @@ export default createStore({
     inspections: [],
     darkMode: false,
     loggedIn: false,
-    modalOpen: false
+    modalOpen: false,
   },
   
   mutations: {
@@ -32,6 +32,13 @@ export default createStore({
     },
     deleteInspection(state, payload) {
       state.inspections = state.inspections.filter(inspection => inspection.id !== payload);
+    },
+    addInspection(state, payload) {
+      state.inspections = [...state.inspections, payload];
+    },
+    changeInspection(state, payload) {
+      const index = state.inspections.findIndex(inspection => inspection.id === payload.id);
+      state.inspections[index] = payload;
     }
   },
   actions: {
@@ -60,12 +67,23 @@ export default createStore({
     },
     deleteInspection(context, value) {
       context.commit('deleteInspection', value);
+    },
+    addInspection(context, value) {
+      context.commit('addInspection', value);
+    },
+    changeInspection(context, value) {
+      context.commit('changeInspection', value);
     }
   },
   getters: {
     getSelectedInspection: (state) => (id) => {
       return state.inspections.find(inspection => inspection.id === id);
+    },
+    getHighestId(state) {
+      const idArray = [];                                                 // Initieer nieuw array
+      state.inspections.map(inspection => idArray.push(inspection.id));   // Push alle id's naar nieuwe array
+      idArray.sort((a, b) => a - b);                                      // Sorteer array zodat de hoogste id als laatste is
+      return idArray.pop();                                               // Retourneer het laatste item in de array, ook wel de hoogste id
     }
   }
-  
 })

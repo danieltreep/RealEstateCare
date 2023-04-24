@@ -34,6 +34,10 @@
                 this.nieuw = !this.nieuw;
                 this.$store.dispatch('sortOnDate', value);
             }
+        },
+        mounted() {
+            this.nieuw = false;
+            this.$store.dispatch('sortOnDate', 'Oudste');
         }
     }
 </script>

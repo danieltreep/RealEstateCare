@@ -2,7 +2,7 @@
 
 
 Te doen:
-- Upload inspecties via service
+- Checked bug
 - OnEnter login
 - Lock onderdelen als er niet is ingelogd
 - Andere pagina's

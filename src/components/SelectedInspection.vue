@@ -2,7 +2,7 @@
     <ion-list>
         <h3 class="ion-text-center ion-padding-top">Details inspectie: {{ selectedInspection.id }}</h3>
         <ion-item lines="none">
-            <ion-button>Aanpassen</ion-button>
+            <ion-button @click="onChangeReport(selectedInspection.id)">Aanpassen</ion-button>
             <DeleteInspection 
                 :onDelete="onDelete"
                 :selectedInspectionId="selectedInspection.id"/>
@@ -148,8 +148,12 @@
             onDelete(id) {
                 this.onDeletedInspection();
                 this.$store.dispatch('deleteInspection', id);
+            },
+            onChangeReport(id) {
+                this.$router.push(`/change/${id}`);
             }
-        }
+        },
+        
     }
 </script>
 

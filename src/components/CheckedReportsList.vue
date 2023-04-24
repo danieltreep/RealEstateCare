@@ -58,7 +58,12 @@ export default {
         selectedInspection() {
             return this.$store.getters.getSelectedInspection(this.selectedInspectionId);
         },
-
-    }
+    },
+    watch: {
+            inspections() {
+                console.log('inspections changed');
+            }
+        }
+    
 }
 </script>

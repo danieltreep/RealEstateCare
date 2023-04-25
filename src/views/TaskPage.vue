@@ -14,6 +14,7 @@
               </ion-card>
             </router-link> 
           </ion-col>
+          
           <ion-col>
             <router-link to="/uitgevoerd">
               <ion-card>
@@ -37,6 +38,7 @@
               </ion-card>
             </router-link>
           </ion-col>
+
           <ion-col>
             <router-link to="/instellingen">
               <ion-card>

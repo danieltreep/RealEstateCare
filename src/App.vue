@@ -18,6 +18,7 @@
 <style>
   :root {
     --main-color: rgba(0,170,162);
+    --dark-color: #222428;
   }
   .darkMode * {
     --color: white;
@@ -25,7 +26,7 @@
     fill: white;
   }
   .darkMode {
-    --ion-background-color: var(--ion-color-dark);
+    --ion-background-color: var(--dark-color);
   }
   .darkMode ion-card {
     --background: #33363b;
@@ -36,4 +37,20 @@
   .darkMode ion-select { 
     --placeholder-color: white;
   }
+
+  @media (prefers-color-scheme: dark) {
+    ion-content {
+      --ion-background-color: var(--dark-color);
+    }
+    ion-item,
+    .list-ios {
+      --background: var(--dark-color);
+      background: var(--dark-color);
+    }
+    ion-button {
+      --color: white;
+    }
+
+  }
+  
 </style>

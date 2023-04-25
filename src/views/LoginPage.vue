@@ -163,7 +163,7 @@
         --keyboard-offset: 0 !important;
     }
     .container {
-        background-color: var(--ion-color-dark);
+        background-color: var(--dark-color);
         min-height: 100vh;
         padding-top: 8rem;
     }

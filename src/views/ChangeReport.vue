@@ -367,9 +367,9 @@
         --size: 1.2rem;
         --border-radius: 5px;
         --checkbox-background: rgb(236, 236, 236);
-        --checkbox-background-checked: var(--ion-color-dark);
-        --border-color-checked: var(--ion-color-dark);
-        --border-color: var(--ion-color-dark);
+        --checkbox-background-checked: var(--dark-color);
+        --border-color-checked: var(--dark-color);
+        --border-color: var(--dark-color);
         --border-width: 2px;
     }
     ion-item:not(.groupHeader) ion-checkbox {

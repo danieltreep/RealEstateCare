@@ -9,6 +9,7 @@
           <router-link :to="`/${result}`">
             <ion-label>{{ result }}</ion-label>
           </router-link>
+          <ion-icon :icon="openOutline" slot="end"></ion-icon>
         </ion-item>
       </ion-list>
     </ion-content>
@@ -18,6 +19,7 @@
 <script lang="ts">
 import { ref } from 'vue';
 import {IonPage, IonContent, IonList, IonItem, IonLabel, IonSearchbar} from '@ionic/vue';
+import { openOutline } from 'ionicons/icons';
 import HeaderSection from '@/components/HeaderSection.vue';
 
 export default {
@@ -40,7 +42,7 @@ export default {
     const data = ['Taken', 'Documentatie', 'Rapporten', 'Uitgevoerd', 'Instellingen', 'Informatie'];
     const results = ref(data);
 
-    return { data, results };
+    return { data, results, openOutline };
   },
   methods: {
     // Zoek functie die query vergelijkt met de data. Filter als de letters niet aanwezig zijn
@@ -52,7 +54,3 @@ export default {
   
 }
 </script>
-
-<style>
-
-</style>

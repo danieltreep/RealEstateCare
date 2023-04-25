@@ -16,9 +16,7 @@
                             setModal(true);
                         }">Open document</ion-button>
                 </ion-item>
-            </ion-list>
-
-            <ion-list>
+                
                 <ion-item>
                     <ion-icon :icon="documentText" aria-hidden="true"></ion-icon>
                     <ion-label>Modificaties Inventariseren</ion-label>

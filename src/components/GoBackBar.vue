@@ -35,4 +35,6 @@
         --background: var(--main-color);
         margin: 1rem;
     }
+
+    
 </style>

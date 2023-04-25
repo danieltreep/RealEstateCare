@@ -1,7 +1,7 @@
 <template>
   <!-- Header sectie die op elke pagina terug komt -->
   <ion-header>
-    <ion-toolbar color="dark">
+    <ion-toolbar>
       <img :src="require('../../public/assets/logo.svg')" class="ion-padding" aria-hidden="true"/>
       <NotificationBar slot="end" />                    
       
@@ -46,5 +46,8 @@ export default {
   }
   ion-header {
     border-bottom: 2px solid white;
+  }
+  ion-toolbar {
+    --background: var(--dark-color);
   }
 </style>

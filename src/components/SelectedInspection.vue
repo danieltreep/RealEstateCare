@@ -58,7 +58,7 @@
             </ion-item>
             <ion-item>
                 <ion-label><i>Kostenindicatie:</i></ion-label> 
-                <ion-label class="ion-text-wrap"> {{ selectedInspection.maintenance.costIndication }}</ion-label> 
+                <ion-label class="ion-text-wrap">&euro; {{ selectedInspection.maintenance.costIndication }}</ion-label> 
             </ion-item>
         </ion-item-group>
         

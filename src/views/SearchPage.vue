@@ -6,7 +6,7 @@
       <ion-list>
         <ion-item v-for="(result, index) in results" :key="index">
           <router-link :to="`/${result}`">
-            <ion-label>{{ result.toUpperCase() }}</ion-label>
+            <ion-label>{{ result }}</ion-label>
           </router-link>
         </ion-item>
         
@@ -46,7 +46,7 @@ export default {
   methods: {
     onSearch(event) {
       const query = event.toLowerCase();
-      this.results = this.data.filter(d => d.toLowerCase().indexOf(query) > -1);
+      this.results = this.data.filter(data => data.toLowerCase().indexOf(query) > -1);
     }
   }
   

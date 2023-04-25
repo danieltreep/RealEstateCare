@@ -1,5 +1,5 @@
 <template>
-  <ion-page>
+  <ion-page v-if="loggedIn">
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
@@ -42,6 +42,16 @@
         informationCircle,
         build,
         search
+      }
+    },
+    computed: {
+      loggedIn() {
+        return this.$store.state.loggedIn;
+      }
+    },
+    mounted() {
+      if (!this.loggedIn) {
+        this.$router.push('/login');
       }
     }
   }

@@ -2,9 +2,6 @@
 
 
 Te doen:
-- dateAdded
-- Lock onderdelen als er niet is ingelogd
-- Andere pagina's
 - Comment uitleg + cleanup
 - Usability, WCAG richtlijnen en stijlgids controleren.  Tab index, Aria
 - Een README bestand maken en toevoegen

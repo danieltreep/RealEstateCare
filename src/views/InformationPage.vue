@@ -4,11 +4,11 @@
     <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
       <ion-list>
         <ion-item>
-          <ion-label>Gebouwd door:</ion-label>
+          <ion-label><i>Gebouwd door:</i></ion-label>
           <ion-label>Daniel Treep</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Studentnummer</ion-label>
+          <ion-label><i>Studentnummer:</i></ion-label>
           <ion-label>312840519</ion-label>
         </ion-item>
       </ion-list>

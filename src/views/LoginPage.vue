@@ -1,73 +1,71 @@
 <template>
-<ion-page>
-    <div class="container">
+    <ion-page>
+        <div class="container">
+            <ion-grid>
+                <ion-row class="ion-justify-content-center">
+                    <h1 >Login</h1>
+                </ion-row>
 
-        <ion-grid>
-            <ion-row class="ion-justify-content-center">
-                <h1 >Login</h1>
-            </ion-row>
-            <ion-row class="ion-justify-content-center">
-
-                <ion-item lines="none">
-                    <ion-icon 
-                        :icon="personCircle" 
-                        aria-hidden="true"
+                <ion-row class="ion-justify-content-center">
+                    <ion-item lines="none">
+                        <ion-icon 
+                            :icon="personCircle" 
+                            aria-hidden="true"
+                            ></ion-icon>
+                            <ion-input 
+                            :clear-input="true" 
+                            label="Gebruikersnaam" 
+                            labelPlacement="stacked"
+                            v-model="username"
+                            :autofocus="true"
+                            tabindex="1"
+                        ></ion-input>
+                    </ion-item>
+                </ion-row>
+                
+                <ion-row class="ion-justify-content-center">
+                    <ion-item lines="none">
+                        <ion-icon 
+                            :icon="lockClosed" 
+                            aria-hidden="true"
                         ></ion-icon>
                         <ion-input 
-                        :clear-input="true" 
-                        label="Gebruikersnaam" 
-                        labelPlacement="stacked"
-                        v-model="username"
-                        :autofocus="true"
-                        tabindex="1"
-                    ></ion-input>
-                </ion-item>
-            </ion-row>
-            
-            <ion-row class="ion-justify-content-center">
-                <ion-item lines="none">
-                    <ion-icon 
-                    :icon="lockClosed" 
-                    aria-hidden="true"
-                    ></ion-icon>
-                    <ion-input 
-                    label="Wachtwoord"
-                    labelPlacement="stacked"
-                    :clear-input="true" 
-                    type="password" 
-                    v-model="password"
-                    tabindex="1"
-                    > 
-                    
-                    </ion-input>
-                </ion-item>
-            </ion-row>
+                            label="Wachtwoord"
+                            labelPlacement="stacked"
+                            :clear-input="true" 
+                            type="password" 
+                            v-model="password"
+                            tabindex="1"
+                            @keyup.enter="checkLogin()"
+                        ></ion-input>
+                    </ion-item>
+                </ion-row>
 
-            <ion-row class="ion-justify-content-center">
-                <ion-item v-if="error" class="errorBox" lines="none">
-                    <ion-icon :icon="alert"></ion-icon>
-                    <h3 >{{ error }}</h3>
-                </ion-item>
-            </ion-row>
+                <ion-row class="ion-justify-content-center">
+                    <ion-item v-if="error" class="errorBox" lines="none">
+                        <ion-icon :icon="alert"></ion-icon>
+                        <h3 >{{ error }}</h3>
+                    </ion-item>
+                </ion-row>
+                
+                <ion-row class="ion-justify-content-center">
+                    <ion-button  
+                        tabindex="1"
+                        :disabled="!username || !password"
+                        @click="checkLogin()"
+                        @keyup.enter="checkLogin()">  Login
+                        <ion-icon :icon="logIn" slot="end"></ion-icon>
+                    </ion-button> 
+                </ion-row>
+            </ion-grid>
             
-            <ion-row class="ion-justify-content-center">
-                <ion-button  
-                    tabindex="1"
-                    :disabled="!username || !password"
-                    @click="checkLogin()"
-                    @keyup.enter="checkLogin()">  Login
-                    <ion-icon :icon="logIn" slot="end"></ion-icon>
-                </ion-button> 
-            </ion-row>
-        </ion-grid>
-        
-        <img :src="require('../../public/assets/logo-icon.svg')" />
-    </div>
-</ion-page>
+            <img :src="require('../../public/assets/logo-icon.svg')" />
+        </div>
+    </ion-page>
 </template>
 
 <script lang="ts">
-    import {IonPage, IonButton, IonInput, IonIcon, IonItem, IonRow, IonGrid} from '@ionic/vue';
+    import { IonPage, IonButton, IonInput, IonIcon, IonItem, IonRow, IonGrid } from '@ionic/vue';
     import { personCircle, lockClosed, logIn, alert } from 'ionicons/icons';
 
     import checkLoginService from '@/services/checkLoginService.js';

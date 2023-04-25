@@ -2,8 +2,7 @@
 
 
 Te doen:
-- Checked bug
-- OnEnter login
+- dateAdded
 - Lock onderdelen als er niet is ingelogd
 - Andere pagina's
 - Comment uitleg + cleanup

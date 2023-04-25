@@ -46,7 +46,7 @@
                             <ion-datetime-button datetime="datetime">Datum:</ion-datetime-button>
     
                             <ion-modal :keep-contents-mounted="true">
-                                <ion-datetime id="datetime" ></ion-datetime>
+                                <ion-datetime id="datetime" @ionChange="onDateChange($event)"></ion-datetime>
                             </ion-modal>
                         </ion-item>
 
@@ -296,7 +296,7 @@
                 achterstalligOnderhoud: false,  // Gebruik voor v-if 
                 technischeInstallaties: false,  // Gebruik voor v-if 
                 modificaties: false,            // Gebruik voor v-if 
-                document: '',                   // Vertel welke document
+                document: '',                   // Vertel welk document
                 newInspection: {
                     id: null,
                     dateAdded: new Date,
@@ -305,7 +305,7 @@
                         location: "",
                         new: false,
                         type: "",
-                        inspectionDate: "",
+                        inspectionDate: new Date,
                         acuteActionRequired: false,
                         description: ""
                     },
@@ -333,7 +333,7 @@
                         comments: ""
                     },
                     photos: []
-                }
+                },
             }
         },
         computed: {
@@ -357,6 +357,9 @@
             onSubmit() {
                 this.$store.dispatch('addInspection', new Inspection(this.newInspection));
                 this.$router.go(-1);
+            },
+            onDateChange($event) {
+                this.newInspection.damageInspection.inspectionDate = new Date($event.detail.value);
             }
         },
         mounted() {

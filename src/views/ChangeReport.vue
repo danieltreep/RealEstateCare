@@ -3,7 +3,7 @@
         <HeaderSection />
         <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
             
-            <h1>Pas rapport {{ oldInspection.id }} aan</h1>
+            <h1>Pas rapport {{ oldInspection.id }} aan </h1>
             
             <ion-list>
                 <ion-item lines="none" class="groupHeader">
@@ -45,7 +45,7 @@
                             <ion-datetime-button datetime="datetime">Datum:</ion-datetime-button>
     
                             <ion-modal :keep-contents-mounted="true">
-                                <ion-datetime id="datetime" ></ion-datetime>
+                                <ion-datetime id="datetime" @ionChange="onDateChange($event)"></ion-datetime>
                             </ion-modal>
                         </ion-item>
 
@@ -275,33 +275,33 @@
                 document: '',                   // Vertel welke document
                 oldInspection: {
                     id: null,
-                    dateAdded: new Date,
+                    dateAdded: '',
                     damageInspection: {
-                        selected: undefined,
+                        selected: false,
                         location: "",
-                        new: undefined,
+                        new: false,
                         type: "",
                         inspectionDate: "",
-                        acuteActionRequired: undefined,
+                        acuteActionRequired: false,
                         description: ""
                     },
                     maintenance: {
-                        selected: undefined,
+                        selected: false,
                         location: "",
                         type: "",
-                        acuteActionRequired: undefined,
+                        acuteActionRequired: false,
                         costIndication: ""
                     },
                     technicalInstallationInspection: {
-                        selected: undefined,
+                        selected: false,
                         location: "",
                         installationType: "",
                         malfunctions: "",
-                        approved: undefined,
+                        approved: false,
                         comments: ""
                     },
                     inventorizeModifications: {
-                        selected: undefined,
+                        selected: false,
                         location: "",
                         executedBy: "",
                         description: "",
@@ -321,6 +321,9 @@
             onSubmit() {
                 this.$store.dispatch('changeInspection', new Inspection(this.oldInspection));
                 this.$router.go(-1);
+            },
+            onDateChange($event) {
+                this.oldInspection.damageInspection.inspectionDate = new Date($event.detail.value);
             }
         },
         mounted() {

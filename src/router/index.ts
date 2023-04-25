@@ -40,7 +40,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'uitgevoerd',
         name: 'uitgevoerd',
-        component: () => import('@/views/CheckedReports.vue')
+        component: () => import('@/views/CheckedReportsPage.vue')
       },
       {
         path: 'documentatie',

@@ -2,13 +2,22 @@
   <ion-page>
     <HeaderSection />
     <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
-      
+      <ion-list>
+        <ion-item>
+          <ion-label>Gebouwd door:</ion-label>
+          <ion-label>Daniel Treep</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Studentnummer</ion-label>
+          <ion-label>312840519</ion-label>
+        </ion-item>
+      </ion-list>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import {IonPage, IonContent} from '@ionic/vue';
+import {IonPage, IonContent, IonList, IonItem, IonLabel} from '@ionic/vue';
 import HeaderSection from '@/components/HeaderSection.vue';
 
 export default {
@@ -16,7 +25,10 @@ export default {
   components: {
     IonPage,
     IonContent,
-    HeaderSection
+    HeaderSection,
+    IonList,
+    IonItem,
+    IonLabel
   },
   computed: {
     darkMode() {

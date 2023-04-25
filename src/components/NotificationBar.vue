@@ -1,4 +1,5 @@
 <template>
+    <!-- Notificatie popover -->
     <div>
         <ion-icon 
             aria-hidden="true" 
@@ -18,7 +19,9 @@
     export default {
         name: 'NotificationBar',
         components: {
-            IonPopover, IonContent, IonIcon
+            IonPopover, 
+            IonContent, 
+            IonIcon
         },
         data() {
             return {

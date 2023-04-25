@@ -1,3 +1,4 @@
+<!-- Login pagina, alle input is tabbaar -->
 <template>
     <ion-page>
         <div class="container">
@@ -6,6 +7,7 @@
                     <h1 >Login</h1>
                 </ion-row>
 
+                <!-- Gebruikersnaam input -->
                 <ion-row class="ion-justify-content-center">
                     <ion-item lines="none">
                         <ion-icon 
@@ -23,6 +25,7 @@
                     </ion-item>
                 </ion-row>
                 
+                <!-- Wachtwoord input -->
                 <ion-row class="ion-justify-content-center">
                     <ion-item lines="none">
                         <ion-icon 
@@ -41,13 +44,15 @@
                     </ion-item>
                 </ion-row>
 
+                <!-- Error box die getoond wordt als wachtwoord en gebruikersnaam niet overeen komen -->
                 <ion-row class="ion-justify-content-center">
                     <ion-item v-if="error" class="errorBox" lines="none">
                         <ion-icon :icon="alert"></ion-icon>
                         <h3 >{{ error }}</h3>
                     </ion-item>
                 </ion-row>
-                
+
+                <!-- Login button -->
                 <ion-row class="ion-justify-content-center">
                     <ion-button  
                         tabindex="1"
@@ -59,6 +64,7 @@
                 </ion-row>
             </ion-grid>
             
+            <!-- Logo -->
             <img :src="require('../../public/assets/logo-icon.svg')" />
         </div>
     </ion-page>
@@ -92,12 +98,8 @@
                 error: ''
             }
         },
-        computed: {
-            loggedIn() {
-                return this.$store.state.loggedIn;
-            } 
-        },
         methods: {
+            // Als de login service false returned laat de error box zien. Wanneer true update state, reset waarden en verwijs door naar taken pagina
             checkLogin() {
                 if (!checkLoginService(this.username, this.password)) {
                     this.error = 'U heeft een verkeerde gebruikersnaam of wachtwoord ingevoerd.'
@@ -111,6 +113,7 @@
             }
         },
         mounted() {
+            // Stel bij het laden wachtwoord en gebruikersnaam in door ze op te slaan in local storage. Hier leest de login service ze uit.
             localStorage.setItem('username', 'admin');
             localStorage.setItem('password', 'admin');
         }

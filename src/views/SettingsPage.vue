@@ -1,3 +1,4 @@
+<!-- Instellingen pagina -->
 <template>
     <ion-page class="settings">
         <HeaderSection />
@@ -27,22 +28,22 @@
         },
         methods: {
             setDarkMode() {
-                this.$store.dispatch('setDarkMode');
+                this.$store.dispatch('setDarkMode');        // Stelt dark mode in bij store
             }
         },
         data() {
             return {
-                checked: false
+                checked: false                              // Houdt checked bij
             }
         },
         computed: {
             darkMode() {
-                return this.$store.state.darkMode;
+                return this.$store.state.darkMode;          // Houdt dark mode bij
             }
             
         },
         mounted() {
-            this.checked = this.$store.state.darkMode;
+            this.checked = this.$store.state.darkMode;      // Update checked op basis van dark mode uit state
         }
 
     }

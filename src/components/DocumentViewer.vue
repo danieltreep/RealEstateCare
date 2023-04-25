@@ -1,4 +1,5 @@
 <template>
+    <!-- Open modal met daarin het document -->
     <ion-modal :is-open="isOpen">
         <ion-header>
             <ion-toolbar>
@@ -6,9 +7,9 @@
                 <ion-button 
                     slot="end" 
                     size="small" 
-                    @click="setModal(false)"
+                    @click="setModal(false)"        
                     >Sluit
-                        <ion-icon :icon="close"></ion-icon> 
+                        <ion-icon :icon="close" aria-hidden="true"></ion-icon> 
                     </ion-button>
             </ion-toolbar>
         </ion-header>
@@ -40,9 +41,9 @@ export default {
         IonIcon
     },
     props: {
-        setModal: Function,
-        isOpen: Boolean,
-        document: String,
+        setModal: Function,         // Functie van parent die de modal aan of uitschakelt
+        isOpen: Boolean,            // Op basis hiervan wordt de modal getoont
+        document: String,           // Specificatie voor welk document geopend moet worden bij v-if's
     },
     data() {
         return {

@@ -1,3 +1,4 @@
+<!-- Zoek pagina met links naar andere pagina's -->
 <template>
   <ion-page>
     <HeaderSection />
@@ -9,9 +10,7 @@
             <ion-label>{{ result }}</ion-label>
           </router-link>
         </ion-item>
-        
       </ion-list>
-
     </ion-content>
   </ion-page>
 </template>
@@ -44,6 +43,7 @@ export default {
     return { data, results };
   },
   methods: {
+    // Zoek functie die query vergelijkt met de data. Filter als de letters niet aanwezig zijn
     onSearch(event) {
       const query = event.toLowerCase();
       this.results = this.data.filter(data => data.toLowerCase().indexOf(query) > -1);

@@ -1,3 +1,5 @@
+<!-- Deze pagina wordt geopend als er een inspectie wordt aangepast. -->
+<!-- UI is bijna hetzelfde als bij nieuwe inspectie maar hier zijn delen ingevuld op basis van de oude inspectie -->
 <template>
     <ion-page>
         <HeaderSection />
@@ -6,6 +8,7 @@
             <h1>Pas rapport {{ oldInspection.id }} aan </h1>
             
             <ion-list>
+                <!-- Onderdeel schade opnemen -->
                 <ion-item lines="none" class="groupHeader">
                     <ion-checkbox v-model="oldInspection.damageInspection.selected">Schade opnemen</ion-checkbox>
                 </ion-item>
@@ -65,13 +68,14 @@
                         <ion-item lines="none">
                             <label>Foto's:</label>
                             <label class="fileInputButton" aria-label="Kies foto" for="fileInput">Kies foto's
-                                <ion-icon :icon="camera" ></ion-icon>   
+                                <ion-icon :icon="camera" aria-hidden="true" ></ion-icon>   
                             </label>
                             <input hidden id="fileInput" type="file" accept="image/png, image/jpeg" slot="end">
                         </ion-item>
                     </ion-item-group>
                 </Transition>
 
+                <!-- Onderdeel Achterstallig onderhoud opnemen -->
                 <ion-item lines="none" class="groupHeader">
                     <ion-checkbox v-model="oldInspection.maintenance.selected">Achterstallig onderhoud opnemen</ion-checkbox>
                 </ion-item>
@@ -107,13 +111,14 @@
                         <ion-item lines="none">
                             <label>Foto's:</label>
                             <label class="fileInputButton" aria-label="Kies foto" for="fileInputOnderhoud">Kies foto's
-                                <ion-icon :icon="camera"></ion-icon>   
+                                <ion-icon :icon="camera" aria-hidden="true"></ion-icon>   
                             </label>
                             <input hidden id="fileInputOnderhoud" type="file" accept="image/png, image/jpeg" slot="end">
                         </ion-item>
                     </ion-item-group>
                 </Transition>
                 
+                <!-- Onderdeel Technische installaties inspecteren -->
                 <ion-item lines="none" class="groupHeader">
                     <ion-checkbox v-model="oldInspection.technicalInstallationInspection.selected">Technische installaties inspecteren</ion-checkbox>
                 </ion-item>
@@ -155,13 +160,14 @@
                         <ion-item lines="none">
                             <label>Foto's:</label>
                             <label class="fileInputButton" aria-label="Kies foto" for="fileInputTechnisch">Kies foto's
-                                <ion-icon :icon="camera"></ion-icon>   
+                                <ion-icon :icon="camera" aria-hidden="true"></ion-icon>   
                             </label>
                             <input hidden id="fileInputTechnisch" type="file" accept="image/png, image/jpeg" slot="end">
                         </ion-item>
                     </ion-item-group>
                 </Transition>
                 
+                <!-- Onderdeel Modificaties inventariseren -->
                 <ion-item lines="none" class="groupHeader">
                     <ion-checkbox v-model="oldInspection.inventorizeModifications.selected">Modificaties inventariseren</ion-checkbox>
                 </ion-item>
@@ -211,13 +217,14 @@
                         <ion-item lines="none">
                             <label>Foto's:</label>
                             <label class="fileInputButton" aria-label="Kies foto" for="fileInputModificaties">Kies foto's
-                                <ion-icon :icon="camera"></ion-icon>    
+                                <ion-icon :icon="camera" aria-hidden="true" ></ion-icon>    
                             </label>
                             <input hidden id="fileInputModificaties" type="file" accept="image/png, image/jpeg" slot="end">
                         </ion-item>
                     </ion-item-group>
                 </Transition>
 
+                <!-- Opslaan wordt getoond als een van de onderdelen is aangevinkt -->
                 <ion-item 
                     lines="none" 
                     v-if="
@@ -233,7 +240,6 @@
                         >Opslaan</ion-button>
                 </ion-item>
             </ion-list>
-
         </ion-content>
     </ion-page>
 </template>
@@ -273,7 +279,7 @@
                 technischeInstallaties: false,  // Gebruik voor v-if 
                 modificaties: false,            // Gebruik voor v-if 
                 document: '',                   // Vertel welke document
-                oldInspection: {
+                oldInspection: {                // De informatie van de oude inspectie komt hier en is al ingevuld door v-models
                     id: null,
                     dateAdded: '',
                     damageInspection: {
@@ -314,20 +320,21 @@
         },
         computed: {
             darkMode() {
-                return this.$store.state.darkMode;
+                return this.$store.state.darkMode;                                                      // Houdt dark mode bij
             }
         },
         methods: {
             onSubmit() {
-                this.$store.dispatch('changeInspection', new Inspection(this.oldInspection));
-                this.$router.go(-1);
+                this.$store.dispatch('changeInspection', new Inspection(this.oldInspection));           // Sla inspectie op 
+                this.$router.go(-1);                                                                    // Ga terug naar het vorige scherm
             },
             onDateChange($event) {
-                this.oldInspection.damageInspection.inspectionDate = new Date($event.detail.value);
+                this.oldInspection.damageInspection.inspectionDate = new Date($event.detail.value);     // Zet ionic date om in Date object voor sorteer functie
             }
         },
+        // Bij mount haal een inspectie op uit state op basis van route parameter en sla de informatie op als oude inspectie zodat dingen al zijn aangevinkt
         mounted() {
-            this.oldInspection = this.$store.getters.getSelectedInspection(+this.$route.params.id);
+            this.oldInspection = this.$store.getters.getSelectedInspection(+this.$route.params.id);     
         }
     }
 </script>

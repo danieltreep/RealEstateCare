@@ -1,8 +1,9 @@
 <template>
+  <!-- Header sectie die op elke pagina terug komt -->
   <ion-header>
     <ion-toolbar color="dark">
-      <img :src="require('../../public/assets/logo.svg')" class="ion-padding" />
-      <NotificationBar slot="end" />
+      <img :src="require('../../public/assets/logo.svg')" class="ion-padding" aria-hidden="true"/>
+      <NotificationBar slot="end" />                    
       
       <router-link to="/instellingen" slot="end">
         <ion-icon 

@@ -1,12 +1,16 @@
+<!-- Pagina met toegewezen inspecties, met vmodels wordt de inspectie data opgeslagen -->
 <template>
     <ion-page>
         <HeaderSection />
         <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
+
+            <!-- Ga terug -->
             <GoBackBar />
             <h1>Toegewezen Rapporten</h1>
             <p>Selecteer de benodigde categoriën voor de inspectie</p>
             
             <ion-list>
+                <!-- Onderdeel schade opnemen -->
                 <ion-item lines="none" class="groupHeader">
                     <ion-checkbox v-model="newInspection.damageInspection.selected">Schade opnemen</ion-checkbox>
                 </ion-item>
@@ -65,14 +69,15 @@
 
                         <ion-item lines="none">
                             <label>Foto's:</label>
-                            <label class="fileInputButton" aria-label="Kies foto" for="fileInput">Kies foto's
-                                <ion-icon :icon="camera" ></ion-icon>   
+                            <label tabindex="1" class="fileInputButton" aria-label="Kies foto" for="fileInput">Kies foto's
+                                <ion-icon :icon="camera" aria-hidden="true"></ion-icon>   
                             </label>
                             <input hidden id="fileInput" type="file" accept="image/png, image/jpeg" slot="end">
                         </ion-item>
                     </ion-item-group>
                 </Transition>
 
+                <!-- Onderdeel achterstallig onderhoud -->
                 <ion-item lines="none" class="groupHeader">
                     <ion-checkbox v-model="newInspection.maintenance.selected">Achterstallig onderhoud opnemen</ion-checkbox>
                 </ion-item>
@@ -107,14 +112,15 @@
 
                         <ion-item lines="none">
                             <label>Foto's:</label>
-                            <label class="fileInputButton" aria-label="Kies foto" for="fileInputOnderhoud">Kies foto's
-                                <ion-icon :icon="camera"></ion-icon>   
+                            <label tabindex="1" class="fileInputButton" aria-label="Kies foto" for="fileInputOnderhoud">Kies foto's
+                                <ion-icon :icon="camera" aria-hidden="true"></ion-icon>   
                             </label>
                             <input hidden id="fileInputOnderhoud" type="file" accept="image/png, image/jpeg" slot="end">
                         </ion-item>
                     </ion-item-group>
                 </Transition>
                 
+                <!-- Onderdeel Technische installaties inspecteren-->
                 <ion-item lines="none" class="groupHeader">
                     <ion-checkbox v-model="newInspection.technicalInstallationInspection.selected">Technische installaties inspecteren</ion-checkbox>
                 </ion-item>
@@ -164,14 +170,15 @@
 
                         <ion-item lines="none">
                             <label>Foto's:</label>
-                            <label class="fileInputButton" aria-label="Kies foto" for="fileInputTechnisch">Kies foto's
-                                <ion-icon :icon="camera"></ion-icon>   
+                            <label tabindex="1" class="fileInputButton" aria-label="Kies foto" for="fileInputTechnisch">Kies foto's
+                                <ion-icon :icon="camera" aria-hidden="true"></ion-icon>   
                             </label>
                             <input hidden id="fileInputTechnisch" type="file" accept="image/png, image/jpeg" slot="end">
                         </ion-item>
                     </ion-item-group>
                 </Transition>
                 
+                <!-- Onderdeel Modificaties inventariseren-->
                 <ion-item lines="none" class="groupHeader">
                     <ion-checkbox v-model="newInspection.inventorizeModifications.selected">Modificaties inventariseren</ion-checkbox>
                 </ion-item>
@@ -229,14 +236,15 @@
 
                         <ion-item lines="none">
                             <label>Foto's:</label>
-                            <label class="fileInputButton" aria-label="Kies foto" for="fileInputModificaties">Kies foto's
-                                <ion-icon :icon="camera"></ion-icon>    
+                            <label tabindex="1" class="fileInputButton" aria-label="Kies foto" for="fileInputModificaties">Kies foto's
+                                <ion-icon :icon="camera" aria-hidden="true"></ion-icon>    
                             </label>
                             <input hidden id="fileInputModificaties" type="file" accept="image/png, image/jpeg" slot="end">
                         </ion-item>
                     </ion-item-group>
                 </Transition>
 
+                <!-- Opslaan button komt tevoorschijn als een van de secties in aangevinkt -->
                 <ion-item 
                     lines="none" 
                     v-if="
@@ -253,6 +261,7 @@
                 </ion-item>
             </ion-list>
 
+            <!-- Document modal die wordt geactiveerd door de open document buttons, document prop geeft het document aan dat getoond moet worden -->
             <DocumentViewer  :setModal="setModal" :isOpen="isOpen" :document="document"/>
         </ion-content>
     </ion-page>
@@ -291,15 +300,15 @@
         },
         data() {
             return {
-                camera,                         // Icon voor foto button
+                camera,                         
                 schadeOpnemen: false,           // Gebruik voor v-if 
                 achterstalligOnderhoud: false,  // Gebruik voor v-if 
                 technischeInstallaties: false,  // Gebruik voor v-if 
                 modificaties: false,            // Gebruik voor v-if 
-                document: '',                   // Vertel welk document
-                newInspection: {
+                document: '',                   // Vertel welk document aan modal
+                newInspection: {                // Hier worden de inspectie waarden opgeslagen
                     id: null,
-                    dateAdded: new Date,
+                    dateAdded: new Date,        // Dag toegevoegd is nu
                     damageInspection: {
                         selected: false,
                         location: "",
@@ -338,28 +347,28 @@
         },
         computed: {
             darkMode() {
-                return this.$store.state.darkMode;
+                return this.$store.state.darkMode;                  // Houdt dark mode bij
             },
             isOpen() {
-                return this.$store.state.modalOpen;
+                return this.$store.state.modalOpen;                 // Houdt bij op modal is geopend
             },
             highestInspectionId() {
                 return this.$store.getters.getHighestId + 1;        // Voeg 1 bij de hoogste Id uit de Id array zodat er nooit een dubbele is
             }
         },
         methods: {
-            setModal(boolean: boolean) {
-                this.$store.dispatch('setModal', boolean);
+            setModal(boolean: boolean) {    
+                this.$store.dispatch('setModal', boolean);          // Open of sluit modal met document
             },
-            setDocument(document: string) {
+            setDocument(document: string) {                         // Stel in welk document getoond moet worden
                 this.document = document;
             },
-            onSubmit() {
+            onSubmit() {                                            // Functie die een nieuwe inspectie toevoegd aan de store inspecties
                 this.$store.dispatch('addInspection', new Inspection(this.newInspection));
-                this.$router.go(-1);
+                this.$router.go(-1);                                // Ga terug naar de vorige pagina zodat het nieuwe rapport wordt gereset
             },
-            onDateChange($event) {
-                this.newInspection.damageInspection.inspectionDate = new Date($event.detail.value);
+            onDateChange(event) {                                  // Maak een Date object van de ionic date picker
+                this.newInspection.damageInspection.inspectionDate = new Date(event.detail.value);
             }
         },
         mounted() {

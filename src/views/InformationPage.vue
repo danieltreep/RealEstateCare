@@ -1,3 +1,4 @@
+<!-- Informatie pagina -->
 <template>
   <ion-page>
     <HeaderSection />

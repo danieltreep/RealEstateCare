@@ -1,4 +1,5 @@
 <template>
+    <!-- Open alert zodat de inspectie niet per ongeluk verwijderd wordt -->
     <ion-button 
         class="delete" 
         id="present-alert"
@@ -16,10 +17,13 @@
     export default {
         name: 'DeleteInspection',
         props: {
-            onDelete: Function,
-            selectedInspectionId: Number
+            onDelete: Function,                         // Functie van parent waarbij inspectie wordt verwijderd
+            selectedInspectionId: Number                // Id van de te verwijderende inspectie
         },
-        components: { IonAlert, IonButton },
+        components: { 
+            IonAlert, 
+            IonButton 
+        },
         data() {
             return {
                 alertButtons: [
@@ -30,7 +34,7 @@
                     {
                         text: 'OK',
                         role: 'confirm',
-                        handler: () => {
+                        handler: () => {                // Als er op Ok wordt geklikt roep de verwijder functie aan uit props
                             this.onDelete(this.selectedInspectionId);
                         }
                     },

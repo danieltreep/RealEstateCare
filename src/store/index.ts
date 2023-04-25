@@ -11,9 +11,10 @@ export default createStore({
   },
   
   mutations: {
+    // Update inspecties en verander elke dateAdded in een Date object zodat die gesorteerd kan worden
     setInspections(state, payload) {
       state.inspections = payload;
-      state.inspections.map(inspection => inspection.dateAdded = new Date(inspection.dateAdded));
+      state.inspections.map(inspection => inspection.dateAdded = new Date(inspection.dateAdded)); 
     },
     setDarkMode(state) {
       state.darkMode = !state.darkMode; 
@@ -36,8 +37,9 @@ export default createStore({
     addInspection(state, payload) {
       state.inspections = [...state.inspections, payload];
     },
+    // Vind index van de aan te passen inspectie en pas die aan met de nieuwe payload
     changeInspection(state, payload) {
-      const index = state.inspections.findIndex(inspection => inspection.id === payload.id);
+      const index = state.inspections.findIndex(inspection => inspection.id === payload.id); 
       state.inspections[index] = payload;
     }
   },
@@ -45,7 +47,7 @@ export default createStore({
     fetchInspections(context) {
       getInspections()
       .then(data => {
-        const inspectionClasses = data.map(inspection => new Inspection(inspection));
+        const inspectionClasses = data.map(inspection => new Inspection(inspection));     
         context.commit('setInspections', inspectionClasses);
       })
     },
@@ -58,6 +60,7 @@ export default createStore({
     setModal(context, value) {
       context.commit('setModal', value);
     },
+    // Commit mutatie op basis van value
     sortOnDate(context, value) {
       if (value === 'Nieuwste') {
         context.commit('sortOnNewest');

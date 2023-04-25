@@ -1,8 +1,7 @@
 - MVC concept, singleton beschrijven
-
+- Alle icons hebben aria hidden
 
 Te doen:
-- Comment uitleg + cleanup
-- Usability, WCAG richtlijnen en stijlgids controleren.  Tab index, Aria
+- Usability, WCAG richtlijnen en stijlgids controleren. Aria
 - Een README bestand maken en toevoegen
 - toDo verwijderen

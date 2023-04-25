@@ -1,3 +1,4 @@
+<!-- Documentatie pagina met links naar documenten -->
 <template>
     <ion-page>
         <HeaderSection />
@@ -6,8 +7,9 @@
             <h1>Documentatie</h1>
             <ion-list>
                 <ion-item>
-                    <ion-icon :icon="documentText"></ion-icon>
+                    <ion-icon :icon="documentText" aria-hidden="true"></ion-icon>
                     <ion-label>Technische Installaties</ion-label>
+                    <!-- Open modal en stelt document in -->
                     <ion-button
                         @click="{
                             setDocument('Technische Installaties');
@@ -18,8 +20,9 @@
 
             <ion-list>
                 <ion-item>
-                    <ion-icon :icon="documentText"></ion-icon>
+                    <ion-icon :icon="documentText" aria-hidden="true"></ion-icon>
                     <ion-label>Modificaties Inventariseren</ion-label>
+                    <!-- Open modal en stelt document in -->
                     <ion-button 
                         @click="{
                             setDocument('Modificaties Inventariseren');
@@ -65,17 +68,17 @@
         },
         computed: {
             darkMode() {
-                return this.$store.state.darkMode;
+                return this.$store.state.darkMode;          // Houdt dark mode bij
             },
             isOpen() {
-                return this.$store.state.modalOpen;
+                return this.$store.state.modalOpen;         // Houdt modal status bij
             }
         },
         methods: {
             setModal(boolean: boolean) {
-                this.$store.dispatch('setModal', boolean);
+                this.$store.dispatch('setModal', boolean);  // Zet open modal om in store
             },
-            setDocument(document: string) {
+            setDocument(document: string) {                 // Stelt document die meegegeven wordt als prop aan de modal
                 this.document = document;
             }
         },

@@ -1,3 +1,4 @@
+// Hiervan worden nieuwe Inspection objecten gemaakt
 class Inspection {
     id: number;
     dateAdded: Date;

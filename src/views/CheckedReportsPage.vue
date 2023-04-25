@@ -1,3 +1,4 @@
+<!-- Pagina van de uitgevoerde rapporten -->
 <template>
     <ion-page>
         <HeaderSection />
@@ -34,8 +35,7 @@
         data() {
             return {
                 arrowDown,
-                arrowUp,
-                nieuw: false
+                arrowUp
             }
         },
         computed: {

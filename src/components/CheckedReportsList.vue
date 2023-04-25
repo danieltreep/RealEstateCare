@@ -5,11 +5,15 @@
             @click="selectInspection(inspection.id)" 
             :detail="true" 
             lines="full" 
-            tabindex="1">
+            >
             <ion-icon 
                 :icon="clipboardOutline" 
                 slot="start" />
-            <ion-label>Inspectie {{inspection.id}} op {{`${inspection.dateAdded.getDate()}-${inspection.dateAdded.getMonth() + 1}-${inspection.dateAdded.getFullYear()}`}}</ion-label>
+            <ion-label 
+                tabindex="1" 
+                @keyup.enter="selectInspection(inspection.id)"              
+                >Inspectie {{inspection.id}} op {{`${inspection.dateAdded.getDate()}-${inspection.dateAdded.getMonth() + 1}-${inspection.dateAdded.getFullYear()}`}}
+            </ion-label>
         </ion-item>
     </ion-list>
 
@@ -21,44 +25,43 @@
     
 </template>
 <script lang="ts">
-import { IonItem, IonLabel, IonList, IonIcon } from '@ionic/vue'; 
-import { clipboardOutline } from 'ionicons/icons';
-import SelectedInspection from './SelectedInspection.vue';
+    import { IonItem, IonLabel, IonList, IonIcon } from '@ionic/vue'; 
+    import { clipboardOutline } from 'ionicons/icons';
+    import SelectedInspection from './SelectedInspection.vue';
 
-export default {
-    name: "CheckedReportsList",
-    components: {
-        IonItem, 
-        IonLabel, 
-        IonList, 
-        IonIcon,
-        SelectedInspection
-    },
-    data() {
-        return {
-            selectedInspectionId: null,
-            showSelectedInspection: false,
-            clipboardOutline
+    export default {
+        name: "CheckedReportsList",
+        components: {
+            IonItem, 
+            IonLabel, 
+            IonList, 
+            IonIcon,
+            SelectedInspection
+        },
+        data() {
+            return {
+                selectedInspectionId: null,                 // Houd bij welke inspectie is gekozen
+                showSelectedInspection: false,              // Laat gekozen inspectie zien of niet, voor v-if
+                clipboardOutline                            
+            }
+        },
+        methods: {
+            selectInspection(id: number) {                  // Update geselecteerde inspectie id voor de getter
+                this.selectedInspectionId = id;
+                this.showSelectedInspection = true;
+            },
+            onDeletedInspection() {                         // Reset de waarden zodat er geen inspectie wordt gelezen die niet meer bestaat
+                this.selectedInspectionId = null;           // Wordt meegegeven als prop aan selectedInspection
+                this.showSelectedInspection = false;
+            }
+        },
+        computed: {
+            inspections() {                                 // Haal de inspecties op uit de store
+                return this.$store.state.inspections;
+            },
+            selectedInspection() {                          // Haal een enkele inspectie op op basis van id, Prop voor selectedInspection
+                return this.$store.getters.getSelectedInspection(this.selectedInspectionId);
+            },
         }
-    },
-    methods: {
-        selectInspection(id: number) {
-            this.selectedInspectionId = id;
-            this.showSelectedInspection = true;
-        },
-        onDeletedInspection() {
-            this.selectedInspectionId = null;
-            this.showSelectedInspection = false;
-        }
-    },
-    computed: {
-        inspections() {
-            return this.$store.state.inspections;
-        },
-        selectedInspection() {
-            return this.$store.getters.getSelectedInspection(this.selectedInspectionId);
-        },
     }
-    
-}
 </script>

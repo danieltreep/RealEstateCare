@@ -8,7 +8,7 @@
             <router-link to="/rapporten">
               <ion-card>
                 <ion-card-content>
-                  <ion-icon :icon="clipboard" color="dark" />
+                  <ion-icon :icon="clipboard" color="dark" aria-hidden="true"/>
                   <h1>Toegewezen rapporten</h1>
                 </ion-card-content>
               </ion-card>
@@ -18,19 +18,20 @@
             <router-link to="/uitgevoerd">
               <ion-card>
                 <ion-card-content>
-                  <ion-icon :icon="checkmarkCircle" color="dark"/>
+                  <ion-icon :icon="checkmarkCircle" color="dark" aria-hidden="true"/>
                   <h1>Uitgevoerde rapporten</h1>
                 </ion-card-content>
               </ion-card>
             </router-link>
           </ion-col>
         </ion-row>
+
         <ion-row >
           <ion-col>
             <router-link to="/documentatie">
               <ion-card>
                 <ion-card-content>
-                  <ion-icon :icon="documents" color="dark"/>
+                  <ion-icon :icon="documents" color="dark" aria-hidden="true"/>
                   <h1>Documentatie</h1>
                 </ion-card-content>
               </ion-card>
@@ -40,7 +41,7 @@
             <router-link to="/instellingen">
               <ion-card>
                 <ion-card-content>
-                  <ion-icon :icon="settingsSharp" color="dark"/>
+                  <ion-icon :icon="settingsSharp" color="dark" aria-hidden="true"/>
                   <h1>Instellingen</h1>
                 </ion-card-content>
               </ion-card>
@@ -83,7 +84,7 @@
       }
     },
     mounted() {
-      this.$store.dispatch('fetchInspections');
+      this.$store.dispatch('fetchInspections');   // Zodra de start pagina geopend wordt laad de inspecties
     }
   }
 </script>

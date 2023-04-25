@@ -45,13 +45,13 @@
       }
     },
     computed: {
-      loggedIn() {
-        return this.$store.state.loggedIn;
+      loggedIn() {                
+        return this.$store.state.loggedIn;    // Haal login status uit state
       }
     },
     mounted() {
-      if (!this.loggedIn) {
-        this.$router.push('/login');
+      if (!this.loggedIn) {                   // Als de gebruiker niet is ingelogd
+        this.$router.push('/login');          // Verwijs door naar login
       }
     }
   }

@@ -1,6 +1,6 @@
 <template>
     <!-- Loop over alle inspecties uit de store en open enkele inspectie bij klik op basis van id -->
-    <ion-list >
+    <ion-list class="list">
         <ion-item 
             v-for="(inspection, index) in inspections" :key="index"
             @click="selectInspection(inspection.id)" 

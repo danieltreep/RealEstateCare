@@ -4,7 +4,7 @@
     <HeaderSection />
     <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''" >
       <ion-searchbar @ionInput="onSearch($event.detail.value)"></ion-searchbar>
-      <ion-list>
+      <ion-list class="list">
         <ion-item v-for="(result, index) in results" :key="index">
           <router-link :to="`/${result}`">
             <ion-label>{{ result }}</ion-label>

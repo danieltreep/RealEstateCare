@@ -65,7 +65,7 @@
             </ion-grid>
             
             <!-- Logo -->
-            <img :src="require('../../public/assets/logo-icon.svg')" />
+            <img :src="require('../../public/assets/logo-icon.svg')" alt="logo" />
         </div>
     </ion-page>
 </template>

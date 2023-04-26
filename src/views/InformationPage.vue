@@ -3,7 +3,7 @@
   <ion-page>
     <HeaderSection />
     <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
-      <ion-list>
+      <ion-list class="list">
         <ion-item>
           <ion-label><i>Gebouwd door:</i></ion-label>
           <ion-label>Daniel Treep</ion-label>

@@ -43,14 +43,13 @@
       --ion-background-color: var(--dark-color);
     }
     ion-item,
-    .list-ios {
+    .list {
       --background: var(--dark-color);
-      background: var(--dark-color);
+      background-color: var(--dark-color);
     }
     ion-button {
       --color: white;
     }
-
   }
   
 </style>

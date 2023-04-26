@@ -9,7 +9,7 @@
             <h1>Toegewezen Rapporten</h1>
             <p>Selecteer de benodigde categoriën voor de inspectie</p>
             
-            <ion-list>
+            <ion-list class="list">
                 <!-- Onderdeel schade opnemen -->
                 <ion-item lines="none" class="groupHeader">
                     <ion-checkbox v-model="newInspection.damageInspection.selected">Schade opnemen</ion-checkbox>
@@ -457,5 +457,4 @@
     .fileInputButton ion-icon {
         fill: black;
     }
-    
 </style>

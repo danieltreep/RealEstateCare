@@ -5,7 +5,7 @@
         <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
             <GoBackBar />
             <h1>Documentatie</h1>
-            <ion-list>
+            <ion-list class="list">
                 <ion-item>
                     <ion-icon :icon="documentText" aria-hidden="true"></ion-icon>
                     <ion-label>Technische Installaties</ion-label>

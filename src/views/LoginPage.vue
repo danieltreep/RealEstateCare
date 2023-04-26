@@ -73,7 +73,7 @@
             </ion-grid>
             
             <!-- Logo -->
-            <img :src="require('../../public/assets/logo-icon.svg')" alt="logo" />
+            <img :src="require('../../public/assets/logo-icon.svg')" alt="logo of Real Estate Care" />
         </div>
     </ion-page>
 </template>

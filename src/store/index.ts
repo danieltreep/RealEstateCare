@@ -9,7 +9,6 @@ export default createStore({
     loggedIn: false,
     modalOpen: false,
   },
-  
   mutations: {
     // Update inspecties en verander elke dateAdded in een Date object zodat die gesorteerd kan worden
     setInspections(state, payload) {

@@ -40,8 +40,8 @@
 
             
             <DocumentViewer 
-                :setModal="setModal" 
-                :isOpen="isOpen" 
+                :set-modal="setModal" 
+                :is-open="isOpen" 
                 :document="document"
             />
             

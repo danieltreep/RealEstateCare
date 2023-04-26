@@ -383,7 +383,11 @@
             </ion-list>
 
             <!-- Document modal die wordt geactiveerd door de open document buttons, document prop geeft het document aan dat getoond moet worden -->
-            <DocumentViewer  :setModal="setModal" :isOpen="isOpen" :document="document"/>
+            <DocumentViewer  
+                :set-modal="setModal" 
+                :is-open="isOpen" 
+                :document="document"
+            />
         </ion-content>
     </ion-page>
 </template>

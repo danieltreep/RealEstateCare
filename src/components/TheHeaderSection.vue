@@ -6,7 +6,7 @@
         :src="require('../../public/assets/logo.svg')" 
         class="ion-padding" 
         aria-hidden="true" 
-        alt="logo"
+        alt="logo of Real Estate Care"
       />
       <NotificationBar slot="end" />                    
       
@@ -15,7 +15,6 @@
         slot="end"
       >
         <ion-icon 
-          router-link="/instellingen"
           aria-hidden="true" 
           :icon="settingsSharp" 
           class="ion-margin-horizontal" 

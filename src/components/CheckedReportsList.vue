@@ -2,7 +2,8 @@
     <!-- Loop over alle inspecties uit de store en open enkele inspectie bij klik op basis van id -->
     <ion-list class="list">
         <ion-item 
-            v-for="(inspection, index) in inspections" :key="index"
+            v-for="(inspection, index) in inspections" 
+            :key="index"
             @click="selectInspection(inspection.id)" 
             :detail="true" 
             lines="full" 
@@ -22,8 +23,8 @@
     <!-- Hier komt de geselecteerde inspectie als er een is gekozen -->
     <CheckedReportSelected 
         v-if="showSelectedInspection" 
-        :selectedInspection="selectedInspection" 
-        :onDeletedInspection="onDeletedInspection"/>
+        :selected-inspection="selectedInspection" 
+        :on-deleted-inspection="onDeletedInspection"/>
     
 </template>
 <script lang="ts">

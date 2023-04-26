@@ -2,14 +2,24 @@
 <template>
   <ion-page>
     <HeaderSection />
-    <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''" >
+    <ion-content 
+      :fullscreen="true" 
+      :class="darkMode ? 'darkMode' : ''" 
+    >
       <ion-searchbar @ionInput="onSearch($event.detail.value)"></ion-searchbar>
       <ion-list class="list">
-        <ion-item v-for="(result, index) in results" :key="index">
+        <ion-item 
+          v-for="(result, index) in results" 
+          :key="index"
+        >
           <router-link :to="`/${result}`">
             <ion-label>{{ result }}</ion-label>
           </router-link>
-          <ion-icon :icon="openOutline" slot="end"></ion-icon>
+          <ion-icon 
+            :icon="openOutline" 
+            slot="end" 
+            aria-hidden="true"
+          ></ion-icon>
         </ion-item>
       </ion-list>
     </ion-content>
@@ -18,9 +28,9 @@
 
 <script lang="ts">
 import { ref } from 'vue';
-import {IonPage, IonContent, IonList, IonItem, IonLabel, IonSearchbar} from '@ionic/vue';
+import {IonPage, IonIcon, IonContent, IonList, IonItem, IonLabel, IonSearchbar} from '@ionic/vue';
 import { openOutline } from 'ionicons/icons';
-import HeaderSection from '@/components/HeaderSection.vue';
+import HeaderSection from '@/components/TheHeaderSection.vue';
 
 export default {
   name: 'SearchPage',
@@ -31,7 +41,8 @@ export default {
     IonList,
     IonItem,
     IonLabel,
-    IonSearchbar
+    IonSearchbar,
+    IonIcon
   },
   computed: {
     darkMode() {

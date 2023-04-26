@@ -1,8 +1,14 @@
 <template>
     <!-- Ga terug button die op bijna elke pagina terug komt. Een simpele go(-1) op de router bij een klik -->
     <ion-toolbar>
-        <ion-button size="small" @click="$router.go(-1)">
-            <ion-icon :icon="arrowBack" aria-hidden="true"></ion-icon>
+        <ion-button 
+            size="small" 
+            @click="$router.go(-1)"
+        >
+            <ion-icon 
+                :icon="arrowBack" 
+                aria-hidden="true"
+            ></ion-icon>
             Terug
         </ion-button>
     </ion-toolbar> 
@@ -13,7 +19,7 @@
     import { arrowBack } from 'ionicons/icons';
 
     export default {
-        name: 'GoBackBar',
+        name: 'ReturnButton',
         components: {
             IonToolbar,
             IonButton,

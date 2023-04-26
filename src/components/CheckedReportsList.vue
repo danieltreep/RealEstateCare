@@ -6,20 +6,21 @@
             @click="selectInspection(inspection.id)" 
             :detail="true" 
             lines="full" 
-            >
+        >
             <ion-icon 
                 :icon="clipboardOutline" 
-                slot="start" />
+                slot="start" 
+            />
             <ion-label 
                 tabindex="1" 
                 @keyup.enter="selectInspection(inspection.id)"              
-                >Inspectie {{inspection.id}} op {{`${inspection.dateAdded.getDate()}-${inspection.dateAdded.getMonth() + 1}-${inspection.dateAdded.getFullYear()}`}}
+            >Inspectie {{inspection.id}} op {{`${inspection.dateAdded.getDate()}-${inspection.dateAdded.getMonth() + 1}-${inspection.dateAdded.getFullYear()}`}}
             </ion-label>
         </ion-item>
     </ion-list>
 
     <!-- Hier komt de geselecteerde inspectie als er een is gekozen -->
-    <SelectedInspection 
+    <CheckedReportSelected 
         v-if="showSelectedInspection" 
         :selectedInspection="selectedInspection" 
         :onDeletedInspection="onDeletedInspection"/>
@@ -28,7 +29,7 @@
 <script lang="ts">
     import { IonItem, IonLabel, IonList, IonIcon } from '@ionic/vue'; 
     import { clipboardOutline } from 'ionicons/icons';
-    import SelectedInspection from './SelectedInspection.vue';
+    import CheckedReportSelected from './CheckedReportSelected.vue';
 
     export default {
         name: "CheckedReportsList",
@@ -37,7 +38,7 @@
             IonLabel, 
             IonList, 
             IonIcon,
-            SelectedInspection
+            CheckedReportSelected
         },
         data() {
             return {
@@ -45,6 +46,14 @@
                 showSelectedInspection: false,              // Laat gekozen inspectie zien of niet, voor v-if
                 clipboardOutline                            
             }
+        },
+        computed: {
+            inspections() {                                 // Haal de inspecties op uit de store
+                return this.$store.state.inspections;
+            },
+            selectedInspection() {                          // Haal een enkele inspectie op op basis van id, Prop voor selectedInspection
+                return this.$store.getters.getSelectedInspection(this.selectedInspectionId);
+            },
         },
         methods: {
             selectInspection(id: number) {                  // Update geselecteerde inspectie id voor de getter
@@ -55,14 +64,6 @@
                 this.selectedInspectionId = null;           // Wordt meegegeven als prop aan selectedInspection
                 this.showSelectedInspection = false;
             }
-        },
-        computed: {
-            inspections() {                                 // Haal de inspecties op uit de store
-                return this.$store.state.inspections;
-            },
-            selectedInspection() {                          // Haal een enkele inspectie op op basis van id, Prop voor selectedInspection
-                return this.$store.getters.getSelectedInspection(this.selectedInspectionId);
-            },
         }
     }
 </script>

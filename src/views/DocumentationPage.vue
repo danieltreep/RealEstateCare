@@ -2,12 +2,18 @@
 <template>
     <ion-page>
         <HeaderSection />
-        <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
-            <GoBackBar />
+        <ion-content 
+            :fullscreen="true"
+            :class="darkMode ? 'darkMode' : ''"
+        >
+            <ReturnButton />
             <h1>Documentatie</h1>
             <ion-list class="list">
                 <ion-item>
-                    <ion-icon :icon="documentText" aria-hidden="true"></ion-icon>
+                    <ion-icon 
+                        :icon="documentText" 
+                        aria-hidden="true"
+                    ></ion-icon>
                     <ion-label>Technische Installaties</ion-label>
                     <!-- Open modal en stelt document in -->
                     <ion-button
@@ -18,7 +24,10 @@
                 </ion-item>
                 
                 <ion-item>
-                    <ion-icon :icon="documentText" aria-hidden="true"></ion-icon>
+                    <ion-icon 
+                        :icon="documentText" 
+                        aria-hidden="true"
+                    ></ion-icon>
                     <ion-label>Modificaties Inventariseren</ion-label>
                     <!-- Open modal en stelt document in -->
                     <ion-button 
@@ -30,14 +39,18 @@
             </ion-list>
 
             
-            <DocumentViewer :setModal="setModal" :isOpen="isOpen" :document="document"/>
+            <DocumentViewer 
+                :setModal="setModal" 
+                :isOpen="isOpen" 
+                :document="document"
+            />
             
         </ion-content>
     </ion-page>
 </template>
 <script  lang="ts">
-    import GoBackBar from '@/components/GoBackBar.vue';
-    import HeaderSection from '@/components/HeaderSection.vue';
+    import ReturnButton from '@/components/ReturnButton.vue';
+    import HeaderSection from '@/components/TheHeaderSection.vue';
     import DocumentViewer from '@/components/DocumentViewer.vue';
 
     import { IonPage, IonContent, IonList, IonItem, IonButton, IonIcon, IonLabel } from '@ionic/vue';
@@ -50,7 +63,7 @@
             IonPage,
             IonContent,
             HeaderSection,
-            GoBackBar,
+            ReturnButton,
             IonList,
             IonItem,
             IonButton,

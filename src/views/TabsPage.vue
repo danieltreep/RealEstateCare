@@ -3,18 +3,36 @@
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="taken" href="/taken">
-          <ion-icon aria-hidden="true" :icon="build" />
+        <ion-tab-button 
+          tab="taken" 
+          href="/taken"
+        >
+          <ion-icon 
+            aria-hidden="true" 
+            :icon="build" 
+          />
           <ion-label>Taken</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="zoeken" href="/zoeken">
-          <ion-icon aria-hidden="true" :icon="search" />
+        <ion-tab-button 
+          tab="zoeken" 
+          href="/zoeken"
+        >
+          <ion-icon 
+            aria-hidden="true" 
+            :icon="search"
+          />
           <ion-label>Zoeken</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="informatie" href="/informatie">
-          <ion-icon aria-hidden="true" :icon="informationCircle" />
+        <ion-tab-button 
+          tab="informatie" 
+          href="/informatie"
+        >
+          <ion-icon 
+            aria-hidden="true" 
+            :icon="informationCircle" 
+          />
           <ion-label>Informatie</ion-label>
         </ion-tab-button>
       </ion-tab-bar>

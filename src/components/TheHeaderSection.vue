@@ -2,10 +2,18 @@
   <!-- Header sectie die op elke pagina terug komt -->
   <ion-header>
     <ion-toolbar>
-      <img :src="require('../../public/assets/logo.svg')" class="ion-padding" aria-hidden="true"/>
+      <img 
+        :src="require('../../public/assets/logo.svg')" 
+        class="ion-padding" 
+        aria-hidden="true" 
+        alt="logo"
+      />
       <NotificationBar slot="end" />                    
       
-      <router-link to="/instellingen" slot="end">
+      <router-link 
+        to="/instellingen" 
+        slot="end"
+      >
         <ion-icon 
           router-link="/instellingen"
           aria-hidden="true" 
@@ -39,7 +47,7 @@ export default {
   }
 }
 </script>
-<style lang="css">
+<style lang="css" scoped>
   ion-header ion-icon {
     fill: white;
     font-size: large;

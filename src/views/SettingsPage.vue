@@ -2,18 +2,26 @@
 <template>
     <ion-page class="settings">
         <HeaderSection />
-        <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
-            <GoBackBar />
+        <ion-content 
+            :fullscreen="true" 
+            :class="darkMode ? 'darkMode' : ''"
+        >
+            <ReturnButton />
+
             <h1>Instellingen</h1>
+
             <ion-item>
-                <ion-toggle :checked="checked" @click="setDarkMode">Donkere modus</ion-toggle>
+                <ion-toggle 
+                    :checked="checked" 
+                    @click="setDarkMode"
+                >Donkere modus</ion-toggle>
             </ion-item>
         </ion-content>
     </ion-page>
 </template>
 <script lang="ts">
-    import GoBackBar from '@/components/GoBackBar.vue';
-    import HeaderSection from '@/components/HeaderSection.vue';
+    import ReturnButton from '@/components/ReturnButton.vue';
+    import HeaderSection from '@/components/TheHeaderSection.vue';
     import { IonPage, IonContent, IonToggle, IonItem} from '@ionic/vue'
     
     export default {
@@ -24,12 +32,7 @@
             IonToggle,
             IonItem,
             HeaderSection,
-            GoBackBar
-        },
-        methods: {
-            setDarkMode() {
-                this.$store.dispatch('setDarkMode');        // Stelt dark mode in bij store
-            }
+            ReturnButton
         },
         data() {
             return {
@@ -44,11 +47,16 @@
         },
         mounted() {
             this.checked = this.$store.state.darkMode;      // Update checked op basis van dark mode uit state
-        }
-
+        },
+        methods: {
+            setDarkMode() {
+                this.$store.dispatch('setDarkMode');        // Stelt dark mode in bij store
+            }
+        },
+        
     }
 </script>
-<style>
+<style scoped>
     ion-toggle {
         --track-background-checked: var(--main-color);
         --handle-background-checked: white;

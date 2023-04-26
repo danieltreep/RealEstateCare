@@ -6,8 +6,11 @@
             :icon="notifications" 
             size="large" 
             id="click-trigger"
-          />
-        <ion-popover trigger="click-trigger" trigger-action="click">
+        />
+        <ion-popover 
+            trigger="click-trigger" 
+            trigger-action="click"
+        >
             <ion-content class="ion-padding">Er zijn geen nieuwe notificaties</ion-content>
         </ion-popover>
     </div>

@@ -15,14 +15,18 @@
     import { IonButton, IonAlert } from '@ionic/vue';
 
     export default {
-        name: 'DeleteInspection',
-        props: {
-            onDelete: Function,                         // Functie van parent waarbij inspectie wordt verwijderd
-            selectedInspectionId: Number                // Id van de te verwijderende inspectie
-        },
+        name: 'DeleteReportButton',
         components: { 
             IonAlert, 
             IonButton 
+        },
+        props: {
+            onDelete: {
+                type: Function
+            },                              // Functie van parent waarbij inspectie wordt verwijderd
+            selectedInspectionId: {
+                type: Number
+            }                               // Id van de te verwijderende inspectie
         },
         data() {
             return {

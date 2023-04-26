@@ -35,7 +35,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'rapporten',
         name: 'rapporten',
-        component: () => import('@/views/AppointedReports.vue')
+        component: () => import('@/views/AppointedReportsPage.vue')
       },
       {
         path: 'uitgevoerd',
@@ -50,7 +50,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'change/:id',
         name: 'change',
-        component: () => import('@/views/ChangeReport.vue')
+        component: () => import('@/views/ChangeReportPage.vue')
       }
     ]
   },

@@ -1,19 +1,22 @@
 <template>
     <!-- Wordt getoond als er een inspectie wordt aangeklikt. Hierin staan alle details van de geselecteerde inspectie-->
-    <ion-list>
+    <ion-list class="list">
         <h3 class="ion-text-center ion-padding-top">Details inspectie: {{ selectedInspection.id }}</h3>
 
         <!-- Buttons met aanpassen of verwijderen -->
         <ion-item lines="none">
             <ion-button @click="onChangeReport(selectedInspection.id)">Aanpassen</ion-button>
-            <DeleteInspection 
+            <DeleteReportButton 
                 :onDelete="onDelete"
                 :selectedInspectionId="selectedInspection.id"/>
         </ion-item>
 
         <!-- Onderdeel schade opnemen -->
         <ion-list-header>Schade opnemen</ion-list-header>
-        <ion-item v-if="!selectedInspection.damageInspection.selected" class="nvt">
+        <ion-item 
+            v-if="!selectedInspection.damageInspection.selected" 
+            class="nvt"
+        >
             <ion-label>Niet van toepassing</ion-label>
         </ion-item>
         <ion-item-group v-if="selectedInspection.damageInspection.selected">
@@ -45,7 +48,10 @@
 
         <!-- Onderdeel achterstallig onderhoud -->
         <ion-list-header>Achterstallig onderhoud</ion-list-header>
-        <ion-item v-if="!selectedInspection.maintenance.selected" class="nvt">
+        <ion-item 
+            v-if="!selectedInspection.maintenance.selected" 
+            class="nvt"
+        >
             <ion-label>Niet van toepassing</ion-label>
         </ion-item>
         <ion-item-group v-if="selectedInspection.maintenance.selected">
@@ -69,7 +75,10 @@
         
         <!-- Onderdeel technische installaties inspecteren -->
         <ion-list-header>Technische installaties inspecteren</ion-list-header>
-        <ion-item v-if="!selectedInspection.technicalInstallationInspection.selected" class="nvt">
+        <ion-item 
+            v-if="!selectedInspection.technicalInstallationInspection.selected" 
+            class="nvt"
+        >
             <ion-label>Niet van toepassing</ion-label>
         </ion-item>
         <ion-item-group v-if="selectedInspection.technicalInstallationInspection.selected">
@@ -97,7 +106,10 @@
         
         <!-- Onderdeel modificaties inventariseren -->
         <ion-list-header>Modificaties inventariseren</ion-list-header>
-        <ion-item v-if="!selectedInspection.inventorizeModifications.selected" class="nvt">
+        <ion-item 
+            v-if="!selectedInspection.inventorizeModifications.selected" 
+            class="nvt"
+        >
             <ion-label>Niet van toepassing</ion-label>
         </ion-item>
         <ion-item-group v-if="selectedInspection.inventorizeModifications.selected">
@@ -127,8 +139,15 @@
         <ion-list-header>Foto's</ion-list-header>
         <ion-item-group>
             <!-- Voor alle bestandsnamen wordt een foto geladen uit de assets -->
-            <ion-item v-for="(foto, index) in selectedInspection.photos" :key="index" lines="none">
-                <img :src="require(`../../public/assets/photos/${foto}`)" :alt="foto">
+            <ion-item 
+                v-for="(foto, index) in selectedInspection.photos" 
+                :key="index" 
+                lines="none"
+            >
+                <img 
+                    :src="require(`../../public/assets/photos/${foto}`)" 
+                    :alt="foto"
+                >
             </ion-item>
         </ion-item-group>
         
@@ -136,14 +155,10 @@
 </template>
 
 <script lang="ts">
-    import DeleteInspection from './DeleteInspectionButton.vue';
+    import DeleteReportButton from './DeleteReportButton.vue';
     import { IonItem, IonLabel, IonList, IonListHeader, IonItemGroup, IonButton } from '@ionic/vue';
     export default {
-        name: 'SelectedInspection',
-        props: {
-            selectedInspection: Object,
-            onDeletedInspection: Function
-        },
+        name: 'CheckedReportSelected',
         components: { 
             IonItem, 
             IonLabel, 
@@ -151,7 +166,16 @@
             IonListHeader, 
             IonItemGroup,
             IonButton,
-            DeleteInspection 
+            DeleteReportButton 
+        },
+        props: {
+            selectedInspection: {
+                type: Object,
+                required: true
+            },
+            onDeletedInspection: {
+                type: Function
+            }
         },
         methods: {
             onDelete(id) {                                               

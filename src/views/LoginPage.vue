@@ -13,8 +13,8 @@
                         <ion-icon 
                             :icon="personCircle" 
                             aria-hidden="true"
-                            ></ion-icon>
-                            <ion-input 
+                        ></ion-icon>
+                        <ion-input 
                             :clear-input="true" 
                             label="Gebruikersnaam" 
                             labelPlacement="stacked"
@@ -46,7 +46,11 @@
 
                 <!-- Error box die getoond wordt als wachtwoord en gebruikersnaam niet overeen komen -->
                 <ion-row class="ion-justify-content-center">
-                    <ion-item v-if="error" class="errorBox" lines="none">
+                    <ion-item 
+                        v-if="error" 
+                        class="errorBox" 
+                        lines="none"
+                    >
                         <ion-icon :icon="alert"></ion-icon>
                         <h3 >{{ error }}</h3>
                     </ion-item>
@@ -58,8 +62,12 @@
                         tabindex="1"
                         :disabled="!username || !password"
                         @click="checkLogin()"
-                        @keyup.enter="checkLogin()">  Login
-                        <ion-icon :icon="logIn" slot="end"></ion-icon>
+                        @keyup.enter="checkLogin()"
+                    >Login
+                        <ion-icon 
+                            :icon="logIn" 
+                            slot="end"
+                        ></ion-icon>
                     </ion-button> 
                 </ion-row>
             </ion-grid>
@@ -98,6 +106,11 @@
                 error: ''
             }
         },
+        mounted() {
+            // Stel bij het laden wachtwoord en gebruikersnaam in door ze op te slaan in local storage. Hier leest de login service ze uit.
+            localStorage.setItem('username', 'admin');
+            localStorage.setItem('password', 'admin');
+        },
         methods: {
             // Als de login service false returned laat de error box zien. Wanneer true update state, reset waarden en verwijs door naar taken pagina
             checkLogin() {
@@ -111,11 +124,6 @@
                     this.$router.push('/taken');
                 }
             }
-        },
-        mounted() {
-            // Stel bij het laden wachtwoord en gebruikersnaam in door ze op te slaan in local storage. Hier leest de login service ze uit.
-            localStorage.setItem('username', 'admin');
-            localStorage.setItem('password', 'admin');
         }
     }
 </script>

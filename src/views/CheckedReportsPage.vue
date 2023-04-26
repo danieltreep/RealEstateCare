@@ -3,8 +3,11 @@
     <ion-page>
         <HeaderSection />
 
-        <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
-            <GoBackBar />
+        <ion-content 
+            :fullscreen="true" 
+            :class="darkMode ? 'darkMode' : ''"
+        >
+            <ReturnButton />
 
             <h1>Uitgevoerde Rapporten</h1>
 
@@ -15,9 +18,9 @@
     </ion-page>
 </template>
 <script lang="ts">
-    import HeaderSection from '@/components/HeaderSection.vue';
+    import HeaderSection from '@/components/TheHeaderSection.vue';
     import CheckedReportsList from '@/components/CheckedReportsList.vue';
-    import GoBackBar from '@/components/GoBackBar.vue';
+    import ReturnButton from '@/components/ReturnButton.vue';
     import { IonPage, IonContent } from '@ionic/vue'
     import { arrowDown, arrowUp } from 'ionicons/icons';
     import SortButtons from '@/components/SortButtons.vue';
@@ -29,7 +32,7 @@
             IonContent,
             HeaderSection,
             CheckedReportsList,
-            GoBackBar,
+            ReturnButton,
             SortButtons
         },
         data() {

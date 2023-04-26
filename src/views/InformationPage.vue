@@ -2,7 +2,10 @@
 <template>
   <ion-page>
     <HeaderSection />
-    <ion-content :fullscreen="true" :class="darkMode ? 'darkMode' : ''">
+    <ion-content 
+      :fullscreen="true" 
+      :class="darkMode ? 'darkMode' : ''"
+    >
       <ion-list class="list">
         <ion-item>
           <ion-label><i>Gebouwd door:</i></ion-label>
@@ -19,7 +22,7 @@
 
 <script lang="ts">
 import {IonPage, IonContent, IonList, IonItem, IonLabel} from '@ionic/vue';
-import HeaderSection from '@/components/HeaderSection.vue';
+import HeaderSection from '@/components/TheHeaderSection.vue';
 
 export default {
   name: 'InformationPage',

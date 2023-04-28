@@ -73,7 +73,7 @@ De WCAG richtlijnen met betrekking tot de app:
 De 10 heuristieken met betrekking tot de app:
 - Het taalgebruik is duidelijk en hetzelfde als in de Case
 - De gebruiker kan terug met de terug knop
-- De zoekbalk is op de vetrouwden plek midden bovenin de pagina
+- De zoekbalk is op de vetrouwde plek midden bovenin de pagina
 - Er staat niet meer tekst dan nodig
 
 ### Wat kan er beter?

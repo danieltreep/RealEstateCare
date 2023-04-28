@@ -1,13 +1,10 @@
-
 # RealEstateCare WebApp voor Mobiel
-
 Een app gemaakt voor RealEstateCare zodat inspecteurs op locatie een rapport kunnen opstellen.
-
 
 ## Hoe werkt de app?
 ### Inloggen
-- Zodra de login pagina wordt geladen wordt er een gebruikersnaam en wachtwoord opgeslagen in Local Storage.
-- Als de gebruiker inlogt worden deze gegevens vergeleken met de gegevens in de Local Storage door de check login service. 
+- Zodra de login pagina wordt geladen wordt er een gebruikersnaam en wachtwoord opgeslagen in de lokale opslag.
+- Als de gebruiker inlogt worden deze gegevens vergeleken met de gegevens in de lokale opslag door de check login service. 
 - Als de gegevens niet overeen komen komt er een foutmelding.
 - Als de gegevens kloppen wordt de gebruiker doorgestuurd naar de hoofdpagina en wordt de login status geupdate in de state.
 - De inloggegevens zijn: 
@@ -54,13 +51,22 @@ Er is een inlog systeem gesimuleerd met lokale opslag dus de gegevens komen niet
 
 
 ## Veiligheid
+- Bij de file upload is het alleen mogelijk om foto's te uploaden. 
+- User input wordt door Vue HTML veilig gemaakt om een XSS te voorkomen. 
+- De dependencies zijn op het moment van uploaden allemaal up to date waardoor er minder kwetsbaarheden zijn. 
+- De foutmelding bij het inloggen is generiek en verklapt niet wat er fout is.
+
+### Wat kan er beter?
+De inlog is op dit moment niet veilig omdat de gegevens uit de lokale opslag gelezen kunnen worden. Verder is het wachtwoord niet beveilligd met een hash. 
 
 ## Toegankelijkheid
+- Er is een hoog contrast tussen elementen
+- 
 
-## Bruikbaarheid
+## Gebruiksvriendelijkheid
 ### Style guide en Best practices
 Bij het coderen heb ik zo goed mogelijk gelet op de style guide en best practices van Vue. Denk hierbij aan het benoemen van componenten. Deze heb ik zo duidelijk mogelijk gemaakt en als ze een relatie hadden tot een ander component ben ik met hetzelfde woord begonnen. 
-Verder de volgorde waarmee in het script wordt gewerkt. Ik heb gelet op naming conventions als kebab-case, camelCase en PascalCase en heb props een type gegeven.
+Verder de volgorde van de options API waarmee in het script wordt gewerkt. Dus bijvoorbeeld als eerste de naam van het component en als laatste de methods. Daarnaast heb ik gelet op naming conventions als kebab-case, camelCase en PascalCase en heb props een type gegeven.
 
 
 ## Schaalbaarheid

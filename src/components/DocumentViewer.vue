@@ -16,12 +16,14 @@
         
         <img  
             v-if="document === 'Technische Installaties'" 
-            :src="require('../../public/assets/documents/documentatie-technische-installaties.png')" 
+            :src="require('../../public/assets/documents/documentatie-technische-installaties.png')"
+            alt="Documentatie van Technische Installaties" 
         >
         
         <img 
             v-if="document === 'Modificaties Inventariseren'" 
-            :src="require('../../public/assets/documents/documentatie-modificaties.png')" 
+            :src="require('../../public/assets/documents/documentatie-modificaties.png')"
+            alt="Documentatie van Modificaties Inventariseren" 
         > 
     </ion-modal>
 </template>

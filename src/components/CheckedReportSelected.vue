@@ -146,7 +146,7 @@
             >
                 <img 
                     :src="require(`../../public/assets/photos/${foto}`)" 
-                    :alt="foto"
+                    :alt="`inspectie foto ${index}`"
                 >
             </ion-item>
         </ion-item-group>

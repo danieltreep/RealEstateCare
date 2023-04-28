@@ -45,10 +45,8 @@ Inspectie worden geüpload naar de state maar niet naar een database. Dit beteke
 ### Inloggen
 Er is een inlog systeem gesimuleerd met lokale opslag dus de gegevens komen niet uit een database.
 
-## Singleton MVC
-
-
-
+### PDF
+Het is mij niet gelukt PDF's te integreren. Er wordt nu gelinkt naar JPG bestanden van de documenten.
 
 ## Veiligheid
 - Bij de file upload is het alleen mogelijk om foto's te uploaden. 
@@ -60,13 +58,28 @@ Er is een inlog systeem gesimuleerd met lokale opslag dus de gegevens komen niet
 De inlog is op dit moment niet veilig omdat de gegevens uit de lokale opslag gelezen kunnen worden. Verder is het wachtwoord niet beveilligd met een hash. 
 
 ## Toegankelijkheid
-- Er is een hoog contrast tussen elementen
-- 
+De WCAG richtlijnen met betrekking tot de app:
+- De opties zijn te bedienen met het toetsenbord
+- Alle foto's / logo hebben een alternatieve tekst
+- Icon's zijn ARIA Hidden en de file upload heeft een ARIA beschrijving
+- Informatie is gescheiden en daardoor duidelijker
+- Links zijn duidelijk weergegeven
+
+### Wat kan er beter?
+- De witte tekst op de groene achtergrond wordt door de WAVE tool beschouwt als laag contrast
+- Inzoomen lijkt niet mogelijk
 
 ## Gebruiksvriendelijkheid
+De 10 heuristieken met betrekking tot de app:
+- Het taalgebruik is duidelijk en hetzelfde als in de Case
+- De gebruiker kan terug met de terug knop
+- De zoekbalk is op de vetrouwden plek midden bovenin de pagina
+- Er staat niet meer tekst dan nodig
+
+### Wat kan er beter?
+- Er zou een lader getoond kunnen worden als er een inspectie wordt geselecteerd 
+- Er zouden meer instellingen voor bijvoorbeeld tekstgrootte gemaakt kunnen worden
+
 ### Style guide en Best practices
 Bij het coderen heb ik zo goed mogelijk gelet op de style guide en best practices van Vue. Denk hierbij aan het benoemen van componenten. Deze heb ik zo duidelijk mogelijk gemaakt en als ze een relatie hadden tot een ander component ben ik met hetzelfde woord begonnen. 
 Verder de volgorde van de options API waarmee in het script wordt gewerkt. Dus bijvoorbeeld als eerste de naam van het component en als laatste de methods. Daarnaast heb ik gelet op naming conventions als kebab-case, camelCase en PascalCase en heb props een type gegeven.
-
-
-## Schaalbaarheid

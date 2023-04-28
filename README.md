@@ -1,5 +1,5 @@
 # RealEstateCare WebApp voor Mobiel
-Een app gemaakt voor RealEstateCare zodat inspecteurs op locatie een rapport kunnen opstellen.
+Een app gemaakt voor RealEstateCare zodat inspecteurs op locatie een rapport kunnen opstellen. Bekijk de site met de resolutie van een mobiel met de browser inspector.
 
 ## Hoe werkt de app?
 ### Inloggen

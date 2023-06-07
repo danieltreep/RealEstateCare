@@ -101,8 +101,8 @@
                 lockClosed,
                 logIn,
                 alert,
-                username: '',
-                password: '',
+                username: 'admin',
+                password: 'admin',
                 error: ''
             }
         },
